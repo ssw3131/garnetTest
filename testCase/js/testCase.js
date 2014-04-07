@@ -802,7 +802,7 @@ Dk.init( function(){
         var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "backgroundColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
 
         Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
-        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
+//        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
         Dk.loader.json( "asset/particle.json", jsonComplete );
 //        Dk.loader.xml( "asset/test.xml", xmlComplete );
 
