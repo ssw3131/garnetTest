@@ -26,7 +26,7 @@ Dk.init( function() {
 		},
 
 		textObj : function( $obj ) {
-
+            var str = "";
 			for ( var key in $obj ) {
 				str += "<br> " + key + " : " + $obj[ key ];
 			}
