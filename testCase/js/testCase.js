@@ -1009,7 +1009,7 @@ Dk.init( function(){
     function addFlash(){
         _setTotal();
         var x = Dk.util.randomIntRange( _dkContainerWidth - 600 ), y = Dk.util.randomIntRange( _dkContainerHeight - 480 );
-        var flash = Dk.flash().css( "left", x, "top", y, "backgroundColor", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
+        var flash = Dk.flash().css( "position", "absolute", "left", x, "top", y, "backgroundColor", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { wmode : "transparent", allowScriptAccess : "sameDomain" } )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { version : 13 } );
             .fl( "load", "asset/flashAs3.swf", 500, 400 )
