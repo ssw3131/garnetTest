@@ -357,7 +357,7 @@ Dk.init( function() {
 	var addChildAtBox;
 
 	function makeBox() {
-		return Dk.dom( "div" ).css( "position", "absolute", "width", 50,
+		return Dk.dom( "div" ).css( "width", 50,
 									"height", 50,
 									"position", "relative",
 									'borderStyle', 'solid',
