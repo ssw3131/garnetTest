@@ -922,7 +922,7 @@ Dk.init( function(){
 
         var x = Dk.util.randomIntRange( _dkContainerWidth - 400 ), y = Dk.util.randomIntRange( _dkContainerHeight - 200 );
         Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "backgroundColor", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
-        var box2 = Dk.sheet().css( "left", x, "top", y ).tr( "addParent", _dkView )
+        var box2 = Dk.sheet().css( "left", x, "top", y ).tr( "addParent", _dkView );
 //            .ss( "load", "asset/particle.png", "asset/particle.txt", 30 );
 //            .ss( "load", "asset/particle.png", "asset/particle.txt", 30 ).ss( "repeat" );
         return box2;
