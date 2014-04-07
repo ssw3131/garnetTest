@@ -804,7 +804,7 @@ Dk.init( function(){
         Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
 //        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
         Dk.loader.json( "asset/particle.json", jsonComplete );
-        Dk.loader.xml( "asset/test.xml", xmlComplete );
+//        Dk.loader.xml( "asset/test.xml", xmlComplete );
 
         function textComplete( $data ){
             trace( $data );
