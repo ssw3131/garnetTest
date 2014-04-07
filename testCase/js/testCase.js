@@ -682,9 +682,10 @@ Dk.init( function(){
             "backgroundColor", "#FFF" )
             .ev( "mousedown", mouseMove, "mousemove", mouseMove, "mouseup", mouseMove );
 
-        trace( "addMouse" );
         function mouseMove( $e ){
-            trace( $e );
+            trace( "mouse x", Dk.Mouse.x );
+            trace( "target", $e.currentTarget );
+            trace( "localX", $e.currentTarget.pp( "localX" ) );
             var target = $e.currentTarget;
             var str = $e.type + "\npageX : " + Dk.Mouse.x + ", y : " + Dk.Mouse.y;
             str += "\nbox localX : " + target.pp( "localX" ) + ", box y : " + target.pp( "localY" ) + "\n";
