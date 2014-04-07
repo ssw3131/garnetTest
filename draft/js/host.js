@@ -161,8 +161,8 @@ Dk.init( function(){
         //-----------------------------------------------------------------------------------------------------------------------------------------------------//
 
         Dk.style( ".container" ).st( "position", "relative", "display", "block", "float", "left", "height", "80%" );
-        Dk.style( ".content" ).st( "position", "relative", "display", "block", "width", "100%", "height", "88%", "box-shadow", "50px 50px 150px #354c5a", "cursor", "pointer" );
-        Dk.style( ".type" ).st( "position", "relative", "display", "block", "width", "100%", "height", "12%", "font", "16px/30px Nanum Gothic", "color", "#FFF", "font-smoothing", "antialiased" );
+        Dk.style( ".content" ).st( "position", "relative", "width", "100%", "height", "88%", "box-shadow", "50px 50px 150px #354c5a", "cursor", "pointer" );
+        Dk.style( ".type" ).st( "position", "relative", "width", "100%", "height", "12%", "font", "16px/30px Nanum Gothic", "color", "#FFF", "font-smoothing", "antialiased" );
 
         function makeBox(){
             var container, content, type;
