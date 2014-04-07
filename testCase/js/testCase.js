@@ -682,6 +682,7 @@ Dk.init( function(){
             "backgroundColor", "#FFF" )
             .ev( "mousedown", mouseMove, "mousemove", mouseMove, "mouseup", mouseMove );
 
+        trace( "addMouse" );
         function mouseMove( $e ){
             trace( $e );
             var target = $e.currentTarget;
