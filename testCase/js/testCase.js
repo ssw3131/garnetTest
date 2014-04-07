@@ -204,7 +204,7 @@ Dk.init( function(){
         _dkContainerWidth = Dk.Doc.width - 500;
         _dkContainerHeight = Dk.Doc.height - 50;
 
-        _dkView = Dk.dom( "div" ).css( "width", _dkContainerWidth, "height", _dkContainerHeight, "backgroundColor", "#000", "overflow", "hidden" );
+        _dkView = Dk.dom( "div" ).css( "position", "absolute", "width", _dkContainerWidth, "height", _dkContainerHeight, "backgroundColor", "#000", "overflow", "hidden" );
 
         _dkViewContainer.element.appendChild( _dkView.pp( "element" ) );
 
@@ -339,7 +339,7 @@ Dk.init( function(){
      */
     function addDom( $i ){
         _setTotal();
-        var box = Dk.dom( "div" ).tr( "addParent", _dkView ).css( "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
+        var box = Dk.dom( "div" ).tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
 //            "transform",
 //                "rotateX(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                "rotateY(" + Dk.util.randomRange( 360 ) + "deg)" +
@@ -359,7 +359,7 @@ Dk.init( function(){
     function addText(){
         _setTotal();
         var box = Dk.dom( "div" ).tr( "text", "<br> text hi", "addParent", _dkView )
-            .css( "font", "20px/30px verdana", "color", Dk.util.randomColor(), "textAlign", "center",
+            .css( "position", "absolute", "font", "20px/30px verdana", "color", Dk.util.randomColor(), "textAlign", "center",
             "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
             "opacity", 1,
 //				 "overflow", "scroll",
@@ -376,7 +376,7 @@ Dk.init( function(){
      */
     function addImg( $i ){
         var box = Dk.dom( "img" ).atr( "src", "asset/img.jpg" )
-            .css( "left", Dk.util.randomRange( _dkContainerWidth - 300 ), "top", Dk.util.randomRange( _dkContainerHeight - 300 ),
+            .css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 300 ), "top", Dk.util.randomRange( _dkContainerHeight - 300 ),
             "transform",
                 "rotateX(" + Dk.util.randomRange( 360 ) + "deg)" +
                 "rotateY(" + Dk.util.randomRange( 360 ) + "deg)" +
@@ -539,7 +539,7 @@ Dk.init( function(){
      */
     function addEvent(){
         _setTotal();
-        Dk.dom( "div" ).tr( "addParent", _dkView ).css( "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
+        Dk.dom( "div" ).tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
             "width", "50px", "height", 50,
             "backgroundColor", "#FFF" )
             .ev( "click", boxClick, "mouseover", boxOver, "mouseout", boxOut )
@@ -610,14 +610,14 @@ Dk.init( function(){
     function addHierarchy(){
         _setTotal();
         var box0 = Dk.dom( "div" ).tr( "addParent", _dkView )
-            .css( "left", _dkContainerWidth / 2 - 100, "top", _dkContainerHeight / 2 - 100,
+            .css( "position", "absolute", "left", _dkContainerWidth / 2 - 100, "top", _dkContainerHeight / 2 - 100,
             "width", 200, "height", 150,
             "opacity", 0.8,
             "backgroundColor", Dk.util.randomColor() );
 
         _setTotal();
         var box1 = Dk.dom( "div" ).tr( "addParent", box0 )
-            .css( "left", 150, "top", 75,
+            .css( "position", "absolute", "left", 150, "top", 75,
             "width", 100, "height", 150,
             "opacity", 0.8,
             "backgroundColor", Dk.util.randomColor() );
@@ -625,7 +625,7 @@ Dk.init( function(){
         _setTotal();
         var box2 = Dk.dom( "img" ).tr( "addParent", box1 )
             .atr( "src", "asset/img.jpg" )
-            .css( "left", 50, "top", 75,
+            .css( "position", "absolute", "left", 50, "top", 75,
             "width", 100, "height", 150,
             "opacity", 0.8 );
 
@@ -674,7 +674,7 @@ Dk.init( function(){
     function addMouse(){
         _setTotal();
         var box = Dk.dom( "div" ).tr( "addParent", _dkView )
-            .css( "left", 50,
+            .css( "position", "absolute", "left", 50,
             "top", 100,
             "width", 300,
             "height", 200,
@@ -733,7 +733,7 @@ Dk.init( function(){
     function addKeyboardManager(){
         _setTotal();
         var box = Dk.dom( "div" ).tr( "addParent", _dkView )
-            .css( "left", 400,
+            .css( "position", "absolute", "left", 400,
             "top", 100,
             "width", 300,
             "height", 100,
@@ -799,7 +799,7 @@ Dk.init( function(){
      */
     function loadAjax(){
         _setTotal();
-        var box = Dk.dom().css( "left", 400, "top", 400, "width", 300, "height", 100, "backgroundColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
+        var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "backgroundColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
 
         Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
         Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
@@ -917,7 +917,7 @@ Dk.init( function(){
 //			.ss( "load", "asset/box.png", "asset/box.json" ).ss("repeat");
 
         var x = Dk.util.randomIntRange( _dkContainerWidth - 400 ), y = Dk.util.randomIntRange( _dkContainerHeight - 200 );
-        Dk.dom().css( "left", x, "top", y, "width", 400, "height", 200, "backgroundColor", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
+        Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "backgroundColor", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
         var box2 = Dk.sheet().css( "left", x, "top", y ).tr( "addParent", _dkView )
             .ss( "load", "asset/particle.png", "asset/particle.txt", 30 ).ss( "repeat" );
         return box2;

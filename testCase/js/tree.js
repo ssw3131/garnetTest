@@ -220,14 +220,14 @@ Dk.init( function() {
 		var vw = ( _dkContainerWidth < 1000 ) ? 1000 : _dkContainerWidth;
 		var vh = ( _dkContainerHeight < 500 ) ? 500 : _dkContainerHeight;
 		// view 생성
-		_dkView = Dk.dom( "div" ).css( "width", vw, "height", vh, "backgroundColor", "#000" );
+		_dkView = Dk.dom( "div" ).css( "position", "absolute", "width", vw, "height", vh, "backgroundColor", "#000" );
 
 		_dkViewContainer.element.appendChild( _dkView.pp("element") );
 
-		_output = Dk.dom( "div" ).css( "left", 50, "top", 50, "width", 300, "height", 100, "backgroundColor", "#353740" )
+		_output = Dk.dom( "div" ).css( "position", "absolute", "position", "absolute", "left", 50, "top", 50, "width", 300, "height", 100, "backgroundColor", "#353740" )
 			.tr( "addParent", _dkView );
 
-		_boxContainer = Dk.dom( "div" ).css( "left", 400, "top", 50, "width", _dkContainerWidth - 450, "height", _dkContainerHeight - 100, "backgroundColor", "#353740" )
+		_boxContainer = Dk.dom( "div" ).css( "position", "absolute", "left", 400, "top", 50, "width", _dkContainerWidth - 450, "height", _dkContainerHeight - 100, "backgroundColor", "#353740" )
 			.tr( "addParent", _dkView );
 	};
 
@@ -357,7 +357,7 @@ Dk.init( function() {
 	var addChildAtBox;
 
 	function makeBox() {
-		return Dk.dom( "div" ).css( "width", 50,
+		return Dk.dom( "div" ).css( "position", "absolute", "width", 50,
 									"height", 50,
 									"position", "relative",
 									'borderStyle', 'solid',
