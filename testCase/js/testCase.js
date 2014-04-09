@@ -1015,5 +1015,5 @@ Dk.init( function(){
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { version : 13 } );
             .fl( "load", "asset/flashAs3.swf", 500, 400 )
     };
-} );
+}, [ "http://ssw3131.github.io/garnet/plugin/sheet.js", "http://ssw3131.github.io/garnet/plugin/flash.js" ] );
 
