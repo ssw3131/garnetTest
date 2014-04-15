@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="ko">
+    <title>Dk plugIn - slideButtons</title>
+    <meta name="keywords" content="Dk garnet"/>
+    <meta name="description" content="Dk garnet"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="viewport"
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+</head>
+<body>
+<script src="http://ssw3131.github.io/garnet/garnet.js"></script>
+<script>
+    Dk.init( function(){
+        Dk.plugIn( [ { id : "slideButtons", url : "slideButtons.js" } ], function(){
+            var Doc = document, _body = Doc.body;
+
+            Dk.style( "body" ).st( "padding", 0, "margin", 0 );
+            Dk.style( ".button" ).st( "padding", 0, "margin", 0, "border", 0, "backgroundColor", "" );
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+            var btData = { className : "bt",
+                align : "hor",
+                gap : 5,
+                list : [
+                    { elementType : "button", event : mouseF, text : "title1" },
+                    { elementType : "button", event : mouseF, text : "title2" },
+                    { elementType : "button", event : mouseF, text : "title3" },
+                    { elementType : "button", event : mouseF, text : "title4" },
+                    { elementType : "button", event : mouseF, text : "title5" }
+                ] };
+
+            function mouseF( $e ){
+                if( $e.type == "click" )
+                    trace( $e.currentTarget.pp( "id" ) );
+            }
+
+            var slData = {
+                width : 298, height : 200,
+                leng : 5,
+                animation : "opacity",
+//                animation : "leftRight",
+//                animation : "rightLeft",
+//                animation : "topBottom",
+//                animation : "bottomTop",
+                time : 1,
+                ease : Quint.easeOut
+            };
+
+            var slideButtons = Dk.slideButtons( slData, btData );
+            slideButtons.slide.container.tr( "addParent", _body );
+            slideButtons.buttons.container.tr( "addParent", _body );
+            trace( slideButtons );
+        } )
+    } );
+</script>
+</body>
+</html>
