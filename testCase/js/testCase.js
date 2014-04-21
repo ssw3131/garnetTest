@@ -712,8 +712,8 @@ Dk.init( function(){
             }
 
             Dk.Doc.addWheel( "wheel2", wheel );
-            function wheel( $delta, $e, $key ){
-                var str = "delta : " + $delta + " / e : " + $e + " / " + $key;
+            function wheel( $delta, $key ){
+                var str = "delta : " + $delta + " / " + $key;
                 box.tr( "text", str );
             }
 
