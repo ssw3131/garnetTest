@@ -1,4 +1,4 @@
 /**
  * @author ssw
  */
-trace( "js load test" );
+log( "js load test" );

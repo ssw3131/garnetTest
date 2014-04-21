@@ -345,7 +345,7 @@ Dk.init( function() {
 			comp.element.appendChild( bt.element );
 			bt.value( "removeChildren" );
 			bt.element.onclick = function() {
-				trace( _boxContainer.tr( "removeChildren" ) );
+				log( _boxContainer.tr( "removeChildren" ) );
 			};
 
 			comp.element.appendChild( document.createElement( "br" ) );
