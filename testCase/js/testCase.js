@@ -349,10 +349,10 @@ Dk.init( function(){
 //                "rotateY(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                "rotateZ(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                " scale(" + Dk.util.randomRange( 1, 0.5 ) + ", " + Dk.util.randomRange( 1, 0.5 ) + ")"
-                "backgroundColor", Dk.util.randomColor() );
+                "bg", Dk.util.randomColor() );
             box.atr( "className", "box circle" );
 //        box.atr( "className", "box" );
-//		log( box.css( "opacity" ) );
+//		log( box.css( "bg" ) );
 //		log( box.css( "width" ) );
 //		log( box.css( "display" ) );
         };
@@ -372,7 +372,7 @@ Dk.init( function(){
 //				 "rotateX("+Dk.util.randomRange(360)+"deg)"+
 //					 "rotateY("+Dk.util.randomRange(360)+"deg)"+
 //					 "rotateZ("+Dk.util.randomRange(360)+"deg)",
-                "backgroundColor", "#fff" );
+                "bg", "#fff" );
         };
 
         /**
@@ -545,7 +545,7 @@ Dk.init( function(){
             _setTotal();
             Dk.dom( "div" ).tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
                 "width", "50px", "height", 50,
-                "backgroundColor", "#FFF" )
+                "bg", "#FFF" )
                 .ev( "click", boxClick )
                 .ev( "mouseout", boxOut )
 //                .ev( "click", boxClick, "mouseover", boxOver, "mouseout", boxOut, "click", boxClick2 )
@@ -621,18 +621,22 @@ Dk.init( function(){
          */
         function addHierarchy(){
             _setTotal();
+
+            Dk.style( ".hie" ).st( "width", 200, "height", 150, "opacity", 0.5 );
+
             var box0 = Dk.dom( "div" ).tr( "addParent", _dkView )
                 .css( "position", "absolute", "left", _dkContainerWidth / 2 - 100, "top", _dkContainerHeight / 2 - 100,
-                "width", 200, "height", 150,
+//                "width", 100, "height", 150,
                 "opacity", 0.8,
-                "backgroundColor", Dk.util.randomColor() );
+                "bg", Dk.util.randomColor() )
+                .atr( "className", "hie");
 
             _setTotal();
             var box1 = Dk.dom( "div" ).tr( "addParent", box0 )
                 .css( "position", "absolute", "left", 150, "top", 75,
                 "width", 100, "height", 150,
                 "opacity", 0.8,
-                "backgroundColor", Dk.util.randomColor() );
+                "bg", Dk.util.randomColor() );
 
             _setTotal();
             var box2 = Dk.dom( "img" ).tr( "addParent", box1 )
@@ -649,13 +653,21 @@ Dk.init( function(){
 
             function boxOver( $e ){
                 var target = $e.currentTarget;
-                target.css( "backgroundColor", Dk.util.randomColor() );
+                target.css( "bg", Dk.util.randomColor() );
             }
 
             function boxClick( $e ){
                 var target = $e.currentTarget;
                 TweenLite.to( target.pp( "element" ), 1, { rotation : Dk.util.randomRange( 360 ) } );
             }
+
+            log( getComputedStyle( box0.element ) )
+//            log( box.element.currentStyle )
+            log( getComputedStyle( box0.element ).color )
+//            log( box.element.currentStyle.width )
+            log( box0.css( "width" ) )
+            log( box0.gs( "scrollWidth" ) )
+            log( box0.gs( "width" ) )
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -692,7 +704,7 @@ Dk.init( function(){
                 "width", 300,
                 "height", 200,
                 "color", "#000",
-                "backgroundColor", "#FFF" )
+                "bg", "#FFF" )
                 .ev( "mousedown", mouseMove, "mousemove", mouseMove, "mouseup", mouseMove );
 
             function mouseMove( $e ){
@@ -754,7 +766,7 @@ Dk.init( function(){
                 "width", 300,
                 "height", 100,
                 "color", "#000",
-                "backgroundColor", "#FFF" );
+                "bg", "#FFF" );
 
             Dk.Keyboard.add( "keyboard", keyboard );
             function keyboard( $type, $keyCode, $key ){
@@ -815,7 +827,7 @@ Dk.init( function(){
          */
         function loadAjax(){
             _setTotal();
-            var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "backgroundColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
+            var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "bg", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
 
             Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
 //        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
@@ -934,7 +946,7 @@ Dk.init( function(){
             _setTotal();
 
             var x = Dk.util.randomIntRange( _dkContainerWidth - 400 ), y = Dk.util.randomIntRange( _dkContainerHeight - 200 );
-            Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "backgroundColor", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
+            Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "bg", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
             var spriteSheet = Dk.sheet().css( "position", "absolute", "left", x, "top", y ).tr( "addParent", _dkView )
                 .ss( "load", "asset/particle.png", "asset/particle.json", 30 ).ss( "repeat" );
             return spriteSheet;
@@ -1026,7 +1038,7 @@ Dk.init( function(){
         function addFlash(){
             _setTotal();
             var x = Dk.util.randomIntRange( _dkContainerWidth - 600 ), y = Dk.util.randomIntRange( _dkContainerHeight - 480 );
-            var flash = Dk.flash().css( "position", "absolute", "left", x, "top", y, "backgroundColor", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
+            var flash = Dk.flash().css( "position", "absolute", "left", x, "top", y, "bg", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { wmode : "transparent", allowScriptAccess : "sameDomain" } )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { version : 13 } );
                 .fl( "load", "asset/flashAs3.swf", 500, 400 )

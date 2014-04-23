@@ -5,7 +5,7 @@
     if( Dk.gs( "buttons" ) ) return;
 
     var Info = { name : "Dk garnet plugIn - buttons", version : "v0.0.1", contact : "ssw3131@daum.net" };
-    trace( Info ),
+    log( Info ),
 
         (function(){
             var Buttons;

@@ -7,7 +7,7 @@
     Dk.loader.js( ["http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js", "http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"], function(){
         var Info = { name : "Dk garnet plugIn - slide", version : "v0.0.1", contact : "ssw3131@daum.net" },
             _prototype;
-        trace( Info ),
+        log( Info ),
 
             (function(){
                 var animationF = { opacity : aniOpa, leftRight : aniLR, rightLeft : aniRL, topBottom : aniTB, bottomTop : aniBT };

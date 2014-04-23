@@ -7,7 +7,7 @@
     Dk.plugIn( [ { id : "slide", url : "slide.js" }, { id : "buttons", url : "buttons.js" } ], function(){
         var Info = { name : "Dk garnet plugIn - slideButtons", version : "v0.0.1", contact : "ssw3131@daum.net" },
             _prototype;
-        trace( Info ),
+        log( Info ),
 
             (function(){
                 var SlideButtons;

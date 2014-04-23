@@ -38,7 +38,7 @@
 
             function mouseF( $e ){
                 if( $e.type == "click" )
-                    trace( $e.currentTarget.pp( "id" ) );
+                    log( $e.currentTarget.pp( "id" ) );
             }
 
             var slData = {
@@ -56,7 +56,7 @@
             var slideButtons = Dk.slideButtons( slData, btData );
             slideButtons.slide.container.tr( "addParent", _body );
             slideButtons.buttons.container.tr( "addParent", _body );
-            trace( slideButtons );
+            log( slideButtons );
         } )
     } );
 </script>

@@ -41,12 +41,12 @@
 
             function mouseF( $e ){
                 if( $e.type == "click" )
-                    trace( $e.currentTarget.pp( "id" ) );
+                    log( $e.currentTarget.pp( "id" ) );
             }
 
             var bts = Dk.buttons( data );
             bts.container.tr( "addParent", _body );
-            trace( bts );
+            log( bts );
 
             Dk.style( ".bt" ).st( "padding", 0, "margin", 0, "listStyle", "none" );
             Dk.style( ".bt .li" ).st( "width", 200, "border", "1px solid #e1e1e1" );
