@@ -212,7 +212,7 @@ Dk.init( function(){
 
             _dkViewContainer.element.appendChild( _dkView.pp( "element" ) );
 
-//            Dk.Doc.addResize( "viewResize", viewResize );
+            Dk.Doc.addResize( "viewResize", viewResize );
 
             function viewResize( $key ){
                 _dkContainerWidth = Dk.Doc.width - 500;
@@ -699,6 +699,8 @@ Dk.init( function(){
                 var target = $e.currentTarget;
                 var str = $e.type + "\nmouseX : " + Dk.Doc.mouseX + ", mouseY : " + Dk.Doc.mouseY;
                 str += "\npageX : " + Dk.Doc.pageX + ", pageY : " + Dk.Doc.pageY;
+                str += "\nspeedX : " + Dk.Doc.speedX + ", speedY : " + Dk.Doc.speedY;
+                str += "\nmoveX : " + Dk.Doc.moveX + ", moveY : " + Dk.Doc.moveY;
                 str += "\nbox localX : " + $e.localX + ", box localY : " + $e.localY + "\n";
 
                 var touchList = Dk.Doc.touchList;
