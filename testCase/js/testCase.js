@@ -140,11 +140,11 @@ Dk.init( function(){
             initView();
             initTotal();
 
-//            initInformation();
-//		initDetector();
+            initInformation();
+            initDetector();
             initDom();
             initLoop();
-//            initTween();
+            initTween();
             initAddEvent();
             initTree();
             initHierarchy();
@@ -152,7 +152,7 @@ Dk.init( function(){
             initKeyboardManager();
             initJsLoader();
             initAjaxLoader();
-//		initAssetLoader();
+//            initAssetLoader();
             initSpriteSheet();
             initFlash();
         };
@@ -629,7 +629,7 @@ Dk.init( function(){
 //                "width", 100, "height", 150,
                 "opacity", 0.8,
                 "bg", Dk.util.randomColor() )
-                .atr( "className", "hie");
+                .atr( "className", "hie" );
 
             _setTotal();
             var box1 = Dk.dom( "div" ).tr( "addParent", box0 )
@@ -661,13 +661,9 @@ Dk.init( function(){
                 TweenLite.to( target.pp( "element" ), 1, { rotation : Dk.util.randomRange( 360 ) } );
             }
 
-            log( getComputedStyle( box0.element ) )
-//            log( box.element.currentStyle )
-            log( getComputedStyle( box0.element ).color )
-//            log( box.element.currentStyle.width )
-            log( box0.css( "width" ) )
-            log( box0.gs( "scrollWidth" ) )
-            log( box0.gs( "width" ) )
+            log( "css", box0.css( "width" ) )
+            log( "scrollWidth", box0.gcs( "scrollWidth" ) )
+            log( "gcs", box0.gcs( "width" ) )
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
