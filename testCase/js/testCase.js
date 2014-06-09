@@ -335,7 +335,7 @@ Dk.init( function(){
             };
         };
 
-        Dk.style( ".circle" ).st( "borderRadius", 25 );
+//        Dk.style( ".circle" ).st( "borderRadius", 25 );
         Dk.style( ".box" ).st( "width", "50px", "height", 50, "opacity", 0.5 );
 
         /**
