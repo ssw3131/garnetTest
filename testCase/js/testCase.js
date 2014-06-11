@@ -140,14 +140,14 @@ Dk.init( function(){
             initView();
             initTotal();
 
-            initInformation();
-            initDetector();
-            initDom();
-            initLoop();
-            initTween();
-            initAddEvent();
-            initTree();
-            initHierarchy();
+//            initInformation();
+//            initDetector();
+//            initDom();
+//            initLoop();
+//            initTween();
+//            initAddEvent();
+//            initTree();
+//            initHierarchy();
             initMouse();
             initKeyboardManager();
             initJsLoader();
