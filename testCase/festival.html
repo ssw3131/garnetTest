@@ -29,9 +29,9 @@
 <script>
     Dk.init( function(){
         Dk.style( "body" ).st( "bg", "#222" );
-        var _doc = document, _body = _doc.body, i = 1000, boxArr = [];
+        var _doc = document, _body = _doc.body, i = 1000, boxArr = [], size = 50;
         while( i-- ){
-            boxArr[ i ] = Dk.dom().atr( "className", "box" ).css( "position", "absolute", "width", 100, "height", 100, "bg", Dk.util.randomColor() ).tr( "addParent", _body );
+            boxArr[ i ] = Dk.dom().atr( "className", "box" ).css( "position", "absolute", "width", size, "height", size, "bg", Dk.util.randomColor() ).tr( "addParent", _body );
         }
 
         var sw = Dk.Doc.width;
