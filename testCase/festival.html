@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dk testCase</title>
+    <title>creative festival</title>
     <meta name="keywords" content="Dk garnet"/>
     <meta name="description" content="Dk garnet"/>
     <meta charset="utf-8"/>
@@ -27,7 +27,39 @@
 <script src="http://ssw3131.github.io/garnet/stats.min.js"></script>
 <script src="http://ssw3131.github.io/garnet/garnet.min.js"></script>
 <script>
+    Dk.init( function(){
+        Dk.style( "body" ).st( "bg", "#222" );
+        var _doc = document, _body = _doc.body, i = 1000, boxArr = [];
+        while( i-- ){
+            boxArr[ i ] = Dk.dom().atr( "className", "box" ).css( "position", "absolute", "width", 100, "height", 100, "bg", Dk.util.randomColor() ).tr( "addParent", _body );
+        }
 
+        var sw = Dk.Doc.width;
+        var sh = Dk.Doc.height;
+        var angleX = 0;
+        var angleY = 0;
+        var centerX = sw / 2 - 50;
+        var centerY = sh / 2 - 50;
+        var rangeX = 1;
+        var rangeY = 0.5;
+        var xspeed = .03;
+        var yspeed = .03;
+        var mathSin = Math.sin;
+        var mathCos = Math.cos;
+
+        Dk.Loop.add( "loop", function(){
+            var i = boxArr.length;
+
+            while(i--){
+                var x = centerX + mathSin( angleX + i / 10 ) * rangeX * i;
+                var y = centerY + mathCos( angleY + i / 10 ) * rangeY * i;
+                boxArr[ i ].css( "left", x, "top", y );
+            }
+
+            angleX += xspeed;
+            angleY += yspeed;
+        })
+    } )
 </script>
 </body>
 </html>
