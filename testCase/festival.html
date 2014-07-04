@@ -29,7 +29,7 @@
 <script>
     Dk.init( function(){
         Dk.style( "body" ).st( "bg", "#222" );
-        var _doc = document, _body = _doc.body, i = 1000, boxArr = [], size = 50;
+        var _doc = document, _body = _doc.body, i = 400, boxArr = [], size = 50;
         while( i-- ){
             boxArr[ i ] = Dk.dom().atr( "className", "box" ).css( "position", "absolute", "width", size, "height", size, "bg", Dk.util.randomColor() ).tr( "addParent", _body );
         }
