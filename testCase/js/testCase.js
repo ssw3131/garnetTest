@@ -153,7 +153,7 @@ Dk.init( function(){
             initKeyboardManager();
             initJsLoader();
             initAjaxLoader();
-//            initAssetLoader();
+            initAssetLoader();
             initSpriteSheet();
             initFlash();
         };
@@ -344,16 +344,16 @@ Dk.init( function(){
          */
         function addDom( $i ){
             _setTotal();
-            var box = Dk.dom( "div" ).tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
+            var box = Dk.dom().tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
 //            "transform",
 //                "rotateX(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                "rotateY(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                "rotateZ(" + Dk.util.randomRange( 360 ) + "deg)" +
 //                " scale(" + Dk.util.randomRange( 1, 0.5 ) + ", " + Dk.util.randomRange( 1, 0.5 ) + ")"
-                "bg", Dk.util.randomColor() );
+                "bgColor", Dk.util.randomColor() );
             box.atr( "className", "box circle" );
 //        box.atr( "className", "box" );
-//		log( box.css( "bg" ) );
+//		log( box.css( "bgColor" ) );
 //		log( box.css( "width" ) );
 //		log( box.css( "display" ) );
         };
@@ -373,7 +373,7 @@ Dk.init( function(){
 //				 "rotateX("+Dk.util.randomRange(360)+"deg)"+
 //					 "rotateY("+Dk.util.randomRange(360)+"deg)"+
 //					 "rotateZ("+Dk.util.randomRange(360)+"deg)",
-                "bg", "#fff" );
+                "bgColor", "#fff" );
         };
 
         /**
@@ -546,7 +546,7 @@ Dk.init( function(){
             _setTotal();
             Dk.dom( "div" ).tr( "addParent", _dkView ).css( "position", "absolute", "left", Dk.util.randomRange( _dkContainerWidth - 50 ), "top", Dk.util.randomRange( _dkContainerHeight - 50 ),
                 "width", "50px", "height", 50,
-                "bg", "#FFF" )
+                "bgColor", "#FFF" )
                 .ev( "click", boxClick )
                 .ev( "mouseout", boxOut )
 //                .ev( "click", boxClick, "mouseover", boxOver, "mouseout", boxOut, "click", boxClick2 )
@@ -629,7 +629,7 @@ Dk.init( function(){
                 .css( "position", "absolute", "left", _dkContainerWidth / 2 - 100, "top", _dkContainerHeight / 2 - 100,
 //                "width", 100, "height", 150,
                 "opacity", 0.8,
-                "bg", Dk.util.randomColor() )
+                "bgColor", Dk.util.randomColor() )
                 .atr( "className", "hie" );
 
             _setTotal();
@@ -637,7 +637,7 @@ Dk.init( function(){
                 .css( "position", "absolute", "left", 150, "top", 75,
                 "width", 100, "height", 150,
                 "opacity", 0.8,
-                "bg", Dk.util.randomColor() );
+                "bgColor", Dk.util.randomColor() );
 
             _setTotal();
             var box2 = Dk.dom( "img" ).tr( "addParent", box1 )
@@ -654,7 +654,7 @@ Dk.init( function(){
 
             function boxOver( $e ){
                 var target = $e.currentTarget;
-                target.css( "bg", Dk.util.randomColor() );
+                target.css( "bgColor", Dk.util.randomColor() );
             }
 
             function boxClick( $e ){
@@ -701,7 +701,7 @@ Dk.init( function(){
                 "width", 300,
                 "height", 200,
                 "color", "#000",
-                "bg", "#FFF" )
+                "bgColor", "#FFF" )
                 .ev( "mousedown", mouseMove, "mousemove", mouseMove, "mouseup", mouseMove );
 
             function mouseMove( $e ){
@@ -763,7 +763,7 @@ Dk.init( function(){
                 "width", 300,
                 "height", 100,
                 "color", "#000",
-                "bg", "#FFF" );
+                "bgColor", "#FFF" );
 
             Dk.Keyboard.add( "keyboard", keyboard );
             function keyboard( $type, $keyCode, $key ){
@@ -824,7 +824,7 @@ Dk.init( function(){
          */
         function loadAjax(){
             _setTotal();
-            var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "bg", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
+            var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "bgColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
 
             Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
 //        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
@@ -846,6 +846,38 @@ Dk.init( function(){
                 box.tr( "text", box.tr( "text" ) + "\nxmlComplete : " + $data.navi.sub );
             }
         };
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        /**
+         * asset loader
+         */
+        function initAssetLoader(){
+            var comp = new Comp();
+            _compContainer.element.appendChild( comp.element );
+            comp.css( {
+                width : _compWidth + "px"
+            } );
+            var str = "<b>Asset Loader</b><br><br>";
+            comp.html( str );
+
+            var bt = new Button();
+            comp.element.appendChild( bt.element );
+            bt.value( "asset load" );
+            bt.element.onclick = function(){
+                loadAsset();
+            };
+        };
+
+        /**
+         * load asset
+         */
+        function loadAsset(){
+            Dk.loader.asset( [ 'box', 'http://www.nasa.gov/images/content/84857main_EC04-0325-23_lg.jpg?' + Date.now(), 'img', 'asset/img.jpg', 'particle', 'asset/particle.png' ], function( $assetList ){
+                log( $assetList );
+                $assetList.img.tr( "addParent", _dkView );
+            } );
+        }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
@@ -943,7 +975,7 @@ Dk.init( function(){
             _setTotal();
 
             var x = Dk.util.randomIntRange( _dkContainerWidth - 400 ), y = Dk.util.randomIntRange( _dkContainerHeight - 200 );
-            Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "bg", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
+            Dk.dom().css( "position", "absolute", "left", x, "top", y, "width", 400, "height", 200, "bgColor", Dk.util.randomColor(), "opacity", 0.05 ).tr( "addParent", _dkView );
             var spriteSheet = Dk.sheet().css( "position", "absolute", "left", x, "top", y ).tr( "addParent", _dkView )
                 .ss( "load", "asset/particle.png", "asset/particle.json", 30 ).ss( "repeat" );
             return spriteSheet;
@@ -1035,7 +1067,7 @@ Dk.init( function(){
         function addFlash(){
             _setTotal();
             var x = Dk.util.randomIntRange( _dkContainerWidth - 600 ), y = Dk.util.randomIntRange( _dkContainerHeight - 480 );
-            var flash = Dk.flash().css( "position", "absolute", "left", x, "top", y, "bg", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
+            var flash = Dk.flash().css( "position", "absolute", "left", x, "top", y, "bgColor", Dk.util.randomColor() ).tr( "addParent", _dkView ).id( "flash" )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { wmode : "transparent", allowScriptAccess : "sameDomain" } )
 //            .fl( "load", "asset/flashAs3.swf", 500, 400, { version : 13 } );
                 .fl( "load", "asset/flashAs3.swf", 500, 400 )
