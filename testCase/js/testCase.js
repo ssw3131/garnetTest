@@ -5,8 +5,8 @@
 
 Dk.init( function(){
     Dk.plugIn( [
-        { id : "sheet", url : "http://ssw3131.github.io/garnet/plugin/sheet.js" },
-        { id : "flash", url : "http://ssw3131.github.io/garnet/plugin/flash.js" }
+        { id: "sheet", url: "http://ssw3131.github.io/garnet/v0.1/plugin/sheet.js" },
+        { id: "flash", url: "http://ssw3131.github.io/garnet/v0.1/plugin/flash.js" }
     ], function(){
         log( Dk );
         var W = window, _doc = document, _body = _doc.body,
@@ -16,21 +16,21 @@ Dk.init( function(){
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
         // 유틸
         _util = {
-            css : function( $obj ){
+            css: function( $obj ){
                 for( var key in $obj ){
                     this.style[ key ] = $obj[ key ];
                 }
             },
 
-            html : function( $html ){
+            html: function( $html ){
                 if( $html == undefined ){
                     return this.element.innerHTML;
-                } else {
+                }else{
                     return this.element.innerHTML = $html;
                 }
             },
 
-            textObj : function( $obj ){
+            textObj: function( $obj ){
                 var str = "";
                 for( var key in $obj ){
                     str += "<br> " + key + " : " + $obj[ key ];
@@ -42,11 +42,15 @@ Dk.init( function(){
              * 윈도우 내부 가로값을 가져온다
              * @returns {number}
              */
-            getWindowWidth : (function(){
+            getWindowWidth: (function(){
                 if( W.innerWidth ){
-                    return function(){ return W.innerWidth };
-                } else {
-                    return function(){ return _doc.documentElement.clientWidth };
+                    return function(){
+                        return W.innerWidth
+                    };
+                }else{
+                    return function(){
+                        return _doc.documentElement.clientWidth
+                    };
                 }
             })(),
 
@@ -54,11 +58,15 @@ Dk.init( function(){
              * 윈도우 내부 세로값을 가져온다
              * @returns {number}
              */
-            getWindowHeight : (function(){
+            getWindowHeight: (function(){
                 if( W.innerHeight ){
-                    return function(){ return W.innerHeight };
-                } else {
-                    return function(){ return _doc.documentElement.clientHeight };
+                    return function(){
+                        return W.innerHeight
+                    };
+                }else{
+                    return function(){
+                        return _doc.documentElement.clientHeight
+                    };
                 }
             })()
         };
@@ -71,21 +79,21 @@ Dk.init( function(){
             this.style = element.style;
 
             this.css( {
-                position : "relative",
-                display : "block",
-                margin : "0px 0px 10px 0px",
-                padding : "20px",
-                backgroundColor : "#000",
-                color : "#FFFFFF",
-                fontFamily : "돋움, sans-serif",
-                fontSize : "12px",
-                lineHeight : "20px"
+                position: "relative",
+                display: "block",
+                margin: "0px 0px 10px 0px",
+                padding: "20px",
+                backgroundColor: "#000",
+                color: "#FFFFFF",
+                fontFamily: "돋움, sans-serif",
+                fontSize: "12px",
+                lineHeight: "20px"
             } );
         };
 
         Comp.prototype = {
-            css : _util.css,
-            html : _util.html
+            css: _util.css,
+            html: _util.html
         };
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -97,31 +105,31 @@ Dk.init( function(){
             this.style = element.style;
 
             this.css( {
-                position : "relative",
-                display : "inline",
-                margin : "2px",
-                height : "20px",
-                fontFamily : "돋움, sans-serif",
-                fontSize : "12px",
-                cursor : "pointer"
+                position: "relative",
+                display: "inline",
+                margin: "2px",
+                height: "20px",
+                fontFamily: "돋움, sans-serif",
+                fontSize: "12px",
+                cursor: "pointer"
             } );
         };
 
         Button.prototype = {
-            css : _util.css,
+            css: _util.css,
 
-            value : function( $value ){
+            value: function( $value ){
                 if( $value == undefined ){
                     return this.element.value;
-                } else {
+                }else{
                     this.element.value = $value;
                 }
             },
 
-            disabled : function( $bool ){
+            disabled: function( $bool ){
                 if( $bool == undefined ){
                     return this.element.disabled;
-                } else {
+                }else{
                     this.element.disabled = $bool;
                 }
             }
@@ -177,26 +185,26 @@ Dk.init( function(){
             _dkViewContainer = new Comp();
             _body.appendChild( _dkViewContainer.element );
             _dkViewContainer.css( {
-                position : "absolute",
-                left : _compX + _compWidth + _gap + "px",
-                top : _compY + "px",
-                margin : "0px",
-                padding : "0px"
+                position: "absolute",
+                left: _compX + _compWidth + _gap + "px",
+                top: _compY + "px",
+                margin: "0px",
+                padding: "0px"
             } );
 
             // Comp 컨테이너
             _compContainer = new Comp();
             _body.appendChild( _compContainer.element );
             _compContainer.css( {
-                position : "absolute",
-                left : _compX + "px",
-                top : _compY + "px",
-                backgroundColor : "",
-                margin : "0px",
-                padding : "0px",
-                overflow : "auto",
-                width : _compWidth + 65 + "px",
-                height : _util.getWindowHeight() - 50 + "px"
+                position: "absolute",
+                left: _compX + "px",
+                top: _compY + "px",
+                backgroundColor: "",
+                margin: "0px",
+                padding: "0px",
+                overflow: "auto",
+                width: _compWidth + 65 + "px",
+                height: _util.getWindowHeight() - 50 + "px"
             } );
         };
 
@@ -221,7 +229,7 @@ Dk.init( function(){
                 _dkView.css( "width", _dkContainerWidth, "height", _dkContainerHeight );
 
                 _compContainer.css( {
-                    height : _dkContainerHeight + "px"
+                    height: _dkContainerHeight + "px"
                 } );
                 log( $key, Dk.Doc.height )
             }
@@ -241,13 +249,13 @@ Dk.init( function(){
             var title = new Comp();
             _dkViewContainer.element.appendChild( title.element );
             title.css( {
-                position : "absolute",
-                top : "0px",
-                left : "90px",
-                margin : "0px",
-                padding : "0px",
-                width : "100px",
-                zIndex : 1
+                position: "absolute",
+                top: "0px",
+                left: "90px",
+                margin: "0px",
+                padding: "0px",
+                width: "100px",
+                zIndex: 1
             } );
 
             _setTotal = function(){
@@ -267,7 +275,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Information</b><br>";
             str += _util.textObj( Dk.Information );
@@ -283,7 +291,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Detector</b><br>";
             str += _util.textObj( Dk.Detector );
@@ -300,7 +308,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Dom / Text / Img / Video</b><br><br>";
             comp.html( str );
@@ -407,7 +415,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Loop</b><br><br>";
             comp.html( str );
@@ -466,7 +474,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Tween</b><br><br>";
             comp.html( str );
@@ -505,13 +513,13 @@ Dk.init( function(){
                 var duration = 0.5;
                 $box.css( "left", _dkContainerWidth / 2, "top", _dkContainerHeight / 2 );
 
-                TweenLite.to( $box.pp( "element" ), 0, { scaleX : 0, scaleY : 0 } );
+                TweenLite.to( $box.pp( "element" ), 0, { scaleX: 0, scaleY: 0 } );
 
                 var angle = Math.random() * Math.PI * 2;
                 var x = Math.cos( angle ) * radiusWidth + radiusWidth;
                 var y = Math.sin( angle ) * radiusHeight + radiusHeight;
 
-                TweenLite.to( $box.pp( "element" ), duration, { delay : Math.random() * duration * 2, left : x, top : y, scaleX : 1, scaleY : 1, ease : Cubic.easeOut, onComplete : function(){
+                TweenLite.to( $box.pp( "element" ), duration, { delay: Math.random() * duration * 2, left: x, top: y, scaleX: 1, scaleY: 1, ease: Cubic.easeOut, onComplete: function(){
                     repeat( $box );
                 } } );
             }
@@ -526,7 +534,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>add event</b><br><br>";
             comp.html( str );
@@ -582,7 +590,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Tree</b><br><br>";
             comp.html( str );
@@ -604,7 +612,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Hierarchy</b><br><br>";
             comp.html( str );
@@ -659,7 +667,7 @@ Dk.init( function(){
 
             function boxClick( $e ){
                 var target = $e.currentTarget;
-                TweenLite.to( target.pp( "element" ), 1, { rotation : Dk.util.randomRange( 360 ) } );
+                TweenLite.to( target.pp( "element" ), 1, { rotation: Dk.util.randomRange( 360 ) } );
             }
 
             log( "css", box0.css( "width" ) )
@@ -677,7 +685,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Mouse</b><br><br>";
             comp.html( str );
@@ -739,7 +747,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Keyboard Manager</b><br><br>";
             comp.html( str );
@@ -781,7 +789,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>JS Loader</b><br><br>";
             comp.html( str );
@@ -806,7 +814,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Ajax Loader</b><br><br>";
             comp.html( str );
@@ -826,7 +834,7 @@ Dk.init( function(){
             _setTotal();
             var box = Dk.dom().css( "position", "absolute", "left", 400, "top", 400, "width", 300, "height", 100, "bgColor", "#FFF", "color", "#000" ).tr( "addParent", _dkView );
 
-            Dk.loader.text( "asset/text.txt", textComplete, { type : "GET", cache : false } );
+            Dk.loader.text( "asset/text.txt", textComplete, { type: "GET", cache: false } );
 //        Dk.loader.text( "asset/text.txt", textComplete, { type : "POST", postParam : "TEST", cache : true } );
             Dk.loader.json( "asset/particle.json", jsonComplete );
 //        Dk.loader.xml( "asset/test.xml", xmlComplete );
@@ -856,7 +864,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Asset Loader</b><br><br>";
             comp.html( str );
@@ -888,7 +896,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>SpriteSheet</b><br><br>";
             comp.html( str );
@@ -990,7 +998,7 @@ Dk.init( function(){
             var comp = new Comp();
             _compContainer.element.appendChild( comp.element );
             comp.css( {
-                width : _compWidth + "px"
+                width: _compWidth + "px"
             } );
             var str = "<b>Flash</b><br><br>";
             comp.html( str );
