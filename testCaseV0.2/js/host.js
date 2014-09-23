@@ -6,8 +6,6 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-	var t0 = dk.Dom( '<a' ).S( '@href', 'tt');
-	log( t0 )
 //    testTag();
 //    testSelctor();
 //    testElement();
@@ -18,7 +16,7 @@ dk( function(){
 //    testAjax();
 //    testJs();
 //    testImg();
-//	testPlugin();
+	testPlugin();
 
 
 //	log( dk.random() );
@@ -156,13 +154,12 @@ dk( function(){
 	}
 
 	function testPlugin(){
-		dk.pluginRoot( '/garnetTest/testCaseV0.2/js/' );
+		dk.pluginRoot( '/garnet/testCaseV0.2/plugin/' );
 		dk.plugin( function(){
-			log( 'plugin1' );
-		}, 'test1' );
-		dk.plugin( function(){
-			log( 'plugin2' );
-		}, 'test1', 'test2' );
+			var a0 = dk.Flash( 'flash' ).S( 'bgColor', '#000000', '<', 'body' );
+			log( a0 )
+			a0.S( 'url', 'test.swf', 'version', 9 )
+		}, 'flash' );
 	}
 } );
 /*    dk( function(){
