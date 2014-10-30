@@ -162,7 +162,7 @@ dk( function(){
 				a0.S( 'toFlash', 'test1()')
 			} )
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
-				a0.S( 'toFlash', 'test2( 0, 1, 2 )' )
+				a0.S( 'toFlash', 'test2( test, 1, 2 )' )
 			} )
 		}, 'flash' );
 	}
