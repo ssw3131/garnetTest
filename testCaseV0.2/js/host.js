@@ -70,7 +70,7 @@ dk( function(){
 	}
 
 	function testS(){
-		var a0 = dk.Dom().S( 'width', 500, 'height', '200px', 'bgColor', '#000000', 'opacity', 1, '@width', 100 );
+		var a0 = dk.Dom().S( 'width', 500, 'height', '200px', 'bgColor', 'rgba(16, 108, 175, 0.6)', 'opacity', 1, '@width', 100 );
 		a0.S( '<', 'body' );
 		log( 'width : ' + a0.S( 'width' ) );
 		log( '@width : ' + a0.S( '@width' ) );
