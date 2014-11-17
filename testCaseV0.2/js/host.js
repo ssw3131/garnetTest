@@ -6,16 +6,16 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-//    testTag();
-//    testSelctor();
-//    testElement();
-//    testCache();
-//    testS();
-//	testEvent();
-//    testStyle();
-//    testAjax();
-//    testJs();
-//    testImg();
+    testTag();
+    testSelctor();
+    testElement();
+    testCache();
+    testS();
+	testEvent();
+    testStyle();
+    testAjax();
+    testJs();
+    testImg();
 	testPlugin();
 
 
@@ -35,6 +35,7 @@ dk( function(){
 		body.appendChild( a2.el );
 		body.appendChild( a3.el );
 		body.appendChild( a4.el );
+		log( 'testTag' );
 		log( a0 );
 		log( a1 );
 		log( a2 );
@@ -46,6 +47,7 @@ dk( function(){
 		var a0 = dk.Dom( '#test' );
 		var a1 = dk.Dom( 'div .test' );
 		var a2 = dk.Dom( 'body nav div .menu' );
+		log( 'testSelctor' );
 		log( a0 );
 		log( a1 );
 		log( a2 );
@@ -55,15 +57,16 @@ dk( function(){
 		var a0 = dk.Dom( document.getElementById( 'test' ) );
 		var a1 = dk.Dom( document.getElementsByTagName( 'span' ) );
 		var a2 = dk.Dom( [ document.getElementById( 'test1' ), document.getElementById( 'test2' ) ] );
+		log( 'testElement' );
 		log( a0 );
 		log( a1 );
 		log( a2 );
 	}
 
 	function testCache(){
-		log( dk.Dom( '#test' ) );
+		log( 'testCache : ' + dk.Dom( '#test' ) );
 		var test1 = dk.Dom( '#test', null );
-		log( test1 );
+		log( 'testCache null : ' + test1 );
 	}
 
 	function testS(){
@@ -82,7 +85,7 @@ dk( function(){
 	}
 
 	function testEvent(){
-		var a0 = dk.Dom().S( 'width', 500, 'height', 200, 'bgColor', '#000000' );
+		var a0 = dk.Dom().S( 'width', 500, 'height', 200, 'bgColor', '#dfdfdf' );
 		a0.S( '<', 'body' );
 
 		var a1 = dk.Dom().S( 'width', 300, 'height', 100, 'bgColor', '#333' );
@@ -102,7 +105,7 @@ dk( function(){
 	}
 
 	function testAjax(){
-//		dk.ajax( getTest, 'json/test1.txt' )
+		dk.ajax( getTest, 'json/test1.txt' )
 		function getTest( data ){
 			log( '로딩완료-test1.txt', data )
 		}
@@ -110,15 +113,14 @@ dk( function(){
 		// get을 이용한 제이슨/xml로딩 및 파싱테스트
 		dk.ajax( getJSON_test, 'json/json.json' )
 		function getJSON_test( d ){
-			log( d )
 			var data = JSON.parse( d );
-			log( data )
+			log( '로딩완료-json.json', data )
 		}
 
-//		dk.ajax( getXMLtest, 'json/test.xml' )
+		dk.ajax( getXMLtest, 'json/test.xml' )
 		function getXMLtest(){
 			var data = arguments[0]
-			log( arguments[0] )
+			log( '로딩완료-test.xml', arguments[0] )
 		}
 	}
 
@@ -139,7 +141,7 @@ dk( function(){
 			console.log( d.channel.q, d )
 		}
 
-		dk.js( openAPICallBakcTest2, 'http://apis.daum.net/contents/movie?apikey=' + 'bffaf40ba59dff1a741998dd1d594e122f4260af&q=' + str + '&output=json&callback=' )
+//		dk.js( openAPICallBakcTest2, 'http://apis.daum.net/contents/movie?apikey=' + 'bffaf40ba59dff1a741998dd1d594e122f4260af&q=' + str + '&output=json&callback=' )
 	}
 
 	function testImg(){
