@@ -6,23 +6,58 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-    testTag();
-    testSelctor();
-    testElement();
-    testCache();
-    testS();
+	testTag();
+	testSelctor();
+	testElement();
+	testCache();
+	testS();
 	testEvent();
-    testStyle();
-    testAjax();
-    testJs();
-    testImg();
+	testStyle();
+	testAjax();
+	testJs();
+	testImg();
 	testPlugin();
 
+	(function(){
+//		dk.KEY.S( 'test', function(){
+//
+//		}
+//		dk.LOOP.S( 'test', function(){
+//			log( 1 )
+//		})
+
+		for( var i = 0; i < 5; i++ ){
+			dk.LOOP.S( 'test' + i, (function(){
+				var aa = i
+				return function(){
+//					log( 'test' + aa )
+				}
+			})() )
+		}
+
+		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
+		dk.WIN.RESIZE.S( 'resize1', function(){
+			log( 'resize1' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
+		} )
+		dk.WIN.RESIZE.S( 'resize2', function(){
+			log( 'resize2' )
+		} )
+//
+		dk.KEY.S( 'a', function( $e ){console.log( $e, $e.nativeEvent )} )
+		dk.KEY.S( 'b', function(){console.log( 'a' )} )
+		dk.KEY.S( 'c', function(){console.log( 'a' )} )
+
+		console.log( '22' )
+//		console.log( dk.WIN.RESIZE.S( 'this' ) )
+		console.log( dk.WIN.RESIZE )
+		console.log( dk.WIN.RESIZE.S( 'list' ) )
+		console.log( dk.WIN.RESIZE.list )
+		console.log( '33' )
+	})()
 
 //	log( dk.random() );
 //	log( dk.randomInt( 2 ) );
 //	log( dk.randomColor() );
-
 
 	function testTag(){
 		var a0 = dk.Dom( '<div></div>' );
@@ -161,7 +196,7 @@ dk( function(){
 			var a0 = dk.Flash( 'flash' ).load( 'url', 'flash/flashAs2.swf', 'width', 800, 'height', 600, 'version', 9, 'wmode', 'transparent'/*, paramK, paramV...*/ );
 			a0.S( 'bgColor', '#000000', '<', 'body', 'width', 400, 'height', 300 );
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
-				a0.S( 'toFlash', 'test1()')
+				a0.S( 'toFlash', 'test1()' )
 			} )
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
 				a0.S( 'toFlash', 'test2( test, 1, 2 )' )
