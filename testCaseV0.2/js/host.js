@@ -36,22 +36,29 @@ dk( function(){
 		}
 
 		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
-		dk.WIN.RESIZE.S( 'resize1', function(){
-			log( 'resize1' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
-		} )
-		dk.WIN.RESIZE.S( 'resize2', function(){
+		dk.RESIZE.S( 'resize2', function(){
 			log( 'resize2' )
+			log( dk.WIN )
+		} )
+		dk.SCROLL.S( 'scroll', function(){
+			log( 'scroll' )
+			log( dk.WIN )
+		} )
+		dk.WHEEL.S( 'wheel', function(){
+			log( 'wheel' )
+			alert( arguments[ 0 ] )
+			log( dk.WIN )
 		} )
 //
 		dk.KEY.S( 'a', function( $e ){console.log( $e, $e.nativeEvent )} )
-		dk.KEY.S( 'b', function(){console.log( 'a' )} )
-		dk.KEY.S( 'c', function(){console.log( 'a' )} )
+		dk.KEY.S( 'b', function(){console.log( 'b' )} )
+		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
 		console.log( '22' )
 //		console.log( dk.WIN.RESIZE.S( 'this' ) )
-		console.log( dk.WIN.RESIZE )
-		console.log( dk.WIN.RESIZE.S( 'list' ) )
-		console.log( dk.WIN.RESIZE.list )
+		console.log( dk.RESIZE )
+		console.log( dk.RESIZE.S( 'list' ) )
+		console.log( dk.RESIZE.list )
 		console.log( '33' )
 	})()
 
@@ -127,6 +134,7 @@ dk( function(){
 		a1.S( '<', a0 );
 
 		function handler( $e ){
+			log( $e )
 			log( $e.target.S( 'width' ) + ' : ' + $e.type );
 		}
 
