@@ -6,8 +6,6 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-	log.show();
-
 	testTag();
 	testSelctor();
 	testElement();
