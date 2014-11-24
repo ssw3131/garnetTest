@@ -6,6 +6,8 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
+	log.show();
+
 	testTag();
 	testSelctor();
 	testElement();
@@ -46,6 +48,7 @@ dk( function(){
 		} )
 		dk.WHEEL.S( 'wheel', function(){
 			log( 'wheel' )
+			log( arguments[ 0 ] )
 			alert( arguments[ 0 ] )
 			log( dk.WIN )
 		} )
