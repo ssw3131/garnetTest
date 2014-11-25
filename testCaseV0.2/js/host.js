@@ -45,9 +45,9 @@ dk( function(){
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
 		dk.MOUSE.S( 'mouse', function(){
-			log( dk.MOUSE.touchList[ 1 ] )
-			log( dk.MOUSE.touchList[ 1 ].x )
-			log( dk.MOUSE.touchList[ 1 ].pageX )
+			log( '1 : ' + dk.MOUSE.touchList[ 1 ] )
+			log( '2 : ' + dk.MOUSE.touchList[ 1 ].x )
+			log( '3 : ' + dk.MOUSE.touchList[ 1 ].pageX )
 		})
 
 		log.position( 10, 10 )
