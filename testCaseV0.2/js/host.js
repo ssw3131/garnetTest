@@ -48,7 +48,7 @@ dk( function(){
 			if ( dk.MOUSE.touchList.length ) log( dk.MOUSE.touchList[ 1 ] )
 		})
 
-		log.position( 0, 0 )
+		log.position( 10, 10 )
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
