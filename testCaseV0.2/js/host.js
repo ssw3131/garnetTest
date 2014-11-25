@@ -34,18 +34,19 @@ dk( function(){
 			log( dk.WIN )
 		} )
 		dk.SCROLL.S( 'scroll', function(){
-			log( 'scroll' )
-			log( dk.WIN )
 		} )
 		dk.WHEEL.S( 'wheel', null );
 		dk.WHEEL.S( 'wheel', function(){
-			log( 'wheel' )
-			log( arguments[ 0 ] )
 		} )
 
 		dk.KEY.S( 'a', function( $e ){console.log( $e, $e.nativeEvent )} )
 		dk.KEY.S( 'b', function(){console.log( 'b' )} )
+		dk.KEY.S( 'b', null )
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
+
+		dk.MOUSE.S( 'mouse', function(){
+			if ( dk.MOUSE.touchList.length ) log( dk.MOUSE.touchList[ 1 ] )
+		})
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
