@@ -28,7 +28,7 @@ dk( function(){
 			})() )
 		}*/
 
-		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
+//		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
 		dk.RESIZE.S( 'resize2', function(){
 			log( 'resize2' )
 			log( dk.WIN )
@@ -45,12 +45,12 @@ dk( function(){
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
 		dk.MOUSE.S( 'mouse', function(){
-			log( '1 : ' + dk.MOUSE.touchList[ 1 ] )
-			log( '2 : ' + dk.MOUSE.touchList[ 1 ].x )
-			log( '3 : ' + dk.MOUSE.touchList[ 1 ].pageX )
+			log( dk.MOUSE )
+			log( dk.MOUSE.moveY )
+//			log( '1 : ' + dk.MOUSE.touchList[ 1 ] )
+//			log( '2 : ' + dk.MOUSE.touchList[ 1 ].x )
+//			log( '3 : ' + dk.MOUSE.touchList[ 1 ].pageX )
 		})
-
-		log.position( 10, 10 )
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
