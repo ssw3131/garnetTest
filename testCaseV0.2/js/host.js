@@ -6,17 +6,17 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-	testTag();
-	testSelctor();
-	testElement();
-	testCache();
-	testS();
-	testEvent();
-	testStyle();
-	testAjax();
-	testJs();
-	testImg();
-	testPlugin();
+//	testTag();
+//	testSelctor();
+//	testElement();
+//	testCache();
+//	testS();
+//	testEvent();
+//	testStyle();
+//	testAjax();
+//	testJs();
+//	testImg();
+//	testPlugin();
 
 	(function(){
 		/*for( var i = 0; i < 5; i++ ){
@@ -47,6 +47,8 @@ dk( function(){
 		dk.MOUSE.S( 'mouse', function(){
 			if ( dk.MOUSE.touchList.length ) log( dk.MOUSE.touchList[ 1 ] )
 		})
+
+		log.position( 0, 0 )
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
