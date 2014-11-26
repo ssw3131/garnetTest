@@ -6,17 +6,17 @@ dk( function(){
 	'use strict';
 	var body = document.body;
 
-//	testTag();
-//	testSelctor();
-//	testElement();
-//	testCache();
-//	testS();
-//	testEvent();
-//	testStyle();
+	testTag();
+	testSelctor();
+	testElement();
+	testCache();
+	testS();
+	testEvent();
+	testStyle();
 //	testAjax();
 //	testJs();
 //	testImg();
-//	testPlugin();
+	testPlugin();
 
 	(function(){
 		/*for( var i = 0; i < 5; i++ ){
@@ -28,12 +28,14 @@ dk( function(){
 			})() )
 		}*/
 
-//		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
+		log( 'resize1 : ' + 'dk.WIN.width : ' + dk.WIN.width + ' / dk.WIN.height : ' + dk.WIN.height )
 		dk.RESIZE.S( 'resize2', function(){
 			log( 'resize2' )
 			log( dk.WIN )
 		} )
+		log( dk.SCROLL )
 		dk.SCROLL.S( 'scroll', function(){
+			log( dk.SCROLL.scrollTop )
 		} )
 		dk.WHEEL.S( 'wheel', null );
 		dk.WHEEL.S( 'wheel', function(){
@@ -44,13 +46,16 @@ dk( function(){
 		dk.KEY.S( 'b', null )
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
-		dk.MOUSE.S( 'mouse', function(){
-			log( dk.MOUSE )
-			log( dk.MOUSE.moveY )
+//		dk.MOUSE.S( 'mouse', function(){
+//			log( 'scrollTop' )
+//			log( dk.SCROLL.scrollTop )
+//			log( dk.MOUSE )
+//			log( dk.MOUSE.mouseY )
+//			log( dk.MOUSE.pageY )
 //			log( '1 : ' + dk.MOUSE.touchList[ 1 ] )
 //			log( '2 : ' + dk.MOUSE.touchList[ 1 ].x )
 //			log( '3 : ' + dk.MOUSE.touchList[ 1 ].pageX )
-		})
+//		})
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
