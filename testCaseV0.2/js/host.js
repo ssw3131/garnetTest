@@ -46,7 +46,8 @@ dk( function(){
 		dk.KEY.S( 'b', null )
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
-		dk.MOUSE.S( 'mouse', function(){
+		dk.MOUSE.S( 'mouse', function( $e ){
+//			log( $e.type )
 //			log( dk.MOUSE )
 		})
 
