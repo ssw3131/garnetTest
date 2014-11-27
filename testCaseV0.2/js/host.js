@@ -13,9 +13,9 @@ dk( function(){
 	testS();
 	testEvent();
 	testStyle();
-//	testAjax();
-//	testJs();
-//	testImg();
+	testAjax();
+	testJs();
+	testImg();
 	testPlugin();
 
 	(function(){
@@ -46,16 +46,9 @@ dk( function(){
 		dk.KEY.S( 'b', null )
 		dk.KEY.S( 'c', function(){console.log( 'c' )} )
 
-//		dk.MOUSE.S( 'mouse', function(){
-//			log( 'scrollTop' )
-//			log( dk.SCROLL.scrollTop )
+		dk.MOUSE.S( 'mouse', function(){
 //			log( dk.MOUSE )
-//			log( dk.MOUSE.mouseY )
-//			log( dk.MOUSE.pageY )
-//			log( '1 : ' + dk.MOUSE.touchList[ 1 ] )
-//			log( '2 : ' + dk.MOUSE.touchList[ 1 ].x )
-//			log( '3 : ' + dk.MOUSE.touchList[ 1 ].pageX )
-//		})
+		})
 
 //		console.log( '22' )
 //		console.log( dk.RESIZE )
