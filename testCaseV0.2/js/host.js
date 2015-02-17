@@ -205,6 +205,9 @@ dk( function(){
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
 				a0.S( 'toFlash', 'test2( test, 1, 2 )' )
 			} )
+			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
+				a0.S( 'refresh' )
+			} )
 		}, 'flash' );
 	}
 } );
