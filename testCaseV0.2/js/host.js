@@ -198,15 +198,12 @@ dk( function(){
 //		dk.pluginRoot( '/garnet/testCaseV0.2/plugin/' );
 		dk.plugin( function(){
 			var a0 = dk.Flash( 'flash' ).load( 'url', 'flash/flashAs2.swf', 'width', 800, 'height', 600, 'version', 9, 'wmode', 'transparent'/*, paramK, paramV...*/ );
-//			a0.S( 'bgColor', '#000000', '<', 'body', 'width', 400, 'height', 300 );
+			a0.S( 'bgColor', '#000000', '<', 'body', 'width', 400, 'height', 300 );
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
 				a0.S( 'toFlash', 'test1()' )
 			} )
 			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
 				a0.S( 'toFlash', 'test2( test, 1, 2 )' )
-			} )
-			dk.Dom().S( 'bgColor', '#ccc', '<', 'body', 'click', function(){
-				a0.S( 'refresh' )
 			} )
 		}, 'flash' );
 	}
