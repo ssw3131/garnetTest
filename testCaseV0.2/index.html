@@ -10,21 +10,95 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="viewport"
-          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=high-dpi"/>
-    <style>
-        * {
-            min-height: 20px;
-        }
-        * {
-            outline: coral dotted 1px;
-        }
-    </style>
+          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+    <!--syntaxhighlighter-->
+    <script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
+    <script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
+    <link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
+    <link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+<div id="container">
+    <h1>DK JS Framework - garnet</h1>
+
+    <div>
+        <div class="content">
+            <div class="hr"></div>
+            <h2>Download</h2>
+
+            <div>
+                <a href="http://ssw3131.github.io/garnet/v0.2/garnet.js">http://ssw3131.github.io/garnet/v0.2/garnet.js</a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="hr"></div>
+            <h2>Installation</h2>
+
+            <div>
+                <pre class="brush:js">
+                <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+                </pre>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="hr"></div>
+            <h2>Initialize</h2>
+
+            <div>
+                돔 로딩 완료 후 '// code' 부분이 실행됩니다.
+                <pre class="brush:js">
+                dk( function(){
+                    // code
+                } )
+                </pre>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="hr"></div>
+            <h2>Simple Example</h2>
+
+            <div>
+                간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
+                <pre class="brush:js">
+                dk( function(){
+                    dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '<', 'body' );
+                } )
+                </pre>
+            </div>
+        </div>
+
+        <!--<div class="content">
+            <div class="hr"></div>
+            <h2>Key, Value</h2>
+
+            <div id="core">
+                garnet은 기본적으로 key, value 시스템으로 운영됩니다. 대부분의 API는 키값, 밸류값
+            <pre class="brush:js">
+                <script>
+                    dk.fn( $k, $v )
+                    dk.cls( $k, $v )
+                    dk.obj( $k, $v )
+                </script>
+            </pre>
+                <script>
+                    dk( function(){
+                        log( dk.INFO )
+                        dk.Dom( '#info' ).S( 'text', dk.INFO )
+                    } )
+                </script>
+            </div>
+        </div>-->
+    </div>
+</div>
 <!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
 <!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
 <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
-<!--<script src="garnet.js"></script>-->
 <script src="js/host.js"></script>
 </body>
 </html>
