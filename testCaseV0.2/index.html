@@ -11,6 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="viewport"
           content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+
+    <!--css-->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
 
@@ -19,86 +21,206 @@
     <script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
     <link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
     <link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
+
+    <!--host-->
+    <!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
+    <!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
+    <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+    <!--<script src="garnet.js"></script>-->
+    <script src="js/host.js"></script>
 </head>
 <body>
 <div id="container">
     <h1>DK JS Framework - garnet</h1>
 
-    <div>
-        <div class="content">
-            <div class="hr"></div>
-            <h2>Download</h2>
-
-            <div>
-                <a href="http://ssw3131.github.io/garnet/v0.2/garnet.js">http://ssw3131.github.io/garnet/v0.2/garnet.js</a>
-            </div>
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>Download</h2>
+        <div>
+            <a href="http://ssw3131.github.io/garnet/v0.2/garnet.js">http://ssw3131.github.io/garnet/v0.2/garnet.js</a>
         </div>
-
-        <div class="content">
-            <div class="hr"></div>
-            <h2>Installation</h2>
-
-            <div>
-                <pre class="brush:js">
-                <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
-                </pre>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="hr"></div>
-            <h2>Initialize</h2>
-
-            <div>
-                돔 로딩 완료 후 '// code' 부분이 실행됩니다.
-                <pre class="brush:js">
-                dk( function(){
-                    // code
-                } )
-                </pre>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="hr"></div>
-            <h2>Simple Example</h2>
-
-            <div>
-                간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
-                <pre class="brush:js">
-                dk( function(){
-                    dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '<', 'body' );
-                } )
-                </pre>
-            </div>
-        </div>
-
-        <!--<div class="content">
-            <div class="hr"></div>
-            <h2>Key, Value</h2>
-
-            <div id="core">
-                garnet은 기본적으로 key, value 시스템으로 운영됩니다. 대부분의 API는 키값, 밸류값
-            <pre class="brush:js">
-                <script>
-                    dk.fn( $k, $v )
-                    dk.cls( $k, $v )
-                    dk.obj( $k, $v )
-                </script>
-            </pre>
-                <script>
-                    dk( function(){
-                        log( dk.INFO )
-                        dk.Dom( '#info' ).S( 'text', dk.INFO )
-                    } )
-                </script>
-            </div>
-        </div>-->
     </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>Installation</h2>
+        <div>
+            <pre class="brush:js">
+            <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+            </pre>
+        </div>
+    </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>Initialize</h2>
+        <div>
+            돔 로딩 완료 후 '// code' 부분이 실행됩니다.
+            <pre class="brush:js">
+            dk( function(){
+                // code
+            } )
+            </pre>
+        </div>
+    </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>Simple Example</h2>
+        <div>
+            간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
+            <pre class="brush:js">
+            dk( function(){
+                dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '<', 'body' );
+            } )
+            </pre>
+        </div>
+    </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>Key, Value</h2>
+        <div>
+            garnet은 기본적으로 key, value 시스템으로 운영됩니다. 다중 파라미터 전달 시 ( key, value ) 쌍으로 연결이 되며 key만 입력 시 value 값이 리턴됩니다. 그
+            외에는 Dom 객체가 리턴됩니다.
+            <pre class="brush:js">
+            // dk.Dom().S( $k, $v );
+
+            var dom = dk.Dom().S( 'width', 100 );
+            dom.S( 'height', 100 );
+            dom.S( 'position', 'absolute' );
+
+            dom.S( 'left', 100, 'top', 100, 'display', 'none' );
+
+            var domWidth = dk.Dom().S( 'width' );
+            </pre>
+        </div>
+    </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>dk.Dom</h2>
+
+        <div class="hr2"></div>
+        <h3>엘리먼트 생성 - dk.Dom 객체</h3>
+        <div>
+            기본으로 div 엘리먼트 생성
+            <pre class="brush:js">
+            dk.Dom();
+            </pre>
+            파라미터로 문자열 html 코드 전달 시 해당 태크 객체 생성
+            <pre class="brush:js">
+            dk.Dom( '<div><div></div></div>' );
+            </pre>
+            파라미터로 < 뒤 엘리먼트 이름 전달 시 해당 엘리먼트 생성
+            <pre class="brush:js" id="Dom0">
+            </pre>
+            <script>
+                var dom0 = dk.Dom( '#Dom0' ).S( 'text', "dk.Dom( '<li' );" );
+                dom0.S( 'text+', "\ndk.Dom( '<ul' );" );
+            </script>
+        </div>
+
+        <div class="hr2"></div>
+        <h3>셀렉터 - css selector</h3>
+        <div>
+            css 셀렉터 문법 그대로 엘리먼트 검색 후 dk.Dom 객체로 리턴
+            <pre class="brush:js">
+            dk.Dom( '#test' ); // id 검색
+            dk.Dom( '.test' ); // 클래스 검색
+            dk.Dom( '#test h1' );
+            </pre>
+        </div>
+
+        <div class="hr2"></div>
+        <h3>엘리먼트 - dom element</h3>
+        <div>
+            엘리먼트 객체 전달 시 해당 객체로 dk.Dom 객체 리턴
+            <pre class="brush:js">
+            dk.Dom( document.createElement( 'div' ) );
+            </pre>
+        </div>
+
+        <div class="hr2"></div>
+        <h3>캐싱 - cache</h3>
+        <div>
+            한번 탐색 된 객체는 제 탐색하지 않고 캐싱하여 리턴
+            <pre class="brush:js">
+            dk.Dom( '#test' ); // id test 돔트리 탐색
+            dk.Dom( '#test' ); // #test 캐싱 리턴
+            </pre>
+        </div>
+    </div>
+
+    <div class="hr1"></div>
+    <div class="content">
+        <h2>S method</h2>
+
+        <div class="hr2"></div>
+        <h3>key, value 시스템</h3>
+        <div>
+            key, value 시스템이 적용됩니다. <br>
+            수치는 px 없이 숫자값으로 입력 가능합니다. 퍼센트는 '10%', 문자열로 입력하면 됩니다. 리턴값은 숫자값과 px 값들은 숫자로 그외는 문자열로 리턴됩니다. <br>
+
+            <pre class="brush:js">
+            // dk.Dom().S( $k, $v );
+            var dom = dk.Dom().S( 'left', 100, 'width', 100, 'height', 100 );
+            dom.S( 'top', '100%' );
+            var left = dom.S( 'left' ); // 100
+            var top = dom.S( 'top' ); // '100%'
+            </pre>
+        </div>
+
+        <div class="hr2"></div>
+        <h3>css vendor prefix</h3>
+        <div>
+            vendor prefix는 자동으로 입력됩니다
+            <pre class="brush:js">
+            // box-shadow, -ms-box-shadow, -moz-box-shadow, -o-box-shadow, -webkit-box-shadow
+            dk.Dom().S( 'boxShadow', '0px 0px 10px #62615f inset' );
+            </pre>
+        </div>
+
+        <div class="hr2"></div>
+        <h3>특수기능</h3>
+        <div>
+            편의성 css 입력값을 지원합니다.
+            <pre class="brush:js">
+            dk.Dom().S( 'bgColor', $v ) // backgoundColor 대체, rgba 입력 시 ie8 이하 rgb로 대체
+            dk.Dom().S( 'bgImg', $v ) // backgroundImage 대체, url 값만 입력
+            dk.Dom().S( 'float', $v ) // cssFloat, styleFloat 자동 분기
+            dk.Dom().S( 'fontSmoothing', $v )
+            dk.Dom().S( 'opacity', $v ) // ie8 이하 필터처리
+            </pre>
+            dk.Dom 객체 삽입 및 제거, html 태그 삽입, 문자열 삽입
+            <pre class="brush:js">
+            // '>' 큰쪽이 부모객체
+            dk.Dom().S( '>', $dom )
+            dk.Dom().S( '<', $dom )
+            dk.Dom().S( '>-', $dom )
+            dk.Dom().S( '<-', $dom )
+            // innerHTML, 엘리먼트 앞 뒤 html 태그 삽입
+            dk.Dom().S( 'html', $v )
+            dk.Dom().S( '+html', $v )
+            dk.Dom().S( 'html+', $v )
+            // innerText, textContent 분기, 엘리먼트 앞 뒤 text 삽입
+            dk.Dom().S( 'text', $v )
+            dk.Dom().S( '+text', $v )
+            dk.Dom().S( 'text+', $v )
+            </pre>
+            이벤트 키값, 핸들러 매서드( ie에선 on 추가 )<br>
+            데스크탑, 모바일 자동 분기 - 해당 이벤트로 적용됩니다.
+            <pre class="brush:js">
+            dk.Dom().S( 'over', $cb ) // mouseover
+            dk.Dom().S( 'out', $cb ) // mouseout
+            dk.Dom().S( 'click', $cb )
+            dk.Dom().S( 'down', $cb ) // mousedown, touchstart
+            dk.Dom().S( 'move', $cb ) // mousemove, touchmove
+            dk.Dom().S( 'up', $cb ) // mouseup, touchend
+            </pre>
+        </div>
+    </div>
+
 </div>
-<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
-<!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
-<script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
-<script src="js/host.js"></script>
 </body>
 </html>
