@@ -1,93 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dk testCase - 테스트케이스</title>
-    <meta name="keywords" content="Dk garnet"/>
-    <meta name="description" content="Dk garnet"/>
-    <meta charset="utf-8"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <meta name="viewport"
-          content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+	<title>Dk testCase - 테스트케이스</title>
+	<meta name="keywords" content="Dk garnet"/>
+	<meta name="description" content="Dk garnet"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="viewport"
+		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
 
-    <!--css-->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 
-    <!--syntaxhighlighter-->
-    <script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
-    <script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
-    <link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
-    <link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
+	<!--syntaxhighlighter-->
+	<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
+	<script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
+	<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
+	<link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
 
-    <!--host-->
-    <!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
-    <!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
-    <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
-    <!--<script src="garnet.js"></script>-->
-    <script src="js/host.js"></script>
+	<!--host-->
+	<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
+	<!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
+	<script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+	<!--<script src="garnet.js"></script>-->
+	<script src="js/host.js"></script>
 </head>
 <body>
 <div id="container">
-    <h1>DK JS Framework - garnet</h1>
+	<h1>DK JS Framework - garnet</h1>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>Download</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Download</h2>
 
-        <div>
-            <a href="http://ssw3131.github.io/garnet/v0.2/garnet.js">http://ssw3131.github.io/garnet/v0.2/garnet.js</a>
-        </div>
-    </div>
+		<div>
+			<a href="http://ssw3131.github.io/garnet/v0.2/garnet.js">http://ssw3131.github.io/garnet/v0.2/garnet.js</a>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>Installation</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Installation</h2>
 
-        <div>
+		<div>
             <pre class="brush:js">
             <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>Initialize</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Initialize</h2>
 
-        <div>
-            돔 로딩 완료 후 '// code' 부분이 실행됩니다.
+		<div>
+			돔 로딩 완료 후 '// code' 부분이 실행됩니다.
             <pre class="brush:js">
             dk( function(){
                 // code
             } )
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>Simple Example</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Simple Example</h2>
 
-        <div>
-            간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
+		<div>
+			간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
             <pre class="brush:js">
             dk( function(){
                 dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '<', 'body' );
             } )
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>Key, Value</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Key, Value</h2>
 
-        <div>
-            garnet은 기본적으로 key, value 시스템으로 운영됩니다. 다중 파라미터 전달 시 ( key, value ) 쌍으로 연결이 되며 key만 입력 시 value 값이 리턴됩니다. 그
-            외에는 Dom 객체가 리턴됩니다.
+		<div>
+			garnet은 기본적으로 key, value 시스템으로 운영됩니다. 다중 파라미터 전달 시 ( key, value ) 쌍으로 연결이 되며 key만 입력 시 value 값이 리턴됩니다. 그
+			외에는 Dom 객체가 리턴됩니다.
             <pre class="brush:js">
             // dk.Dom().S( $k, $v );
 
@@ -99,80 +99,80 @@
 
             var domWidth = dk.Dom().S( 'width' );
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>dk.Dom</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>dk.Dom</h2>
 
-        <div class="hr2"></div>
-        <h3>엘리먼트 생성 - dk.Dom 객체</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>엘리먼트 생성 - dk.Dom 객체</h3>
 
-        <div>
-            기본으로 div 엘리먼트 생성
+			기본으로 div 엘리먼트가 생성됩니다.
             <pre class="brush:js">
             dk.Dom();
             </pre>
-            파라미터로 문자열 html 코드 전달 시 해당 태크 객체 생성
+			파라미터로 문자열 html 코드 전달 시 해당 태크 객체가 생성됩니다.
             <pre class="brush:js">
             dk.Dom( '<div>
-                <div></div>
-            </div>' );
+				<div></div>
+			</div>' );
             </pre>
-            파라미터로 < 뒤 엘리먼트 이름 전달 시 해당 엘리먼트 생성
+			파라미터로 < 뒤 엘리먼트 이름 전달 시 해당 엘리먼트가 생성됩니다.
             <pre class="brush:js" id="Dom0">
             </pre>
-            <script>
-                var dom0 = dk.Dom( '#Dom0' ).S( 'text', "dk.Dom( '<li' );" );
-                dom0.S( 'text+', "\ndk.Dom( '<ul' );" );
-            </script>
-        </div>
+			<script>
+				var dom0 = dk.Dom( '#Dom0' ).S( 'text', "dk.Dom( '<li' );" );
+				dom0.S( 'text+', "\ndk.Dom( '<ul' );" );
+			</script>
+		</div>
 
-        <div class="hr2"></div>
-        <h3>셀렉터 - css selector</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>셀렉터 - css selector</h3>
 
-        <div>
-            css 셀렉터 문법 그대로 엘리먼트 검색 후 dk.Dom 객체로 리턴
+			css 셀렉터 문법 그대로 엘리먼트 검색 후 dk.Dom 객체로 리턴됩니다.
             <pre class="brush:js">
             dk.Dom( '#test' ); // id 검색
             dk.Dom( '.test' ); // 클래스 검색
             dk.Dom( '#test h1' );
             </pre>
-        </div>
+		</div>
 
-        <div class="hr2"></div>
-        <h3>엘리먼트 - dom element</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>엘리먼트 - dom element</h3>
 
-        <div>
-            엘리먼트 객체 전달 시 해당 객체로 dk.Dom 객체 리턴
+			엘리먼트 객체 전달 시 해당 객체로 생성된 dk.Dom 객체를 리턴합니다.
             <pre class="brush:js">
             dk.Dom( document.createElement( 'div' ) );
             </pre>
-        </div>
+		</div>
 
-        <div class="hr2"></div>
-        <h3>캐싱 - cache</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>캐싱 - cache</h3>
 
-        <div>
-            한번 탐색 된 객체는 제 탐색하지 않고 캐싱하여 리턴
+			한번 탐색 된 객체는 돔트리를 재탐색하지 않고 내부 메모리에 캐싱하여 리턴합니다.
             <pre class="brush:js">
             dk.Dom( '#test' ); // id test 돔트리 탐색
             dk.Dom( '#test' ); // #test 캐싱 리턴
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    <div class="hr1"></div>
-    <div class="content">
-        <h2>S method</h2>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>S method</h2>
 
-        <div class="hr2"></div>
-        <h3>key, value 시스템</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>key, value 시스템</h3>
 
-        <div>
-            key, value 시스템이 적용됩니다. <br>
-            수치는 px 없이 숫자값으로 입력 가능합니다. 퍼센트는 '10%', 문자열로 입력하면 됩니다. 리턴값은 숫자값과 px 값들은 숫자로 그외는 문자열로 리턴됩니다. <br>
+			key, value 시스템이 적용됩니다. <br>
+			수치는 px 없이 숫자값으로 입력 가능합니다. 퍼센트는 '10%', 문자열로 입력하면 됩니다. 리턴값은 숫자값과 px 값들은 숫자로 그외는 문자열로 리턴됩니다.
 
             <pre class="brush:js">
             // dk.Dom().S( $k, $v );
@@ -181,24 +181,24 @@
             var left = dom.S( 'left' ); // 100
             var top = dom.S( 'top' ); // '100%'
             </pre>
-        </div>
+		</div>
 
-        <div class="hr2"></div>
-        <h3>css vendor prefix</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>css vendor prefix</h3>
 
-        <div>
-            vendor prefix는 자동으로 입력됩니다
+			vendor prefix는 자동으로 입력됩니다.
             <pre class="brush:js">
             // box-shadow, -ms-box-shadow, -moz-box-shadow, -o-box-shadow, -webkit-box-shadow
             dk.Dom().S( 'boxShadow', '0px 0px 10px #62615f inset' );
             </pre>
-        </div>
+		</div>
 
-        <div class="hr2"></div>
-        <h3>특수기능</h3>
+		<div>
+			<div class="hr3"></div>
+			<h3>특수함수</h3>
 
-        <div>
-            편의성 css 입력값을 지원합니다.
+			편의성 css 입력 함수를 지원합니다.
             <pre class="brush:js">
             dk.Dom().S( 'bgColor', $v ) // backgoundColor 대체, rgba 입력 시 ie8 이하 rgb로 대체
             dk.Dom().S( 'bgImg', $v ) // backgroundImage 대체, url 값만 입력
@@ -206,7 +206,8 @@
             dk.Dom().S( 'fontSmoothing', $v )
             dk.Dom().S( 'opacity', $v ) // ie8 이하 필터처리
             </pre>
-            dk.Dom 객체 삽입 및 제거, html 태그 삽입, 문자열 삽입
+
+			dk.Dom 객체 삽입 및 제거 함수, html 태그 삽입함수, 문자열 삽입함수를 지원합니다.
             <pre class="brush:js">
             // '>' 큰쪽이 부모객체
             dk.Dom().S( '>', $dom )
@@ -222,8 +223,10 @@
             dk.Dom().S( '+text', $v )
             dk.Dom().S( 'text+', $v )
             </pre>
-            이벤트 키값, 핸들러 매서드<br>
-            IE, 데스크탑, 모바일 자동 분기 - 해당 이벤트로 적용됩니다.
+
+			이벤트 추가함수를 지원힙니다.<br>
+			이벤트 키값, 핸들러 매서드<br>
+			IE, 데스크탑, 모바일 자동 분기 - 해당 이벤트로 적용됩니다.
             <pre class="brush:js">
             var cb = function( $e ){
                 // $e.type, $e.target, $e.nativeEvent, $e.nativeTarget
@@ -240,18 +243,78 @@
             dk.Dom().S( 'up', cb ) // mouseup, touchend
             dk.Dom().S( 'contextmenu', cb )
             </pre>
-            예제
-            <div id="exMouse"></div>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>예제</h3>
+
+			<div id="exMouse"></div>
             <pre class="brush:js">
                 <script>
-                    var con = dk.Dom( '#exMouse' ), cb, box;
-                    cb = function( $e ){
-                        log( $e ), box.S( 'html', $e.type )
-                    }, box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb );
-                </script>
+					var con = dk.Dom( '#exMouse' ), cb, box;
+					cb = function( $e ){
+						log( $e ), box.S( 'html', $e.type )
+					}, box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb );
+				</script>
             </pre>
-        </div>
-    </div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>dk.Style</h2>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>스타일 객체 생성 ( CSSStyleSheet ) - dk.Style 객체</h3>
+
+			스타일시트의 룰객체를 이용하여 스타일시트 전반을 통제할 수 있습니다<br>
+			css 생성 문법 그대로 적용됩니다.
+            <pre class="brush:js">
+            dk.Style( 'html' ); // html{ }
+            dk.Style( 'body' ); // body{ }
+            dk.Style( 'html, body' ); // html, body{ }
+            dk.Style( '.class' ); // .class{ }
+            dk.Style( '#class' ); // #class{ }
+            dk.Style( 'a:hover' ); // a:hover{ }
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>S method</h3>
+
+			dk.Dom의 S method와 동일한 인터페이스를 지원합니다.<br>
+			key, value 시스템, css vendor prefix, 편의성 css 입력 함수
+            <pre class="brush:js">
+			dk.Style( 'body' ).S( 'margin', 0, 'padding', 0 ); // 기본 css 문법
+			dk.Style( 'body' ).S( 'color', '#808081', 'font', '12px/18px Helvetica, Arial' ); // 중복 설정 가능 (상속)
+			dk.Style( 'body' ).S( 'bgColor', '#eceef4' ); // 편의성 css 입력 함수
+			dk.Style( '.test' ).S( 'boxShadow', '0px 0px 10px #62615f inset' ); // css vendor prefix
+
+			dk.Style( 'a:link, a:visited, a:active' ).S( 'color', '#808081', 'textDecoration', 'none' );
+			dk.Style( 'a:hover' ).S( 'color', '#222', 'textDecoration', 'underline' );
+			dk.Style( '.hr2' ).S( 'margin', '30px 0', 'borderTop', '1px solid #aaa' );
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>제어문 처리가능</h3>
+
+			dk.Style 객체를 통해 프로그래밍 언어로서 변수, 문, 식을 다양하게 응용할 수 있습니다.
+            <pre class="brush:js">
+			// ie 일 경우 배경색 흰색, 아닐경우 배경색 검정
+			var agent = window.navigator.userAgent.toLowerCase();
+			if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 ){
+				dk.Style( 'body' ).S( 'bgColor', '#fff' );
+			} else {
+				dk.Style( 'body' ).S( 'bgColor', '#000' );
+			}
+            </pre>
+		</div>
+	</div>
 </div>
 </body>
 </html>
