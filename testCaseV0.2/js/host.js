@@ -13,4 +13,10 @@ dk( function(){
 		dk.Style( '#container' ).S( 'margin', 30, 'padding', 30, 'maxWidth', 1200, 'bgColor', '#fff', 'border', '1px solid #c9c9c9', 'boxShadow', '0px 0px 10px #62615f inset', 'borderRadius', 20 ),
 		dk.Style( '#container h1' ).S( 'color', '#1a99aa' ),
 		SyntaxHighlighter.all();
+
+	var src = "http://www.nasa.gov/images/content/84857main_EC04-0325-23_lg.jpg?" + Date.now();
+	dk.img( function( $r ){
+		log( $r )
+		dk.Dom( $r[0] ).S( '<', 'body' );
+	}, src/* ,$src, $src */ )
 } )
