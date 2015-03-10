@@ -75,7 +75,7 @@
 			간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
             <pre class="brush:js">
             dk( function(){
-                dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '<', 'body' );
+                dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '&lt;', 'body' );
             } )
             </pre>
 		</div>
@@ -116,11 +116,9 @@
             </pre>
 			파라미터로 문자열 html 코드 전달 시 해당 태크 객체가 생성됩니다.
             <pre class="brush:js">
-            dk.Dom( '<div>
-				<div></div>
-			</div>' );
+            dk.Dom( '<div><div></div></div>' );
             </pre>
-			파라미터로 < 뒤 엘리먼트 이름 전달 시 해당 엘리먼트가 생성됩니다.
+			파라미터로 &lt; 뒤 엘리먼트 이름 전달 시 해당 엘리먼트가 생성됩니다.
             <pre class="brush:js" id="Dom0">
             </pre>
 			<script>
@@ -209,11 +207,11 @@
 
 			dk.Dom 객체 삽입 및 제거 함수, html 태그 삽입함수, 문자열 삽입함수를 지원합니다.
             <pre class="brush:js">
-            // '>' 큰쪽이 부모객체
+            '>' 큰쪽이 부모객체
             dk.Dom().S( '>', $dom )
-            dk.Dom().S( '<', $dom )
+            dk.Dom().S( '&lt;', $dom )
             dk.Dom().S( '>-', $dom )
-            dk.Dom().S( '<-', $dom )
+            dk.Dom().S( '&lt;-', $dom )
             // innerHTML, 엘리먼트 앞 뒤 html 태그 삽입
             dk.Dom().S( 'html', $v )
             dk.Dom().S( '+html', $v )
@@ -263,21 +261,21 @@
 
 	<div class="content">
 		<div class="hr2"></div>
-		<h2>dk.Style</h2>
+		<h2>dk.Css</h2>
 
 		<div>
 			<div class="hr3"></div>
-			<h3>스타일 객체 생성 ( CSSStyleSheet ) - dk.Style 객체</h3>
+			<h3>스타일 객체 생성 ( CSSStyleSheet ) - dk.Css 객체</h3>
 
 			스타일시트의 룰객체를 이용하여 스타일시트 전반을 통제할 수 있습니다<br>
 			css 생성 문법 그대로 적용됩니다.
             <pre class="brush:js">
-            dk.Style( 'html' ); // html{ }
-            dk.Style( 'body' ); // body{ }
-            dk.Style( 'html, body' ); // html, body{ }
-            dk.Style( '.class' ); // .class{ }
-            dk.Style( '#class' ); // #class{ }
-            dk.Style( 'a:hover' ); // a:hover{ }
+            dk.Css( 'html' ); // html{ }
+            dk.Css( 'body' ); // body{ }
+            dk.Css( 'html, body' ); // html, body{ }
+            dk.Css( '.class' ); // .class{ }
+            dk.Css( '#class' ); // #class{ }
+            dk.Css( 'a:hover' ); // a:hover{ }
             </pre>
 		</div>
 
@@ -288,14 +286,14 @@
 			dk.Dom의 S method와 동일한 인터페이스를 지원합니다.<br>
 			key, value 시스템, css vendor prefix, 편의성 css 입력 함수
             <pre class="brush:js">
-			dk.Style( 'body' ).S( 'margin', 0, 'padding', 0 ); // 기본 css 문법
-			dk.Style( 'body' ).S( 'color', '#808081', 'font', '12px/18px Helvetica, Arial' ); // 중복 설정 가능 (상속)
-			dk.Style( 'body' ).S( 'bgColor', '#eceef4' ); // 편의성 css 입력 함수
-			dk.Style( '.test' ).S( 'boxShadow', '0px 0px 10px #62615f inset' ); // css vendor prefix
+			dk.Css( 'body' ).S( 'margin', 0, 'padding', 0 ); // 기본 css 문법
+			dk.Css( 'body' ).S( 'color', '#808081', 'font', '12px/18px Helvetica, Arial' ); // 중복 설정 가능 (상속)
+			dk.Css( 'body' ).S( 'bgColor', '#eceef4' ); // 편의성 css 입력 함수
+			dk.Css( '.test' ).S( 'boxShadow', '0px 0px 10px #62615f inset' ); // css vendor prefix
 
-			dk.Style( 'a:link, a:visited, a:active' ).S( 'color', '#808081', 'textDecoration', 'none' );
-			dk.Style( 'a:hover' ).S( 'color', '#222', 'textDecoration', 'underline' );
-			dk.Style( '.hr2' ).S( 'margin', '30px 0', 'borderTop', '1px solid #aaa' );
+			dk.Css( 'a:link, a:visited, a:active' ).S( 'color', '#808081', 'textDecoration', 'none' );
+			dk.Css( 'a:hover' ).S( 'color', '#222', 'textDecoration', 'underline' );
+			dk.Css( '.hr2' ).S( 'margin', '30px 0', 'borderTop', '1px solid #aaa' );
             </pre>
 		</div>
 
@@ -303,18 +301,54 @@
 			<div class="hr3"></div>
 			<h3>제어문 처리가능</h3>
 
-			dk.Style 객체를 통해 프로그래밍 언어로서 변수, 문, 식을 다양하게 응용할 수 있습니다.
+			dk.Css 객체를 통해 프로그래밍 언어로서 변수, 문, 식을 다양하게 응용할 수 있습니다.
             <pre class="brush:js">
 			// ie 일 경우 배경색 흰색, 아닐경우 배경색 검정
 			var agent = window.navigator.userAgent.toLowerCase();
-			if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 ){
-				dk.Style( 'body' ).S( 'bgColor', '#fff' );
+			if( agent.indexOf( 'msie' ) &lt; 0 && agent.indexOf( 'trident' ) &lt; 0 ){
+				dk.Css( 'body' ).S( 'bgColor', '#fff' );
 			} else {
-				dk.Style( 'body' ).S( 'bgColor', '#000' );
+				dk.Css( 'body' ).S( 'bgColor', '#000' );
+			}
+            </pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>dk.DETECTOR</h2>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>데스크탑, 모바일, 브라우저, 객체 탐지 등</h3>
+
+			Detector를 통해서 브라우저 및 객체탐지 등을 미리 파악할 수 있습니다.
+            <pre class="brush:js">
+            dk.DETECTOR;
+            </pre>
+            <pre class="brush:js" id="Detector">
+            </pre>
+			<script>
+				var dom0 = dk.Dom( '#Detector' ), detector = dk.DETECTOR, str = '', k;
+				for( k in detector ){
+					str += k + ' : ' + detector[ k ] + '\n';
+				}
+				dom0.S( 'html', str );
+			</script>
+            <pre class="brush:js">
+			// ie 일 경우 배경색 흰색, 아닐경우 배경색 검정
+			if( dk.DECTOER.browser == 'ie' ){
+				dk.Css( 'body' ).S( 'bgColor', '#fff' );
+			} else {
+				dk.Css( 'body' ).S( 'bgColor', '#000' );
 			}
             </pre>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	SyntaxHighlighter.all()
+</script>
+
 </body>
 </html>
