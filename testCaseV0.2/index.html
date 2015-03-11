@@ -17,10 +17,13 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 
 	<!--syntaxhighlighter-->
-	<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
-	<script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
 	<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
 	<link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
+	<script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+	</script>
 
 	<!--host-->
 	<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
@@ -116,7 +119,9 @@
             </pre>
 			파라미터로 문자열 html 코드 전달 시 해당 태크 객체가 생성됩니다.
             <pre class="brush:js">
-            dk.Dom( '<div><div></div></div>' );
+            dk.Dom( '<div>
+				<div></div>
+			</div>' );
             </pre>
 			파라미터로 &lt; 뒤 엘리먼트 이름 전달 시 해당 엘리먼트가 생성됩니다.
             <pre class="brush:js" id="Dom0">
@@ -198,28 +203,28 @@
 
 			편의성 css 입력 함수를 지원합니다.
             <pre class="brush:js">
-            dk.Dom().S( 'bgColor', $v ) // backgoundColor 대체, rgba 입력 시 ie8 이하 rgb로 대체
-            dk.Dom().S( 'bgImg', $v ) // backgroundImage 대체, url 값만 입력
-            dk.Dom().S( 'float', $v ) // cssFloat, styleFloat 자동 분기
-            dk.Dom().S( 'fontSmoothing', $v )
-            dk.Dom().S( 'opacity', $v ) // ie8 이하 필터처리
+            dk.Dom().S( 'bgColor', '#fff' ) // backgoundColor 대체, rgba 입력 시 ie8 이하 rgb로 대체
+            dk.Dom().S( 'bgImg', 'img.jpg' ) // backgroundImage 대체, url 값만 입력
+            dk.Dom().S( 'float', 'left' ) // cssFloat, styleFloat 자동 분기
+            dk.Dom().S( 'opacity', 0.5 ) // ie8 이하 필터처리
+            dk.Dom().S( 'fontSmoothing', 'antialiased' )
             </pre>
 
 			dk.Dom 객체 삽입 및 제거 함수, html 태그 삽입함수, 문자열 삽입함수를 지원합니다.
             <pre class="brush:js">
             '>' 큰쪽이 부모객체
-            dk.Dom().S( '>', $dom )
-            dk.Dom().S( '&lt;', $dom )
-            dk.Dom().S( '>-', $dom )
-            dk.Dom().S( '&lt;-', $dom )
+            dk.Dom().S( '>', dk.Dom() )
+            dk.Dom().S( '&lt;', dk.Dom() )
+            dk.Dom().S( '>-', dk.Dom() )
+            dk.Dom().S( '&lt;-', dk.Dom() )
             // innerHTML, 엘리먼트 앞 뒤 html 태그 삽입
-            dk.Dom().S( 'html', $v )
-            dk.Dom().S( '+html', $v )
-            dk.Dom().S( 'html+', $v )
+            dk.Dom().S( 'html', '<div>hello</div>' )
+            dk.Dom().S( '+html', <div>hello</div> )
+            dk.Dom().S( 'html+', <div>hello</div> )
             // innerText, textContent 분기, 엘리먼트 앞 뒤 text 삽입
-            dk.Dom().S( 'text', $v )
-            dk.Dom().S( '+text', $v )
-            dk.Dom().S( 'text+', $v )
+            dk.Dom().S( 'text', 'hello' )
+            dk.Dom().S( '+text', 'hello' )
+            dk.Dom().S( 'text+', 'hello' )
             </pre>
 
 			이벤트 추가함수를 지원힙니다.<br>
@@ -319,10 +324,7 @@
 		<h2>dk.DETECTOR</h2>
 
 		<div>
-			<div class="hr3"></div>
-			<h3>데스크탑, 모바일, 브라우저, 객체 탐지 등</h3>
-
-			Detector를 통해서 브라우저 및 객체탐지 등을 미리 파악할 수 있습니다.
+			Detector를 통해서 데스크탑, 모바일, 브라우저, 객체 탐지 등을 미리 파악할 수 있습니다.
             <pre class="brush:js">
             dk.DETECTOR;
             </pre>
@@ -331,7 +333,7 @@
 			<script>
 				var dom0 = dk.Dom( '#Detector' ), detector = dk.DETECTOR, str = '', k;
 				for( k in detector ){
-					str += k + ' : ' + detector[ k ] + '\n';
+					str += k + ' : ' + detector[k] + '\n';
 				}
 				dom0.S( 'html', str );
 			</script>
@@ -345,10 +347,139 @@
             </pre>
 		</div>
 	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>STATIC</h2>
+
+		<div>
+			WIN, RESIZE, LOOP, SCROLL, MOUSE, WHEEL, KEY, REG 의 스태틱 객체를 지원합니다.
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.WIN</h3>
+
+			window 관련 정보를 가지고 있는 dk.WIN 객체를 지원합니다.
+            <pre class="brush:js">
+			dk.WIN
+			dk.WIN.width // window 초기 가로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
+			dk.WIN.height // window 초기 세로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
+			dk.WIN.scrollTo( 100, 100 )
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.RESIZE</h3>
+
+			리사이즈 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 리사이즈 이벤트로 실행됩니다.
+            <pre class="brush:js">
+			dk.RESIZE.S( 'resize', function(){
+				log( dk.WIN.width );
+				log( dk.WIN.height );
+			});
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.LOOP</h3>
+
+			루프 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 requestAnimFrame 함수로 실행됩니다.
+
+            <pre class="brush:js">
+			var count = 1;
+			dk.LOOP.S( 'loop', function(){
+				count++;
+			});
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.MOUSE</h3>
+
+			마우스 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 마우스 이벤트로 실행됩니다.
+
+            <pre class="brush:js">
+			dk.MOUSE.S( 'mouse', function(){
+				// 화면에 보이는 0,0 좌표 기준 마우스 위치
+				log( dk.MOUSE.mouseX )
+				log( dk.MOUSE.mouseY )
+				// 스크롤로 숨은 영역을 포함하는 0,0 좌표 기준 마우스 위치
+				log( dk.MOUSE.pageX )
+				log( dk.MOUSE.pageY )
+				// mousedown, touchstart 이후 움직인 거리
+				log( dk.MOUSE.moveX )
+				log( dk.MOUSE.moveY )
+				// 직전 프레임 기준 마우스 이동 속도
+				log( dk.MOUSE.speedX )
+				log( dk.MOUSE.speedY )
+				//터치무브 가로이동 시 true, 스크롤 이동 시 false
+				log( dk.MOUSE.expandTouch )
+			});
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.SCROLL</h3>
+
+			스크롤 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 마우스 이벤트로 실행됩니다.
+
+            <pre class="brush:js">
+			dk.SCROLL.S( 'scroll', function(){
+				log( dk.SCROLL.scrollLeft ) // 가로 스크롤 이동 값
+				log( dk.SCROLL.scrollTop ) // 세로 스크롤 이동 값
+			});
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.WHEEL</h3>
+
+			휠 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 마우스 이벤트로 실행됩니다.
+
+            <pre class="brush:js">
+			dk.WHEEL.S( 'wheel', function( $delta ){
+				log( $delta ) // 아래 스크롤 시 1, 위 스크롤시 -1을 반환
+			});
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.KEY</h3>
+
+			키보드 객체를 지원합니다.<br>
+			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
+			한개의 마우스 이벤트로 실행됩니다.
+
+            <pre class="brush:js">
+			dk.KEY.S( 'a', function( $e ){
+				// $e.keyCode, $e.nativeEvent, $e.nativeTarget
+				log( $e );
+			});
+			dk.KEY.S( 'b', function( $e ){
+				// $e.keyCode, $e.nativeEvent, $e.nativeTarget
+				log( $e );
+			});
+            </pre>
+		</div>
+	</div>
 </div>
-<script type="text/javascript">
-	SyntaxHighlighter.all()
-</script>
 
 </body>
 </html>
