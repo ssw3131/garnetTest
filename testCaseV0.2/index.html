@@ -333,7 +333,7 @@
 			<script>
 				var dom0 = dk.Dom( '#Detector' ), detector = dk.DETECTOR, str = '', k;
 				for( k in detector ){
-					str += k + ' : ' + detector[k] + '\n';
+					str += k + ' : ' + detector[ k ] + '\n';
 				}
 				dom0.S( 'html', str );
 			</script>
@@ -362,10 +362,10 @@
 
 			window 관련 정보를 가지고 있는 dk.WIN 객체를 지원합니다.
             <pre class="brush:js">
-			dk.WIN
-			dk.WIN.width // window 초기 가로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
-			dk.WIN.height // window 초기 세로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
-			dk.WIN.scrollTo( 100, 100 )
+			dk.WIN;
+			dk.WIN.width; // window 초기 가로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
+			dk.WIN.height; // window 초기 세로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
+			dk.WIN.scrollTo( 100, 100 );
             </pre>
 		</div>
 
@@ -411,19 +411,19 @@
             <pre class="brush:js">
 			dk.MOUSE.S( 'mouse', function(){
 				// 화면에 보이는 0,0 좌표 기준 마우스 위치
-				log( dk.MOUSE.mouseX )
-				log( dk.MOUSE.mouseY )
+				log( dk.MOUSE.mouseX );
+				log( dk.MOUSE.mouseY );
 				// 스크롤로 숨은 영역을 포함하는 0,0 좌표 기준 마우스 위치
-				log( dk.MOUSE.pageX )
-				log( dk.MOUSE.pageY )
+				log( dk.MOUSE.pageX );
+				log( dk.MOUSE.pageY );
 				// mousedown, touchstart 이후 움직인 거리
-				log( dk.MOUSE.moveX )
-				log( dk.MOUSE.moveY )
+				log( dk.MOUSE.moveX );
+				log( dk.MOUSE.moveY );
 				// 직전 프레임 기준 마우스 이동 속도
-				log( dk.MOUSE.speedX )
-				log( dk.MOUSE.speedY )
+				log( dk.MOUSE.speedX );
+				log( dk.MOUSE.speedY );
 				//터치무브 가로이동 시 true, 스크롤 이동 시 false
-				log( dk.MOUSE.expandTouch )
+				log( dk.MOUSE.expandTouch );
 			});
             </pre>
 		</div>
@@ -434,12 +434,12 @@
 
 			스크롤 객체를 지원합니다.<br>
 			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
-			한개의 마우스 이벤트로 실행됩니다.
+			한개의 스크롤 이벤트로 실행됩니다.
 
             <pre class="brush:js">
 			dk.SCROLL.S( 'scroll', function(){
-				log( dk.SCROLL.scrollLeft ) // 가로 스크롤 이동 값
-				log( dk.SCROLL.scrollTop ) // 세로 스크롤 이동 값
+				log( dk.SCROLL.scrollLeft ); // 가로 스크롤 이동 값
+				log( dk.SCROLL.scrollTop ); // 세로 스크롤 이동 값
 			});
             </pre>
 		</div>
@@ -450,11 +450,11 @@
 
 			휠 객체를 지원합니다.<br>
 			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
-			한개의 마우스 이벤트로 실행됩니다.
+			한개의 휠 이벤트로 실행됩니다.
 
             <pre class="brush:js">
 			dk.WHEEL.S( 'wheel', function( $delta ){
-				log( $delta ) // 아래 스크롤 시 1, 위 스크롤시 -1을 반환
+				log( $delta ); // 아래 스크롤 시 1, 위 스크롤시 -1을 반환
 			});
             </pre>
 		</div>
@@ -465,7 +465,7 @@
 
 			키보드 객체를 지원합니다.<br>
 			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
-			한개의 마우스 이벤트로 실행됩니다.
+			한개의 키보드 이벤트로 실행됩니다.
 
             <pre class="brush:js">
 			dk.KEY.S( 'a', function( $e ){
@@ -479,6 +479,174 @@
             </pre>
 		</div>
 	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>UTIL</h2>
+
+		<div>
+			유틸함수를 지원합니다.
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.random</h3>
+
+			$max와 $min 사이의 랜덤 숫자를 반환합니다<br>
+			앞의 숫자가 큰 숫자 입니다. $min 생략시 0 ~ $max 사이의 램덤 숫자를, 둘 다 생략 시 0 ~ 1 사이의 랜덤 숫자를 반환합니다.
+            <pre class="brush:js">
+			dk.random(); // 0 ~ 1
+			dk.random( $max ); // 0 ~ $max
+			dk.random( $max, $min ); // $min ~ $max
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.randomInt</h3>
+
+			$max와 $min 사이의 랜덤 정수를 반환합니다<br>
+			앞의 숫자가 큰 숫자 입니다. $min 생략시 0 ~ $max 사이의 램덤 숫자를 반환합니다. 둘다 생략은 불가능 합니다.
+            <pre class="brush:js">
+			dk.randomInt( $max ); // 0 ~ $max
+			dk.randomInt( $max, $min ); // $min ~ $max
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.randomColor</h3>
+
+			rgb(255, 255, 255) 사이의 랜덤 컬러값을 반환합니다
+            <pre class="brush:js">
+			dk.randomColor();
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.timeCheck</h3>
+
+			dk.timeCheck() 실행시점과 다음 dk.timeCheck() 실행시점 사이의 시간을 반환합니다. Date.now()로 체크합니다.
+            <pre class="brush:js">
+			dk.timeCheck(); // null
+			dk.timeCheck(); // 숫자
+			dk.timeCheck(); // null
+			dk.timeCheck(); // 숫자
+            </pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>LOADER</h2>
+
+		<div>
+			AJAX, JS, IMG 로더를 지원합니다
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.ajax</h3>
+
+			ajax 통신을 지원합니다.<br>
+			url의 데이트를 텍스트 데이타로 로드 후, JSON.parse()를 통해 JSON 데이터로 변환합니다. (eval)
+            <pre class="brush:js">
+			dk.ajax( $cb, $url );
+
+			dk.ajax( function( $data ){
+			}, 'data.txt' );
+
+			dk.ajax( function( $data ){
+				var data = JSON.parse( $data );
+			}, 'data.json' );
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.js</h3>
+
+			javascript 파일 로더를 지원합니다. 비동기로 작동됩니다.<br>
+			콜백 함수 뒤 로드하고자 하는 url 입력 시, 순차적으로 로드 합니다. 모든 파일이 로드 되면 콜백함수를 호출합니다.
+            <pre class="brush:js">
+			dk.js( $cb, $url/* ,$url, $url */ )
+
+			dk.js( function(){
+			}, 'data.js' );
+
+			dk.js( function(){
+			}, 'data1.js', 'data2.js', 'data3.js', 'data4.js' );
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.img</h3>
+
+			이미지 파일 로더를 지원합니다. 프리로더로 사용 가능합니다.<br>
+			콜백 함수 뒤 로드하고자 하는 url 입력 시, 순차적으로 로드 합니다. 모든 파일이 로드 되면 콜백함수를 호출되며 입력한 url순의 img element 배열을 리턴합니다.
+            <pre class="brush:js">
+			dk.img( $cb, $src/* ,$src, $src */ )
+
+			dk.img( function( $arr ){
+				log( $arr[ 0 ] );
+			}, 'data.jpg' );
+
+			dk.img( function( $arr ){
+				log( $arr );
+			}, 'data1.jpg', 'data2.jpg', 'data3.jpg', 'data4.jpg' );
+            </pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>PLUGIN</h2>
+
+		<div>
+			플러그인을 지원합니다. dk 코어 이외에 필요한 플러그인 사용 및 외부추가가 가능합니다.<br>
+			dk.pluginRoot 함수를 통해 로드 할 플러그인 경로를 수정할 수 있습니다. 기본은 github 주소 (http://ssw3131.github.io/garnet/v0.2/plugin/)로
+			되어있습니다.<br>
+			dk.plugin 함수를 통해 필요 플러그인을 로드합니다. 콜백 함수 뒤 로드하고자 하는 플러그인 파일들 이름을 지정하면 순차로 로드합니다. 중복호출 시 자동으로 한번만 실행됩니다.<br>
+			현재 Flash 플러그인을 제공하고 있습니다.
+            <pre class="brush:js">
+			dk.pluginRoot( '/garnet/testCaseV0.2/plugin/' );
+			dk.plugin( $cb, $id/* ,$id, $id */ )
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>dk.Flash</h3>
+
+			플래시 임베드, 통신, 제어함수를 지원합니다.
+            <pre class="brush:js">
+			// 필요 시 설정
+			dk.pluginRoot( 'http://ssw3131.github.io/garnet/v0.2/plugin/' );
+
+			dk.plugin( function(){
+				// load 함수를 통해 로드 및 파라미터 전달
+				var flash = dk.Flash( 'flash' ).load( 'url', 'flash/flashAs2.swf', 'width', 800, 'height', 600, 'version', 9, 'wmode', 'transparent'/*, paramK, paramV...*/ );
+
+				// S method 와 동일하게 속성적용 (플래시 컨테이너 div)
+				flash.S( 'bgColor', '#000000', '<', 'body', 'width', 400, 'height', 300 );
+
+				// flash 특수함수
+				flash.S( 'width', 800 ); // 가로값
+				flash.S( 'height', 600 ); // 세로값
+				flash.S( 'hide' ); // 감추기 (실행 중)
+				flash.S( 'show' ); // 보여주기 (실행 중)
+				flash.S( 'refresh' ); // 새로고침
+				flash.S( 'del' ); // 제거 (실행 중지)
+				flash.S( 'add' ); // 추가 (실행 중지)
+				flash.S( 'toFlash', 'test1()' ); // 플래시 내부함수 호출
+				flash.S( 'toFlash', 'test2( test, 1, 2 )' ); // 플래시 내부함수 호출
+			}, 'flash.js' );
+            </pre>
+		</div>
+	</div>
+
 </div>
 
 </body>
