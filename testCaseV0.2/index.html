@@ -409,7 +409,7 @@
 			한개의 마우스 이벤트로 실행됩니다.
 
             <pre class="brush:js">
-			dk.MOUSE.S( 'mouse', function(){
+			dk.MOUSE.S( 'mouse', function( $e ){
 				// 화면에 보이는 0,0 좌표 기준 마우스 위치
 				log( dk.MOUSE.mouseX );
 				log( dk.MOUSE.mouseY );
@@ -422,8 +422,8 @@
 				// 직전 프레임 기준 마우스 이동 속도
 				log( dk.MOUSE.speedX );
 				log( dk.MOUSE.speedY );
-				//터치무브 가로이동 시 true, 스크롤 이동 시 false
-				log( dk.MOUSE.expandTouch );
+				// 기본값 실행방지
+				$e.nativeEvent.preventDefault();
 			});
             </pre>
 		</div>
