@@ -4,6 +4,7 @@
 ;
 alert( dk.WIN.width )
 dk( function(){
+	alert( dk.WIN.width )
 	// css
 	dk.Css( 'body' ).S( 'margin', 0, 'padding', 0, 'bgColor', '#eceef4', 'color', '#808081', 'font', '12px/18px Helvetica, Arial, Nanum Gothic, AppleGothic, Dotum, Sans-Serif' ),
 		dk.Css( 'a:link, a:visited, a:active' ).S( 'color', '#808081', 'textDecoration', 'none' ),
