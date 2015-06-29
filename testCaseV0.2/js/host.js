@@ -2,6 +2,7 @@
  * Created by sewon on 2015-03-05.
  */
 ;
+alert( dk.WIN.width )
 dk( function(){
 	// css
 	dk.Css( 'body' ).S( 'margin', 0, 'padding', 0, 'bgColor', '#eceef4', 'color', '#808081', 'font', '12px/18px Helvetica, Arial, Nanum Gothic, AppleGothic, Dotum, Sans-Serif' ),
