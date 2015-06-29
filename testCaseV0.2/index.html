@@ -53,9 +53,9 @@
 		<h2>Installation</h2>
 
 		<div>
-            <pre class="brush:js">
-            <script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
-            </pre>
+			<!--<pre class="brush:js">
+			<script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+			</pre>-->
 		</div>
 	</div>
 
@@ -77,12 +77,20 @@
 		<div class="hr2"></div>
 		<h2>Simple Example</h2>
 
+		<div>간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.</div>
+
+		<h3>예제</h3>
+
+		<div id="exSimple"></div>
 		<div>
-			간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.
             <pre class="brush:js">
-            dk( function(){
-                dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', '#000', '&lt;', 'body' );
-            } )
+				// 예제코드
+
+                <script>
+					dk( function(){
+						dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exSimple' ) );
+					} )
+				</script>
             </pre>
 		</div>
 	</div>
@@ -103,7 +111,7 @@
 
             dom.S( 'left', 100, 'top', 100, 'display', 'none' );
 
-            var domWidth = dk.Dom().S( 'width' );
+            var domWidth = dom.S( 'width' );
             </pre>
 		</div>
 	</div>
@@ -165,6 +173,8 @@
             <pre class="brush:js">
             dk.Dom( '#test' ); // id test 돔트리 탐색
             dk.Dom( '#test' ); // #test 캐싱 리턴
+
+			dk.Dom( '#test', null ); // #test 캐싱 삭제
             </pre>
 		</div>
 	</div>
@@ -258,6 +268,8 @@
 			<div id="exMouse"></div>
             <pre class="brush:js">
                 <script>
+					// 예제코드
+
 					var con = dk.Dom( '#exMouse' ), cb, box;
 					cb = function( $e ){
 						log( $e ), box.S( 'html', $e.type )
@@ -370,6 +382,22 @@
 			dk.WIN.height; // window 초기 세로값을 반환합니다. (리사이즈는 dk.RESIZE를 이용해야합니다.)
 			dk.WIN.scrollTo( 100, 100 );
             </pre>
+			<h3>예제</h3>
+
+			<div id="exWin"></div>
+			<div>
+            <pre class="brush:js">
+				// 예제코드
+
+                <script>
+					var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exWin' ) );
+					con.S( 'click', function(){
+						log( dk.WIN );
+						con.S( 'bgColor', dk.randomColor(), 'html', 'width : ' + dk.WIN.width + '<br> height : ' + dk.WIN.height )
+					})
+				</script>
+            </pre>
+			</div>
 		</div>
 
 		<div>
@@ -380,11 +408,25 @@
 			S( $k, $cb )의 형태로 등록됩니다. 하나의 스태틱 함수 내에 키값 별로 개별 함수가 추가되며 리스트에 1개 이상 추가됐을 때 실행됩니다.<br>
 			한개의 리사이즈 이벤트로 실행됩니다.
             <pre class="brush:js">
-			dk.RESIZE.S( 'resize', function(){
-				log( dk.WIN.width );
-				log( dk.WIN.height );
-			});
+			dk.RESIZE.S( $k, $cb );
+			dk.RESIZE.dispatchEvent(); // 강제로 이벤트를 발생시킵니다.
             </pre>
+			<h3>예제</h3>
+
+			<div id="exResize"></div>
+			<div>
+            <pre class="brush:js">
+				// 예제코드
+
+                <script>
+					var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exResize' ) );
+					dk.RESIZE.S( 'resize', function(){
+						con.S( 'bgColor', dk.randomColor(), 'html', 'width : ' + dk.WIN.width + '<br> height : ' + dk.WIN.height )
+					})
+					dk.RESIZE.dispatchEvent();
+				</script>
+            </pre>
+			</div>
 		</div>
 
 		<div>

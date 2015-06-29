@@ -13,4 +13,5 @@ dk( function(){
 		dk.Css( '#container' ).S( 'margin', 30, 'padding', 30, 'maxWidth', 1200, 'minWidth', 300, 'bgColor', '#fff', 'border', '1px solid #c9c9c9', 'boxShadow', '0px 0px 8px #62615f inset', 'borderRadius', 16 ),
 		dk.Css( '#container h1' ).S( 'color', '#444' );
 		dk.Css( '#container h2' ).S( 'color', '#1a99aa' );
+		dk.Css( '#container h3' ).S( 'color', '#1a99aa', 'fontSize', 12 );
 } )
