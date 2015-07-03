@@ -269,8 +269,10 @@
 				dk( function(){
 					var con = dk.Dom( '#exEvent' ), cb, box;
 					cb = function( $e ){
+						if( $e.nativeTarget == box.el ) $e.nativeEvent.preventDefault();
 						log( $e ), box.S( 'html', $e.type )
-					}, box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb );
+					}, box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb ),
+							dk.DETECTOR.touchBool ? box.S( 'move', cb ) : null;
 				} );
 			</script>
 			</pre>
@@ -516,6 +518,7 @@
 						dk( function(){
 							var con = dk.Dom().S( 'width', 300, 'minHeight', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exMouse' ) );
 							dk.MOUSE.S( 'mouse', function( $e ){
+								if( $e.nativeTarget == con.el ) $e.nativeEvent.preventDefault();
 								var str, i, leng;
 								str = 'mouseX : ' + dk.MOUSE.mouseX,
 										str += ', <br>mouseY : ' + dk.MOUSE.mouseY,
@@ -816,7 +819,7 @@
 							dk.img( function( $arr, $src ){
 								if( $arr ){
 									var i, leng = $arr.length, domArr;
-									for( i = 0; i < leng; i++){
+									for( i = 0; i < leng; i++ ){
 										str += '<br>img url : ' + $arr[ i ].src;
 									}
 									con.S( 'html', str );
