@@ -267,11 +267,12 @@
 
 			<script>
 				dk( function(){
-					var con = dk.Dom( '#exEvent' ), cb, box;
+					var con = dk.Dom( '#exEvent' ), cb, box, count = 0;
 					cb = function( $e ){
 						if( $e.nativeTarget == box.el ) $e.nativeEvent.preventDefault();
-						log( $e ), box.S( 'html', $e.type )
-					}, box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb ),
+						count++, box.S( 'html', $e.type + count );
+					},
+							box = dk.Dom().S( 'height', 50, 'color', '#fff', 'bgColor', '#000', '<', con, 'enter', cb, 'leave', cb, 'click', cb, 'dblclick', cb, 'down', cb, 'up', cb ),
 							dk.DETECTOR.touchBool ? box.S( 'move', cb ) : null;
 				} );
 			</script>
