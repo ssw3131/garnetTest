@@ -848,10 +848,9 @@
 
 		<div>
 			플러그인을 지원합니다. dk 코어 이외에 필요한 플러그인 사용 및 외부추가가 가능합니다.<br>
-			dk.pluginRoot 함수를 통해 로드 할 플러그인 경로를 수정할 수 있습니다. 기본은 github 주소
+			dk.pluginRoot 함수를 통해 로드 할 플러그인의 루트 경로를 수정할 수 있습니다. 기본은 github 주소
 			(http://ssw3131.github.io/garnet/v0.2/plugin/)로 되어있습니다.<br>
-			dk.plugin 함수를 통해 필요 플러그인을 로드합니다. 콜백 함수 뒤 로드하고자 하는 플러그인 파일들 이름을 지정하면 순차로 로드합니다. 중복호출 시 자동으로 한번만
-			실행됩니다.<br>
+			dk.plugin 함수를 통해 필요 플러그인을 로드합니다. 콜백 함수 뒤 로드하고자 하는 플러그인 파일들 이름을 지정하면 순차로 로드합니다. 중복호출 시 자동으로 한번만 실행됩니다.
             <pre class="brush:js">
 			dk.pluginRoot( '/garnet/testCaseV0.2/plugin/' );
 			dk.plugin( $cb, $id/* ,$id, $id */ )
@@ -864,16 +863,17 @@
 
 			투터치 핀치 제어 객체를 제공합니다.
             <pre class="brush:js">
-					<script>
-						dk( function(){
+				<script>
+					dk( function(){
+						log( 'dkjfldjlj')
 			// 필요 시 설정
 			dk.pluginRoot( 'http://ssw3131.github.io/garnet/v0.2/plugin/' );
 
 			dk.plugin( function(){
 				log( dk.PINCH );
 			}, 'pinch.js' );
-						} );
-					</script>
+					})
+				</script>
             </pre>
 		</div>
 	</div>
