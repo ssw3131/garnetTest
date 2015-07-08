@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dk testCase - 테스트케이스</title>
+	<meta name="keywords" content="Dk garnet"/>
+	<meta name="description" content="Dk garnet"/>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="format-detection" content="telephone=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="viewport"
+		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+</head>
+<body>
+<!--host-->
+<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>
+<script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
+<script>
+	'use strict';
+	dk( function(){
+		dk.plugin( function(){
+			log.show();
+			log.position(0, 0, 150)
+			log( dk.PINCH );
+
+// common css :
+					dk.Css( 'html, body' ).S( 'position', 'absolute', 'width', '100%', 'height', '100%', 'minHeight', 400, 'overflow', 'hidden' ),
+
+					dk.PINCH.S( 'map',function( $e ){
+						log( 'site pinch ---------------------------------' );
+						log( 'scale : ' + $e.scale );
+						log( 'distance : ' + $e.distance );
+						log( 'move : ' + $e.moveX + ' , ' + $e.moveY );
+						log( 'center : ' + $e.centerX + ' , ' + $e.centerY );
+					} )
+		}, 'pinch.js' );
+	} );
+</script>
+</body>
+</html>

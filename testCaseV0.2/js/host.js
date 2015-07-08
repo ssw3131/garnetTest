@@ -17,6 +17,6 @@ dk( function(){
 
 		dk.Css( '.content' ).S( 'padding', 20, 'marginBottom', 10, 'border', '1px solid #c9c9c9', 'boxShadow', '0px 0px 4px #62615f', 'borderRadius', 8 );
 
-	log.show();
-	log.position( 0, 0, 150 )
+	//log.show();
+	//log.position( 0, 0, 150 )
 } )
