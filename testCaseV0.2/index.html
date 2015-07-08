@@ -27,7 +27,7 @@
 
 	<!--host-->
 	<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
-	<!--<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>-->
+	<script src="http://ssw3131.github.io/garnet/v0.2/dkLog.js"></script>
 	<script src="http://ssw3131.github.io/garnet/v0.2/garnet.js"></script>
 	<!--<script src="garnet.js"></script>-->
 	<script src="js/host.js"></script>
@@ -87,7 +87,7 @@
 
 			<script>
 				dk( function(){
-					dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exSimple' ) );
+					dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exSimple' ) );
 				} )
 			</script>
             </pre>
@@ -104,7 +104,7 @@
             <pre class="brush:js">
             // dk.Dom().S( $k, $v );
 
-            var dom = dk.Dom().S( 'width', 100 );
+            var dom = dk.Dom().S( 'width', '100%' );
             dom.S( 'height', 100 );
             dom.S( 'position', 'absolute' );
 
@@ -390,7 +390,7 @@
 
 				<script>
 					dk( function(){
-						var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exLoop' ) );
+						var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exLoop' ) );
 						var count = 1;
 						dk.LOOP.S( 'loop', function(){
 							count++;
@@ -435,7 +435,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exResize' ) );
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exResize' ) );
 							dk.RESIZE.S( 'resize', function( $e ){
 								con.S( 'bgColor', dk.randomColor(), 'html', 'width : ' + dk.WIN.width + '<br> height : ' + dk.WIN.height )
 							} )
@@ -468,7 +468,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exScroll' ) );
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exScroll' ) );
 							dk.SCROLL.S( 'scroll', function( $e ){
 								con.S( 'html', 'scrollLeft : ' + dk.SCROLL.scrollLeft + '<br> scrollTop : ' + dk.SCROLL.scrollTop )
 							} );
@@ -517,7 +517,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 300, 'minHeight', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exMouse' ) );
+							var con = dk.Dom().S( 'width', '100%', 'minHeight', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exMouse' ) );
 							dk.MOUSE.S( 'mouse', function( $e ){
 								if( $e.nativeTarget == con.el ) $e.nativeEvent.preventDefault();
 								var str, i, leng;
@@ -568,7 +568,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exWheel' ) );
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exWheel' ) );
 							dk.WHEEL.S( 'wheel', function( $e ){
 								con.S( 'html', 'delta : ' + $e.delta )
 							} );
@@ -609,7 +609,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 100, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exKey' ) );
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exKey' ) );
 							dk.KEY.S( 'a', function( $e ){
 								if( $e.nativeTarget == dk.Dom( '#exKeyInput' ).el ){
 									con.S( 'html', 'key : ' + $e.nativeTarget.id )
@@ -718,7 +718,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 300, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exAjax' ) ),
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exAjax' ) ),
 									str = '';
 
 							dk.ajax( function( $data, $status ){
@@ -775,7 +775,7 @@
 
 					<script>
 						dk( function(){
-							var con = dk.Dom().S( 'width', 300, 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exJs' ) );
+							var con = dk.Dom().S( 'width', '100%', 'height', 100, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exJs' ) );
 
 							dk.js( function(){
 							}, 'js/test1.js', 'js/test2.js', [ 'js/test1.js', 'js/test2.js' ], 'js/test1.js', 'js/test2.js' );
@@ -885,6 +885,11 @@
 							dk.PINCH.S( 'test', function( $e ){
 //								if( $e.nativeTarget == con.el ){
 //									$e.nativeEvent.preventDefault();
+								log( 'site pinch ---------------------------------' );
+								log( 'scale : ' + $e.scale );
+								log( 'distance : ' + $e.distance );
+								log( 'move : ' + $e.moveX + ' , ' + $e.moveY );
+								log( 'center : ' + $e.centerX + ' , ' + $e.centerY );
 
 									str = 'site pinch ---------------------------------',
 											str += ', <br>scale : ' + $e.scale,
