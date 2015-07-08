@@ -877,16 +877,14 @@
 
 			<div>
 				<pre class="brush:js">
-					// 예제코드 : 콘솔확인
-
 					<script>
 						dk( function(){
 							var con = dk.Dom().S( 'width', '100%', 'height', 300, 'bgColor', dk.randomColor(), 'marginTop', '1em', '<', dk.Dom( '#exPinch' ) ),
 									str = '';
 
 							dk.PINCH.S( 'test', function( $e ){
-								if( $e.nativeTarget == con.el ){
-									$e.nativeEvent.preventDefault();
+//								if( $e.nativeTarget == con.el ){
+//									$e.nativeEvent.preventDefault();
 
 									str = 'site pinch ---------------------------------',
 											str += ', <br>scale : ' + $e.scale,
@@ -894,7 +892,7 @@
 											str += ', <br>move : ' + $e.moveX + ' , ' + $e.moveY,
 											str += ', <br>center : ' + $e.centerX + ' , ' + $e.centerY,
 											con.S( 'html', str )
-								}
+//								}
 							} )
 						} );
 					</script>
