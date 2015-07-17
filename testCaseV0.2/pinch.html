@@ -45,8 +45,9 @@
 	log.position(0, 0, 150)
 	var count = 0;
 	document.addEventListener( 'touchmove', function( $e ){
+		$e.stopPropagation()
 		$e.preventDefault();
-		log( $e.type )
+//		log( $e.type )
 		log( count++ )
 	}, true )
 </script>
