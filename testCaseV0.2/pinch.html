@@ -32,6 +32,7 @@
 					dk.Css( 'html, body' ).S( 'position', 'absolute', 'width', '100%', 'height', '100%', 'minHeight', 400, 'overflow', 'hidden' ),
 
 					dk.PINCH.S( 'map',function( $e ){
+						$e.nativeEvent.stopPropagation(), $e.nativeEvent.preventDefault()
 						log( 'site pinch ---------------------------------' );
 						log( 'scale : ' + $e.scale );
 //						log( 'distance : ' + $e.distance );
