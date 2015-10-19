@@ -1,0 +1,26 @@
+﻿@charset "utf-8"; 
+
+/*
+ * Hangeul NanumBarunGothic Font
+ */
+@font-face {
+ font-family: 'NanumBarunGothic';
+ src: url(font/NanumBarunGothicWeb.eot);
+ src: url(font/NanumBarunGothicWeb.eot?#iefix) format('embedded-opentype'),
+      url(font/NanumBarunGothicWeb.woff) format('woff'),
+      url(font/NanumBarunGothicWeb.ttf) format('truetype');
+}
+@font-face {
+ font-family: 'NanumBarunGothicBold';
+ src: url(font/NanumBarunGothicWebBold.eot);
+ src: url(font/NanumBarunGothicWebBold.eot?#iefix) format('embedded-opentype'),
+      url(font/NanumBarunGothicWebBold.woff) format('woff'),
+      url(font/NanumBarunGothicWebBold.ttf) format('truetype');
+}
+@font-face {
+ font-family: 'NanumBareunGothicLight';
+ src: url(font/NanumBarunGothicWebLight.eot);
+ src: url(font/NanumBarunGothicWebLight.eot?#iefix) format('embedded-opentype'),
+      url(font/NanumBarunGothicWebLight.woff) format('woff'),
+      url(font/NanumBarunGothicWebLight.ttf) format('truetype');
+}
