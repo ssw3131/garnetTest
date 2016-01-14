@@ -65,10 +65,15 @@
 				d = $doc.createElement( 'div' ), s = d.style, c = $doc.createElement( 'canvas' ), a = $doc.createElement( 'audio' ), v = $doc.createElement( 'video' ), t0,
 				ie, chrome, firefox, safari, opera, naver;
 
+			log( '-------------------------------' );
 			log( navi );
+			log( '-------------------------------' );
 			log( agent );
+			log( '-------------------------------' );
 			log( platform );
+			log( '-------------------------------' );
 			log( app );
+			log( '-------------------------------' );
 
 			return {
 			}
