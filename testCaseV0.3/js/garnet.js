@@ -57,7 +57,6 @@
 // ERROR :
 		dk.fn( 'err', function( $log ){ log( 'err : ' + $log ); } ),
 // DETECTOR :
-		// todo detector update
 		dk.obj( 'DETECTOR', (function( $w, $doc ){
 			var navi = $w.navigator, agent = navi.userAgent.toLowerCase(), platform = navi.platform.toLowerCase(), app = navi.appVersion.toLowerCase(),
 				device = 'pc', os, osv, browser, bv, flash,
