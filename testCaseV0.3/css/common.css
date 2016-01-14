@@ -1,4 +1,15 @@
+@import url("NanumBarunGothic.css");
+
 /*공통*/
-body { overflow-y: scroll; }
-* { /*outline: 1px dashed #ff0000;*/ }
-.clear { content: ""; display: block; clear: both; }
+/**{ outline: 1px dashed #ff0000; }*/
+
+body, input, button, select, textarea{
+	font-size: 12px; /* 기본폰트 사이즈 */
+	line-height: 140%; /* 행간 */
+	color: #a7a8ac; /* 폰트 컬러 */
+	font-family: "NanumBarunGothic", Dotum, sans-serif;
+}
+
+body{ overflow-y: scroll; }
+
+.clear{ content: ""; display: block; clear: both; }

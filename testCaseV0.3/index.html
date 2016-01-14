@@ -10,29 +10,39 @@
 	<meta name="apple-mobile-web-app-capable" content="yes"/>
 	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 	<meta name="viewport"
-		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi"/>
+		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,target-densitydpi=medium-dpi,shrink-to-fit=no"/>
 
 	<!--css-->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 
 	<!--syntaxhighlighter-->
-	<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
+	<!--<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
 	<link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
 	<script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
 	<script type="text/javascript">
 		SyntaxHighlighter.all();
-	</script>
+	</script>-->
 
 	<!--host-->
+	<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
 	<script src="http://ssw3131.github.io/garnet/v0.3/dkLog.js"></script>
-	<script>
-		log.show();
-	</script>
+	<script src="http://ssw3131.github.io/garnet/v0.3/garnet.js"></script>
+	<!--<script src="js/garnet.js"></script>-->
 </head>
 <body>
 안녕하세요?
+<script>
+	log.show();
+	log.position( { left : 100 } )
+	setTimeout( function(){
+		log( arguments );
+		log( arguments[ 0 ] );
+		log( arguments[ 1 ] );
+		log( arguments[ 2 ] );
+	}, 100, 'a', 'b', 'c' )
+</script>
 
 </body>
 </html>
