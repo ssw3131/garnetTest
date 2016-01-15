@@ -65,17 +65,21 @@
 				d = $doc.createElement( 'div' ), s = d.style, c = $doc.createElement( 'canvas' ), a = $doc.createElement( 'audio' ), v = $doc.createElement( 'video' ), t0,
 				ie, chrome, firefox, safari, opera, naver;
 
-			log( '-------------------------------' );
-			log( navi );
-			log( '-------------------------------' );
-			log( agent );
-			log( '-------------------------------' );
-			log( platform );
-			log( '-------------------------------' );
-			log( app );
-			log( '-------------------------------' );
+			ie = function(){
+				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 ) return;
+				if( agent.indexOf( 'iemobile' ) > -1 ) os = 'winMobile';
+				return browser = 'ie', bv = agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
+			},
+				ie()
+
+			log( agent )
 
 			return {
+				device : device,
+				browser : browser,
+				browserVer : bv,
+				os : os,
+				osVer : osv
 			}
 		})( W, DOC ) ),
 
