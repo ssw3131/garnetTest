@@ -66,7 +66,6 @@
 				d = $doc.createElement( 'div' ), s = d.style, c = $doc.createElement( 'canvas' ), a = $doc.createElement( 'audio' ), v = $doc.createElement( 'video' ), t0,
 				edge, ie, chrome, firefox, safari, opera, naver;
 
-			log( agent ),
 			edge = function(){
 				if( agent.indexOf( 'edge' ) < 0 ) return;
 				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
