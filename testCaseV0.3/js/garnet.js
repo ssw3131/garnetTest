@@ -122,6 +122,7 @@
 			}
 			(function(){
 				var plug = navi.plugins, t0;
+				log( plug );
 				if( browser == 'ie' ) try{
 					t0 = new ActiveXObject( 'ShockwaveFlash.ShockwaveFlash' ).GetVariable( '$version' ).substr( 4 ).split( ',' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] );
 					log( t0 )
