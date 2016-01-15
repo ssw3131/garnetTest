@@ -66,11 +66,8 @@
 				ie, chrome, firefox, safari, opera, naver;
 
 			ie = function(){
-				log( 'ie ie ie' );
-				log( agent )
 				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 && agent.indexOf( 'edge' ) < 0 ) return;
-				if( agent.indexOf( 'iemobile' ) > -1 ) os = 'winMobile';
-				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
+				if( agent.indexOf( 'iemobile' ) > -1 || agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
 				return browser = 'ie', bv = agent.indexOf( 'edge' ) > -1 ? 'edge' : agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
 			},
 				chrome = function(){
@@ -123,6 +120,12 @@
 					os = app.indexOf( 'x11' ) > -1 ? 'unix' : app.indexOf( 'linux' ) > -1 ? 'linux' : 0, chrome() || firefox();
 				}
 			}
+			(function(){
+				var plug = navi.plugins, t0;
+				if( browser == 'ie' ) try{ t0 = new ActiveXObject( 'ShockwaveFlash.ShockwaveFlash' ).GetVariable( '$version' ).substr( 4 ).split( ',' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] ); }catch( e ){ }
+				else if( ( t0 = plug[ 'Shockwave Flash 2.0' ] ) || ( t0 = plug[ 'Shockwave Flash' ] ) ) t0 = t0.description.split( ' ' )[ 2 ].split( '.' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] );
+				else if( agent.indexOf( 'webtv' ) > -1 ) flash = agent.indexOf( 'webtv/2.6' ) > -1 ? 4 : agent.indexOf( 'webtv/2.5' ) > -1 ? 3 : 2;
+			})();
 
 			return {
 				device : device,
