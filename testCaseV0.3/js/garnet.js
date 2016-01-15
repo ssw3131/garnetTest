@@ -56,7 +56,7 @@
 
 // ERROR :
 		dk.fn( 'err', function( $log ){ log( 'err : ' + $log ); } ),
-		
+
 // DETECTOR :
 		dk.obj( 'DETECTOR', (function( $w, $doc ){
 			var navi = $w.navigator, agent = navi.userAgent.toLowerCase(), platform = navi.platform.toLowerCase(), app = navi.appVersion.toLowerCase(),
@@ -66,6 +66,7 @@
 				d = $doc.createElement( 'div' ), s = d.style, c = $doc.createElement( 'canvas' ), a = $doc.createElement( 'audio' ), v = $doc.createElement( 'video' ), t0,
 				edge, ie, chrome, firefox, safari, opera, naver;
 
+			log( agent ),
 			edge = function(){
 				if( agent.indexOf( 'edge' ) < 0 ) return;
 				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
@@ -77,6 +78,7 @@
 					return browser = 'ie', bv = agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
 				},
 				chrome = function(){
+					if( agent.indexOf( 'opr' ) > -1 || agent.indexOf( 'opera' ) > -1 ) return;
 					if( agent.indexOf( t0 = 'chrome' ) < 0 && agent.indexOf( t0 = 'crios' ) < 0 ) return;
 					return browser = 'chrome', bv = parseFloat( ( t0 == 'chrome' ? /chrome\/([\d]+)/ : /crios\/([\d]+)/ ).exec( agent )[ 1 ] );
 				},
@@ -84,7 +86,8 @@
 					return agent.indexOf( 'firefox' ) < 0 ? 0 : ( browser = 'firefox', bv = parseFloat( /firefox\/([\d]+)/.exec( agent )[ 1 ] ) );
 				},
 				safari = function(){
-					return agent.indexOf( 'safari' ) < 0 ? 0 : ( browser = 'safari', bv = parseFloat( /safari\/([\d]+)/.exec( agent )[ 1 ] ) );
+					if( agent.indexOf( 'opr' ) > -1 || agent.indexOf( 'opera' ) > -1 ) return;
+					return agent.indexOf( 'safari' ) < 0 ? 0 : ( browser = 'safari', bv = parseFloat( /version\/([\d]+)/.exec( agent )[ 1 ] ) );
 				},
 				opera = function(){
 					var i;
