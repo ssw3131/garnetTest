@@ -56,6 +56,7 @@
 
 // ERROR :
 		dk.fn( 'err', function( $log ){ log( 'err : ' + $log ); } ),
+		
 // DETECTOR :
 		dk.obj( 'DETECTOR', (function( $w, $doc ){
 			var navi = $w.navigator, agent = navi.userAgent.toLowerCase(), platform = navi.platform.toLowerCase(), app = navi.appVersion.toLowerCase(),
@@ -93,7 +94,7 @@
 					return agent.indexOf( 'naver' ) < 0 ? 0 : browser = 'naver';
 				};
 
-			// win
+			// os, browser
 			if( agent.indexOf( 'android' ) > -1 ){
 				browser = os = 'android';
 				if( agent.indexOf( 'mobile' ) == -1 ) browser += 'Tablet', device = 'tablet';
@@ -125,20 +126,41 @@
 					os = app.indexOf( 'x11' ) > -1 ? 'unix' : app.indexOf( 'linux' ) > -1 ? 'linux' : 0, chrome() || firefox();
 				}
 			}
+			// flash
 			(function(){
 				var plug = navi.plugins, t0;
 				if( browser == 'ie' ) try{ t0 = new ActiveXObject( 'ShockwaveFlash.ShockwaveFlash' ).GetVariable( '$version' ).substr( 4 ).split( ',' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] ); }catch( e ){}
 				else if( ( t0 = plug[ 'Shockwave Flash 2.0' ] ) || ( t0 = plug[ 'Shockwave Flash' ] ) ) t0 = t0.description.split( ' ' )[ 2 ].split( '.' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] );
 				else if( agent.indexOf( 'webtv' ) > -1 ) flash = agent.indexOf( 'webtv/2.6' ) > -1 ? 4 : agent.indexOf( 'webtv/2.5' ) > -1 ? 3 : 2;
 			})();
+			// dom
+			switch( browser ){
+				case'ie':
+					if( bv == -1 ) bv = !c[ 'getContext' ] ? 8 : !( 'msTransition' in s ) && !( 'transition' in s ) ? 9 : c.getContext( 'webgl' ) || c.getContext( 'experimental-webgl' ) ? 11 : 10;
+					prefixCss = '-ms-', prefixStyle = 'ms', transform3D = bv > 9 ? 1 : 0, docMode = $doc[ 'documentMode' ] || 0;
+					break;
+				case'firefox':
+					prefixCss = '-moz-', prefixStyle = 'Moz', transform3D = 1;
+					break;
+				case'opera':
+					prefixCss = '-o-', prefixStyle = 'O', transform3D = 1;
+					break;
+				default:
+					prefixCss = '-webkit-', prefixStyle = 'webkit', transform3D = os == 'android' ? ( osv < 4 ? 0 : 1 ) : 1;
+			}
+			if( keyframe ){
+				if( keyframe.WEBKIT_KEYFRAME_RULE ) keyframe = '-webkit-keyframes';
+				else if( keyframe.MOZ_KEYFRAME_RULE ) keyframe = '-moz-keyframes';
+				else if( keyframe.KEYFRAME_RULE ) keyframe = 'keyframes';
+				else keyframe = null;
+			}
 
-			log( agent );
 			return {
 				device : device,
-				browser : browser,
-				browserVer : bv,
 				os : os,
 				osVer : osv,
+				browser : browser,
+				browserVer : bv,
 				ie8 : browser == 'ie' && bv < 9 ? 1 : 0,
 				mobile : device == 'pc' ? 0 : 1,
 				flash : flash,
@@ -147,7 +169,7 @@
 				transform3D : transform3D,
 				transform : ( prefixStyle + 'Transform' in s || 'transform' in s ) ? 1 : 0,
 				transition : ( prefixStyle + 'Transition' in s || 'transition' in s ) ? 1 : 0,
-				keyframe : keyframe ? 1 : 0,
+				keyframe : keyframe,
 				float : 'cssFloat' in s ? 'cssFloat' : 'styleFloat',
 				canvas : c ? 1 : 0,
 				canvasText : c && c[ 'getContext' ] && c.getContext( '2d' ).fillText ? 1 : 0,
