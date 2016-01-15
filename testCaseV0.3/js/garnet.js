@@ -63,13 +63,18 @@
 				prefixCss, prefixStyle, transform3D, keyframe = $w[ 'CSSRule' ],
 				docMode = 0,
 				d = $doc.createElement( 'div' ), s = d.style, c = $doc.createElement( 'canvas' ), a = $doc.createElement( 'audio' ), v = $doc.createElement( 'video' ), t0,
-				ie, chrome, firefox, safari, opera, naver;
+				edge, ie, chrome, firefox, safari, opera, naver;
 
-			ie = function(){
-				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 && agent.indexOf( 'edge' ) < 0 ) return;
-				if( agent.indexOf( 'iemobile' ) > -1 || agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
-				return browser = 'ie', bv = agent.indexOf( 'edge' ) > -1 ? 'edge' : agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
+			edge = function(){
+				if( agent.indexOf( 'edge' ) < 0 ) return;
+				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
+				return browser = 'edge', bv = 'edge';
 			},
+				ie = function(){
+					if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 ) return;
+					if( agent.indexOf( 'iemobile' ) > -1 ) os = 'winMobile';
+					return browser = 'ie', bv = agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
+				},
 				chrome = function(){
 					if( agent.indexOf( t0 = 'chrome' ) < 0 && agent.indexOf( t0 = 'crios' ) < 0 ) return;
 					return browser = 'chrome', bv = parseFloat( ( t0 == 'chrome' ? /chrome\/([\d]+)/ : /crios\/([\d]+)/ ).exec( agent )[ 1 ] );
@@ -112,7 +117,7 @@
 					else if( agent.indexOf( t0 + '6.2' ) > -1 ) osv = '8';
 					else if( agent.indexOf( t0 + '6.3' ) > -1 ) osv = '8.1';
 					else if( agent.indexOf( t0 + '10.0' ) > -1 ) osv = '10';
-					ie() || chrome() || firefox() || safari() || opera();
+					edge() || ie() || chrome() || firefox() || safari() || opera();
 				}else if( platform.indexOf( 'mac' ) > -1 ){
 					os = 'mac', t0 = /os x ([\d._]+)/.exec( agent )[ 1 ].replace( '_', '.' ).split( '.' ), osv = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] ),
 					safari() || chrome() || firefox() || opera();
@@ -122,17 +127,12 @@
 			}
 			(function(){
 				var plug = navi.plugins, t0;
-				log( plug );
-				if( browser == 'ie' ) try{
-					t0 = new ActiveXObject( 'ShockwaveFlash.ShockwaveFlash' ).GetVariable( '$version' ).substr( 4 ).split( ',' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] );
-					log( t0 )
-				}catch( e ){
-					log( e )
-				}
+				if( browser == 'ie' ) try{ t0 = new ActiveXObject( 'ShockwaveFlash.ShockwaveFlash' ).GetVariable( '$version' ).substr( 4 ).split( ',' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] ); }catch( e ){}
 				else if( ( t0 = plug[ 'Shockwave Flash 2.0' ] ) || ( t0 = plug[ 'Shockwave Flash' ] ) ) t0 = t0.description.split( ' ' )[ 2 ].split( '.' ), flash = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] );
 				else if( agent.indexOf( 'webtv' ) > -1 ) flash = agent.indexOf( 'webtv/2.6' ) > -1 ? 4 : agent.indexOf( 'webtv/2.5' ) > -1 ? 3 : 2;
 			})();
 
+			log( agent );
 			return {
 				device : device,
 				browser : browser,
