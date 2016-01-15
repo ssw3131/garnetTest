@@ -67,8 +67,14 @@
 
 			ie = function(){
 				log( 'ie ie ie' );
-				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 ) return;
+
+				log( agent )
+				log( agent.indexOf( 'msie' ) < 0 )
+				log( agent.indexOf( 'trident' ) < 0 )
+				log( agent.indexOf( 'edge' ) < 0 )
+				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 && agent.indexOf( 'edge' ) < 0 ) return;
 				if( agent.indexOf( 'iemobile' ) > -1 ) os = 'winMobile';
+				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
 				return browser = 'ie', bv = agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
 			},
 				chrome = function(){
@@ -112,6 +118,7 @@
 					else if( agent.indexOf( t0 + '6.1' ) > -1 ) osv = '7';
 					else if( agent.indexOf( t0 + '6.2' ) > -1 ) osv = '8';
 					else if( agent.indexOf( t0 + '6.3' ) > -1 ) osv = '8.1';
+					else if( agent.indexOf( t0 + '10.0' ) > -1 ) osv = '10';
 					ie() || chrome() || firefox() || safari() || opera();
 				}else if( platform.indexOf( 'mac' ) > -1 ){
 					os = 'mac', t0 = /os x ([\d._]+)/.exec( agent )[ 1 ].replace( '_', '.' ).split( '.' ), osv = parseFloat( t0[ 0 ] + '.' + t0[ 1 ] ),
@@ -120,8 +127,6 @@
 					os = app.indexOf( 'x11' ) > -1 ? 'unix' : app.indexOf( 'linux' ) > -1 ? 'linux' : 0, chrome() || firefox();
 				}
 			}
-
-			log( agent )
 
 			return {
 				device : device,
