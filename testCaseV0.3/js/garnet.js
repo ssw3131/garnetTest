@@ -67,15 +67,11 @@
 
 			ie = function(){
 				log( 'ie ie ie' );
-
 				log( agent )
-				log( agent.indexOf( 'msie' ) < 0 )
-				log( agent.indexOf( 'trident' ) < 0 )
-				log( agent.indexOf( 'edge' ) < 0 )
 				if( agent.indexOf( 'msie' ) < 0 && agent.indexOf( 'trident' ) < 0 && agent.indexOf( 'edge' ) < 0 ) return;
 				if( agent.indexOf( 'iemobile' ) > -1 ) os = 'winMobile';
 				if( agent.indexOf( 'Windows Phone' ) > -1 ) os = 'winMobile';
-				return browser = 'ie', bv = agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
+				return browser = 'ie', bv = agent.indexOf( 'edge' ) > -1 ? 'edge' : agent.indexOf( 'msie 7' ) > -1 && agent.indexOf( 'trident' ) > -1 ? -1 : agent.indexOf( 'msie' ) < 0 ? 11 : parseFloat( /msie ([\d]+)/.exec( agent )[ 1 ] );
 			},
 				chrome = function(){
 					if( agent.indexOf( t0 = 'chrome' ) < 0 && agent.indexOf( t0 = 'crios' ) < 0 ) return;
