@@ -756,7 +756,7 @@
 							var r, i, leng = this.length;
 							r = this.list[ 0 ].S.apply( this.list[ 0 ], arguments );
 							for( i = 1; i < leng; i++ ) this.list[ i ].S.apply( this.list[ i ], arguments );
-							return r || this;
+							return r === false ? this : r;
 						},
 							DomList.prototype.S = func;
 						return func.apply( this, arguments );
@@ -830,7 +830,7 @@
 						while( i < j ){
 							k = arguments[ i++ ];
 							if( i == j ) return proto[ k ] ? proto[ k ].call( { style : s } ) :
-								( r = s[ k ], t0 = parseFloat( r ), r = isNaN( t0 ) ? r : t0 );
+								( r = s[ k ], r.indexOf( '%' ) > -1 ? r : ( t0 = parseFloat( r ), r = isNaN( t0 ) ? r : t0 ) );
 							else  v = arguments[ i++ ],
 								proto[ k ] ? proto[ k ].call( { style : s }, v ) :
 									s[ k ] = s[ prefixCss + k ] = typeof v == 'number' ? nopx[ k ] ? v : v + 'px' : v
@@ -853,6 +853,46 @@
 			return factory;
 		})( DOC, HEAD, dk.DETECTOR ) ),
 		dk.PROTO.connect( dk.Css.fn, dk.PROTO.css ),
+
+// OBJ :
+		dk.fn( 'sList', (function(){
+			function dkList( $k, $update, $start, $end ){
+				this.list = {}, this._list = [], this.name = $k,
+					this.start = $start, this.end = $end,
+					this.update = $update ? function( $param ){
+						var t, i, j;
+						t = this._list, i = t.length, j = i % 8;
+						while( i-- > j ) t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i-- ]( $param ), t[ i ]( $param );
+						while( j-- ) t[ j ]( $param );
+					} : null;
+			}
+
+			function reset(){
+				var k, t0 = this.list, t1 = [];
+				for( k in t0 ) t1.push( t0[ k ] );
+				this._list = t1, t1.length ? this.start ? this.start() : null : this.end ? this.end() : null;
+			}
+
+			dkList.prototype.S = function(){
+				var i = 0, j = arguments.length, k, v;
+				while( i < j ){
+					k = arguments[ i++ ];
+					if( i == j ) return this.list[ k ];
+					else v = arguments[ i++ ], v === null ? delete this.list[ k ] : this.list[ k ] = v;
+				}
+				reset.call( this );
+				return v;
+			}
+			return function( $k, $update, $start, $end ){
+				return new dkList( $k, $update, $start, $end );
+			}
+		})() ),
+
+		dk.obj( 'LOOP', (function( $sList ){
+			var r = $sList( 'LOOP', true );
+			(function loop(){ r[ 'update' ](), requestAnimFrame( loop ) })();
+			return r;
+		})( dk.sList ) ),
 
 		log( 'code end' );
 })();
