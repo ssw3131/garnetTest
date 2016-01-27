@@ -30,11 +30,22 @@
 	<script src="http://ssw3131.github.io/garnet/v0.3/dkLog.js"></script>
 	<!--<script src="http://ssw3131.github.io/garnet/v0.3/garnet.js"></script>-->
 	<script src="js/garnet.js"></script>
+	<style>
+		.red {
+			background: red;
+		}
+		.blue {
+			background: blue;
+		}
+		.box {
+			height: 100px;
+		}
+	</style>
 </head>
 <body>
 안녕하세요?
 <div id="test">test</div>
-<div class="box">box</div>
+<div class="box black">box</div>
 <div class="box">box</div>
 <div class="box">box</div>
 <div class="box">box</div>
@@ -55,15 +66,22 @@
 //		log( dk.Dom( '#test' ) );
 
 //		log( dk.Dom( '.box' ).S( 'position', 'absolute', 'left', '50%', 'top', 50 ) );
-		log( dk.Dom( '.box' ).S( 'left' ) );
-		log( dk.Dom( '.box' ).S( 'position' ) );
+//		log( dk.Dom( '.box' ).S( 'left' ) );
+//		log( dk.Dom( '.box' ).S( 'position' ) );
 		log( dk.Dom( '.box' ).S( 'click', function( $e ){
-			log( $e )
-			log( $e.target )
-			log( $e.target.idx )
+//			log( $e )
+//			log( $e.target )
+//			log( $e.target.idx )
 		} ) );
+		dk.Dom( '.box' ).S( '@addClass', 'red' );
+		dk.Dom( '.box' ).S( '@addClass', 'blue' );
+		dk.Dom( '.box' ).S( '@delClass', 'box' );
+//		dk.Dom( '.box' ).S( '@class', 'white' );
+		log( dk.Dom( '.box' ).S( '@class' ) );
 //		log( dk.Dom( '#test' ).S( 'left', 100 ) );
 //		log( dk.Dom( '#test' ).S( 'left' ) );
+
+//		dk.Css( 'body' ).S( 'bgColor', '#000');
 	})
 </script>
 
