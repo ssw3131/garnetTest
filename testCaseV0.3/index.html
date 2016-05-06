@@ -44,12 +44,13 @@
 </head>
 <body>
 안녕하세요?
-<div id="test">test</div>
-<div class="box black">box</div>
+<div class="box1 box2" style="top: 0px;">box</div>
+<div class="box1 box box2" style="top: 0px;">box</div>
+<div class="box box1">box</div>
+<div class="box1 box">box</div>
 <div class="box">box</div>
-<div class="box">box</div>
-<div class="box">box</div>
-<div class="box">box</div>
+<div>box</div>
+<!--<div class="box">box</div>-->
 <script>
 //	log.show();
 //	log.position( { left : 100 } );
@@ -68,20 +69,24 @@
 //		log( dk.Dom( '.box' ).S( 'position', 'absolute', 'left', '50%', 'top', 50 ) );
 //		log( dk.Dom( '.box' ).S( 'left' ) );
 //		log( dk.Dom( '.box' ).S( 'position' ) );
-		dk.Dom( '.box' ).S( 'click', function( $e ){
+//		dk.Dom( '.box' ).S( 'click', function( $e ){
 //			log( $e )
 //			log( $e.target )
 //			log( $e.target.idx )
-		} );
-		dk.Dom( '.box' ).S( '@addClass', 'red' );
-		dk.Dom( '.box' ).S( '@addClass', 'blue' );
-		dk.Dom( '.box' ).S( '@delClass', 'box' );
+//		} );
+		dk.Dom( 'div' ).S( '@addClass', 'box' );
+		dk.Dom( 'div' ).S( '@delClass', 'box' );
+//		dk.Dom( '.box' ).S( '@addClass', 'box' );
+//		dk.Dom( '.box' ).S( '@addClass', 'box' );
+//		dk.Dom( '.box' ).S( '@addClass', 'red' );
+//		dk.Dom( '.box' ).S( '@addClass', 'blue' );
 //		dk.Dom( '.box' ).S( '@class', 'white' );
-//		log( dk.Dom( '.box' ).S( '@class' ) );
+//		log( dk.Dom( '.box' ).S( 'scrollTop' ) );
+//		log( dk.Dom( '.box' ).S( 'left' ) );
+//		log( dk.Dom( '.box' ).S( 'top' ) );
 //		log( dk.Dom( '#test' ).S( 'left', 100 ) );
 //		log( dk.Dom( '#test' ).S( 'left' ) );
 
-		log( dk.Dom( '.box' ).S( 'left' ) );
 	})
 </script>
 
