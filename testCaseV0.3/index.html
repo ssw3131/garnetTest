@@ -44,8 +44,10 @@
 </head>
 <body>
 안녕하세요?
-<div class="box1 box2" style="top: 0px;">box</div>
-<div class="box1 box box2" style="top: 0px;">box</div>
+<div id="t0">t0</div>
+<div id="t1">t1</div>
+<div class="box1 box box2" style="top: 1px;">box</div>
+<div class="box1 box2">box</div>
 <div class="box box1">box</div>
 <div class="box1 box">box</div>
 <div class="box">box</div>
@@ -74,19 +76,22 @@
 //			log( $e.target )
 //			log( $e.target.idx )
 //		} );
-		dk.Dom( 'div' ).S( '@addClass', 'box' );
-		dk.Dom( 'div' ).S( '@delClass', 'box' );
+//		dk.Dom( 'div' ).S( '@addClass', 'box' );
+//		dk.Dom( 'div' ).S( '@delClass', 'box' );
 //		dk.Dom( '.box' ).S( '@addClass', 'box' );
 //		dk.Dom( '.box' ).S( '@addClass', 'box' );
 //		dk.Dom( '.box' ).S( '@addClass', 'red' );
 //		dk.Dom( '.box' ).S( '@addClass', 'blue' );
 //		dk.Dom( '.box' ).S( '@class', 'white' );
-//		log( dk.Dom( '.box' ).S( 'scrollTop' ) );
-//		log( dk.Dom( '.box' ).S( 'left' ) );
-//		log( dk.Dom( '.box' ).S( 'top' ) );
+		log( dk.Dom( '.box' ).S( 'scrollTop' ) );
+		log( dk.Dom( '.box' ).S( 'left' ) );
+		log( dk.Dom( '.box' ).S( 'left', 1 ) );
+		log( dk.Dom( '.box' ).S( 'left' ) );
+		log( dk.Dom( '.box' ).S( 'top' ) );
 //		log( dk.Dom( '#test' ).S( 'left', 100 ) );
 //		log( dk.Dom( '#test' ).S( 'left' ) );
-
+		dk.Dom().S( '>', dk.Dom() )
+		dk.Dom( '#t0' ).S( '>', dk.Dom( '.box' ) )
 	})
 </script>
 

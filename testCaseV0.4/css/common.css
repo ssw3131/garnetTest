@@ -1,0 +1,39 @@
+/*@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/jejumyeongjo.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css);*/
+/*@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);*/
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+/*@import url("NanumBarunGothic.css");*/
+/*@import url("NanumSquare.css");*/
+
+/*공통*/
+/**{ outline: 1px dashed #ff0000; }*/
+
+body, input, button, select, textarea{
+	font-size: 12px; /* 기본폰트 사이즈 */
+	line-height: 140%; /* 행간 */
+	color: #a7a8ac; /* 폰트 컬러 */
+	/*font-family: 'Hanna', sans-serif;*/
+	/*font-family: 'Jeju Gothic', sans-serif;*/
+	/*font-family: 'Jeju Hallasan', cursive;*/
+	/*font-family: 'Jeju Myeongjo', serif;*/
+	/*font-family: 'KoPub Batang', serif;*/
+	/*font-family: 'Nanum Brush Script', cursive;*/
+	/*font-family: 'Nanum Gothic', sans-serif;*/
+	/*font-family: 'Nanum Gothic Coding', monospace;*/
+	/*font-family: 'Nanum Myeongjo', serif;*/
+	/*font-family: 'Nanum Pen Script', cursive;*/
+	font-family: 'Noto Sans KR', sans-serif;
+	/*font-family: 'NanumBarunGothic', Dotum, sans-serif;*/
+	/*font-family: 'NanumSquare', 'Dotum','돋움';*/
+}
+
+body{  }
+
+.clear:after{ content: ""; display: block; clear: both; }

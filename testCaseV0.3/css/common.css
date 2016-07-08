@@ -12,4 +12,4 @@ body, input, button, select, textarea{
 
 body{ overflow-y: scroll; }
 
-.clear{ content: ""; display: block; clear: both; }
+.clear:after { content: ""; display: block; clear: both; }
