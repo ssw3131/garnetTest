@@ -16,9 +16,10 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<style>
-		body {
-			font-size: 120px; /* 기본폰트 사이즈 */
-		}
+		*{ outline: 1px dashed #ff0000; }
+		.box { }
+		.big { width: 100px; height: 100px; }
+		.small { width: 50px; height: 50px; }
 	</style>
 
 	<!--syntaxhighlighter-->
@@ -44,10 +45,32 @@
 	<script>
 		dk( function(){
 			log( dk.DETECTOR );
+			dk.Dom( '.box' ).S( 'padding', 10 );
+			var arr = dk.Dom( '.box' ).domList, i = arr.length;
+			while( i-- ){
+				arr[ i ].S( 'bgColor', dk.randomColor() );
+			}
+//			log( dk.Dom( '.small' ).domList )
+//			log( dk.Dom( '.small' ).elList )
+//			log( dk.Dom( '.small' ).dom )
+//			log( dk.Dom( '.small' ).dom.S( 'bgColor' ) )
+//			log( dk.Dom( '.small' ).el )
+			log( dk.Dom( '#box0' ).S( 'left', 0 ) )
+			log( dk.Dom( '#box0' ).S( 'left' ) )
+			log( dk.Dom( '#box1' ).S( 'left', 0 ) )
+			log( dk.Dom( '#box1' ).S( 'left' ) )
+			log( dk.Dom( '.box' ).S( 'right', 1 ) )
+			log( dk.Dom( '.box' ).S( 'bgColor' ) )
 		})
 	</script>
 </head>
 <body>
-안녕하세요
+<div id="box0" class="box big" style="left: 10px;">box0</div>
+<div id="box1" class="box big">box1</div>
+<div id="box2" class="box big">
+	<div class="box small">box</div>
+	<div class="box small">box</div>
+	<div class="box small">box</div>
+</div>
 </body>
 </html>

@@ -33,7 +33,7 @@
 					if( $doc && $doc.getElementsByTagName && $doc.getElementById && $doc.body ){
 						clearInterval( check ), $host ? $host() : null;
 					}
-				}, 10 );
+				}, 5 );
 			}
 		})( DOC ),
 

@@ -18,7 +18,7 @@
 body, input, button, select, textarea{
 	font-size: 12px; /* 기본폰트 사이즈 */
 	line-height: 140%; /* 행간 */
-	color: #a7a8ac; /* 폰트 컬러 */
+	color: #333; /* 폰트 컬러 */
 	/*font-family: 'Hanna', sans-serif;*/
 	/*font-family: 'Jeju Gothic', sans-serif;*/
 	/*font-family: 'Jeju Hallasan', cursive;*/

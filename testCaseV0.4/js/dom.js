@@ -5,25 +5,15 @@ dk.cls( 'Dom', (function( $doc, $selector, $detector ){
 
 	DomList = function( $arr ){
 		var leng = $arr.length, i = leng;
-		this.list = [], this.length = leng;
-		while( i-- ) this.list[ i ] = new Dom( $arr[ i ], i );
+		this.domList = [], this.elList = [], this.length = leng;
+		while( i-- ) this.domList[ i ] = new Dom( $arr[ i ], i ), this.elList[ i ] = this.domList[ i ].el;
+		this.dom = this.domList[ 0 ], this.el = this.elList[ 0 ]; // 리스트 첫번째 요소
 	},
 		DomList.prototype.S = function(){
-			var func;
-			if( this.length == 1 ){
-				func = function(){ return this.list[ 0 ].S.apply( this.list[ 0 ], arguments ) || this; },
-					DomList.prototype.S = func;
-				return func.apply( this, arguments );
-			}else{
-				func = function(){
-					var r, i, leng = this.length;
-					r = this.list[ 0 ].S.apply( this.list[ 0 ], arguments );
-					for( i = 1; i < leng; i++ ) this.list[ i ].S.apply( this.list[ i ], arguments );
-					return r === false ? this : r;
-				},
-					DomList.prototype.S = func;
-				return func.apply( this, arguments );
-			}
+			var r, i, leng = this.length;
+			for( i = 1; i < leng; i++ ) this.domList[ i ].S.apply( this.domList[ i ], arguments );
+			r = this.dom.S.apply( this.dom, arguments );
+			return r === false ? this : r;
 		},
 
 		Dom = function( $el, $idx ){
