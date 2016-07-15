@@ -1,5 +1,5 @@
-// EVENT :
 ;
+// EVENT :
 dk.fn( 'dkEvent', (function( $detector ){
 	var t0 = $detector.currentTarget;
 	return function( $e ){

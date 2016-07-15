@@ -17,9 +17,12 @@
 	<link rel="stylesheet" type="text/css" href="css/common.css">
 	<style>
 		*{ outline: 1px dashed #ff0000; }
-		.box { }
-		.big { width: 100px; height: 100px; }
-		.small { width: 50px; height: 50px; }
+
+		.box{ }
+
+		.big{ width: 100px; height: 100px; }
+
+		.small{ width: 50px; height: 50px; }
 	</style>
 
 	<!--syntaxhighlighter-->
@@ -31,8 +34,11 @@
 		SyntaxHighlighter.all();
 	</script>-->
 
+	<!--ajax-->
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/2.0.5/reqwest.js"></script>-->
+
 	<!--host-->
-	<!--<script src="http://ssw3131.github.io/garnet/vender/stats.min.js"></script>-->
+	<!--<script src="http://ssw3131.github.io/garnet/vender/stats/stats.min.js"></script>-->
 	<!--<script src="http://ssw3131.github.io/garnet/v0.4/dkLog.js"></script>-->
 	<!--<script src="http://ssw3131.github.io/garnet/v0.4/garnet.js"></script>-->
 	<script src="js/garnet.js"></script>
@@ -42,35 +48,57 @@
 	<script src="js/event.js"></script>
 	<script src="js/prototype.js"></script>
 	<script src="js/dom.js"></script>
+	<script src="js/css.js"></script>
+	<script src="js/sList.js"></script>
+	<script src="js/stt.js"></script>
+	<script src="js/loader.js"></script>
 	<script>
 		dk( function(){
-			log( dk.DETECTOR );
 			dk.Dom( '.box' ).S( 'padding', 10 );
 			var arr = dk.Dom( '.box' ).domList, i = arr.length;
 			while( i-- ){
 				arr[ i ].S( 'bgColor', dk.randomColor() );
 			}
-//			log( dk.Dom( '.small' ).domList )
-//			log( dk.Dom( '.small' ).elList )
-//			log( dk.Dom( '.small' ).dom )
-//			log( dk.Dom( '.small' ).dom.S( 'bgColor' ) )
-//			log( dk.Dom( '.small' ).el )
-			log( dk.Dom( '#box0' ).S( 'left', 0 ) )
-			log( dk.Dom( '#box0' ).S( 'left' ) )
-			log( dk.Dom( '#box1' ).S( 'left', 0 ) )
-			log( dk.Dom( '#box1' ).S( 'left' ) )
-			log( dk.Dom( '.box' ).S( 'right', 1 ) )
-			log( dk.Dom( '.box' ).S( 'bgColor' ) )
-		})
+			dk.Css( '.box' ).S( 'margin', 10 );
+
+//			dk.Dom( '.small' ).S( '<', 'body' );
+
+			dk.LOOP.S( 'dk', function(){
+//				log( 'hi' );
+			} );
+			dk.RESIZE.S( 'dk', function(){
+				log( dk.WIN.width );
+				log( dk.WIN.height );
+			} );
+			dk.SCROLL.S( 'scroll', function( $e ){
+				log( 'scrollLeft : ' + dk.SCROLL.scrollLeft + ', scrollTop : ' + dk.SCROLL.scrollTop )
+			} );
+			dk.RESIZE.dispatchEvent();
+
+			dk.MOUSE.S( 'dk', function(){
+//				log( dk.MOUSE.mouseX );
+//				log( dk.MOUSE.mouseY );
+			} );
+			dk.WHEEL.S( 'wheel', function( $e ){
+				log( 'delta : ' + $e.delta )
+			} );
+			dk.KEY.S( 'NUMPAD_0', function( $e ){
+				log( $e );
+				log( 'NUMPAD_0' );
+			} );
+			dk.js( function(){}, 'js/css.js', 'js/detector.js' );
+			dk.img( function( $e ){ log( $e ) }, 'imgs/01.jpg', 'imgs/02.jpg', 'imgs/03.jpg', 'imgs/04.jpg', 'imgs/01.jpg', 'imgs/02.jpg', 'imgs/03.jpg', 'imgs/04.jpg' );
+		} );
 	</script>
 </head>
-<body>
+
 <div id="box0" class="box big" style="left: 10px;">box0</div>
 <div id="box1" class="box big">box1</div>
 <div id="box2" class="box big">
-	<div class="box small">box</div>
-	<div class="box small">box</div>
-	<div class="box small">box</div>
+	<div class="box small">box1</div>
+	<div class="box small">box2</div>
+	<div class="box small">box3</div>
 </div>
+<input type="text" id="txt"></input>
 </body>
 </html>

@@ -1,6 +1,6 @@
-// PROTOTYPE :
 ;
-dk.obj( 'PROTO', {
+// PROTOTYPE :
+dk.stt( 'PROTO', {
 	connect : function( $fn/* , $obj, $obj */ ){
 		var i = arguments.length, k, param = [];
 		while( i-- > 1 ){

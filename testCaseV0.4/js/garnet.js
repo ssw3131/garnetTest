@@ -46,13 +46,13 @@
 			$k = $k.replace( trim, '' ), $k = $k.charAt( 0 ).toUpperCase() + $k.substring( 1, $k.length ),
 				dk[ $k ] ? dk.err( 'dk.cls에 이미 ' + $k + '값이 존재합니다' ) : dk[ $k ] = $v;
 		},
-		dk.obj = function( $k, $v ){
+		dk.stt = function( $k, $v ){
 			$k = $k.replace( trim, '' ).toUpperCase(),
-				dk[ $k ] ? dk.err( 'dk.obj에 이미 ' + $k + '값이 존재합니다' ) : dk[ $k ] = $v;
+				dk[ $k ] ? dk.err( 'dk.stt에 이미 ' + $k + '값이 존재합니다' ) : dk[ $k ] = $v;
 		},
 
 // INFO :
-		dk.obj( 'INFO', { name : 'Dk garnet', version : 'v0.4.1', github : 'https://github.com/ssw3131/garnet.git' } ),
+		dk.stt( 'INFO', { name : 'Dk garnet', version : 'v0.4.1', github : 'https://github.com/ssw3131/garnet.git' } ),
 
 // ERROR :
 		dk.fn( 'err', function( $log ){ log( 'err : ' + $log ); } );

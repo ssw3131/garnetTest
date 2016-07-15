@@ -1,6 +1,6 @@
 // DETECTOR :
 ;
-dk.obj( 'DETECTOR', (function( $w, $doc ){
+dk.stt( 'DETECTOR', (function( $w, $doc ){
 	var navi = $w.navigator, agent = navi.userAgent.toLowerCase(), platform = navi.platform.toLowerCase(), app = navi.appVersion.toLowerCase(),
 		device = 'pc', os, osv, browser, bv, flash,
 		prefixCss, prefixStyle, transform3D, keyframe = $w[ 'CSSRule' ],

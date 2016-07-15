@@ -1,5 +1,5 @@
-// SELECTOR : bsSelector v0.3.2, 141110
 ;
+// SELECTOR : bsSelector v0.3.2, 141110
 dk.fn( 'selector', (function( $doc ){
 	/* bsSelector v0.3.2
 	 * Copyright (c) 2014 by ProjectBS Committe and contributors.

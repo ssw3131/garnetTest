@@ -1,5 +1,5 @@
-// DOM :
 ;
+// DOM :
 dk.cls( 'Dom', (function( $doc, $selector, $detector ){
 	var factory, DomList, Dom, uuList = {}, proto = {}, maker = $doc.createElement( 'div' ), parser;
 
@@ -11,8 +11,8 @@ dk.cls( 'Dom', (function( $doc, $selector, $detector ){
 	},
 		DomList.prototype.S = function(){
 			var r, i, leng = this.length;
-			for( i = 1; i < leng; i++ ) this.domList[ i ].S.apply( this.domList[ i ], arguments );
 			r = this.dom.S.apply( this.dom, arguments );
+			for( i = 1; i < leng; i++ ) this.domList[ i ].S.apply( this.domList[ i ], arguments );
 			return r === false ? this : r;
 		},
 
