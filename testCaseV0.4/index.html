@@ -52,14 +52,17 @@
 	<script src="js/sList.js"></script>
 	<script src="js/stt.js"></script>
 	<script src="js/loader.js"></script>
+	<script src="js/spriteSheet.js"></script>
 	<script>
 		dk( function(){
-			dk.Dom( '.box' ).S( 'padding', 10 );
+			dk.Dom( '.box' ).S( 'padding', 10, 'click', function( $e ){ log( $e ) } );
 			var arr = dk.Dom( '.box' ).domList, i = arr.length;
 			while( i-- ){
 				arr[ i ].S( 'bgColor', dk.randomColor() );
 			}
 			dk.Css( '.box' ).S( 'margin', 10 );
+
+			dk.Dom().S( '@addClass', 'box big', '<', 'body' );
 
 //			dk.Dom( '.small' ).S( '<', 'body' );
 
@@ -67,8 +70,8 @@
 //				log( 'hi' );
 			} );
 			dk.RESIZE.S( 'dk', function(){
-				log( dk.WIN.width );
-				log( dk.WIN.height );
+//				log( dk.WIN.width );
+//				log( dk.WIN.height );
 			} );
 			dk.SCROLL.S( 'scroll', function( $e ){
 				log( 'scrollLeft : ' + dk.SCROLL.scrollLeft + ', scrollTop : ' + dk.SCROLL.scrollTop )
@@ -86,8 +89,14 @@
 				log( $e );
 				log( 'NUMPAD_0' );
 			} );
-			dk.js( function(){}, 'js/css.js', 'js/detector.js' );
-			dk.img( function( $e ){ log( $e ) }, 'imgs/01.jpg', 'imgs/02.jpg', 'imgs/03.jpg', 'imgs/04.jpg', 'imgs/01.jpg', 'imgs/02.jpg', 'imgs/03.jpg', 'imgs/04.jpg' );
+//			dk.js( function(){}, 'js/css.js', 'js/detector.js' );
+//			dk.img( function( $e ){ log( $e ) }, 'asset/01.jpg', 'asset/02.jpg', 'asset/03.jpg', 'asset/04.jpg', 'asset/01.jpg', 'asset/02.jpg', 'asset/03.jpg', 'asset/04.jpg' );
+
+//			log( dk.Dom( [ document.createElement( 'div' ), document.createElement( 'div' ) ] ) );
+//			log( dk.Dom( dk.selector( 'div' ) ) );
+
+			dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body', 'width', 300, 'height', 300, 'html', 'sprite sheet' );
+
 		} );
 	</script>
 </head>

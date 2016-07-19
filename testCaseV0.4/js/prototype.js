@@ -9,6 +9,7 @@ dk.stt( 'PROTO', {
 		$fn.apply( undefined, param );
 	},
 	attr : (function(){
+		var trim = /^\s*|\s*$/g;
 		return {
 			'@addClass' : function( $v ){
 				var e = this.el, r, check = new RegExp( '(\\s|^)' + $v + '(\\s|$)' );
