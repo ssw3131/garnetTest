@@ -84,7 +84,7 @@ dk.stt( 'PROTO', {
 			'+text' : function( $v ){ return this.el[ text ] = $v + this.el[ text ]; },
 			'text+' : function( $v ){ return this.el[ text ] = this.el[ text ] + $v; }
 		}
-	})( document, dk.DETECTOR ),
+	})( dk.DOC, dk.DETECTOR ),
 	event : (function( $w, $dkEvent, $addEvent, $delEvent ){
 		var r = {}, evList = [ 'over', 'out', 'down', 'move', 'up', 'click', 'enter', 'leave', 'contextmenu', 'dblclick' ], i = evList.length,
 			cancleMap = { mousedown : 1, mouseup : 1, mousemove : 1 }, t0,
@@ -108,5 +108,5 @@ dk.stt( 'PROTO', {
 
 		while( i-- ) r[ t0 = evList[ i ] ] = make( t0 );
 		return r;
-	})( window, dk.dkEvent, dk.addEvent, dk.delEvent )
+	})( dk.W, dk.dkEvent, dk.addEvent, dk.delEvent )
 } );

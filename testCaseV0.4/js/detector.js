@@ -131,4 +131,4 @@ dk.stt( 'DETECTOR', (function( $w, $doc ){
 		wheelEvent : browser == 'firefox' ? 'DOMMouseScroll' : 'mousewheel',
 		isLocalhost : location.host.indexOf( 'localhost' ) < 0 ? false : true
 	}
-})( window, document ) );
+})( dk.W, dk.DOC ) );

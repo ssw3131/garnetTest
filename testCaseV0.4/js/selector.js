@@ -397,4 +397,4 @@ dk.fn( 'selector', (function( $doc ){
 		};
 	};
 	return bsSelector( $doc, /^\s*|\s*$/g );
-})( document ) );
+})( dk.DOC ) );

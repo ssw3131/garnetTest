@@ -27,4 +27,4 @@ dk.fn( 'dkEvent', (function( $detector ){
 					$et = map[ $et ] ? map[ $et ] : $et, $el.detachEvent( 'on' + $et, $cb ); // ie8 이하 capture 불가능
 				}
 			})() )
-	})( window, dk.DETECTOR );
+	})( dk.W, dk.DETECTOR );

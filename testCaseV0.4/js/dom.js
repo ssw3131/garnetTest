@@ -69,5 +69,5 @@ dk.cls( 'Dom', (function( $doc, $selector, $detector ){
 		};
 
 	return factory;
-})( document, dk.selector, dk.DETECTOR ) ),
+})( dk.DOC, dk.selector, dk.DETECTOR ) ),
 	dk.PROTO.connect( dk.Dom.fn, dk.PROTO.attr, dk.PROTO.css, dk.PROTO.tree, dk.PROTO.event );

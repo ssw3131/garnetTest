@@ -55,5 +55,10 @@
 		dk.stt( 'INFO', { name : 'Dk garnet', version : 'v0.4.1', github : 'https://github.com/ssw3131/garnet.git' } ),
 
 // ERROR :
-		dk.fn( 'err', function( $log ){ log( 'err : ' + $log ); } );
+		dk.fn( 'err', function( $log ){ log( 'dk error : ' + $log ); } ),
+
+// BOM :
+		dk.stt( 'W', W ),
+		dk.stt( 'DOC', DOC ),
+		dk.stt( 'HEAD', DOC.getElementsByTagName( 'head' )[ 0 ] );
 })();

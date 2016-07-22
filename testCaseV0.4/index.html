@@ -66,9 +66,9 @@
 
 //			dk.Dom( '.small' ).S( '<', 'body' );
 
-			dk.LOOP.S( 'dk', function(){
+//			dk.LOOP.S( 'dk', function(){
 //				log( 'hi' );
-			} );
+//			} );
 			dk.RESIZE.S( 'dk', function(){
 //				log( dk.WIN.width );
 //				log( dk.WIN.height );
@@ -95,8 +95,41 @@
 //			log( dk.Dom( [ document.createElement( 'div' ), document.createElement( 'div' ) ] ) );
 //			log( dk.Dom( dk.selector( 'div' ) ) );
 
-			dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body', 'width', 300, 'height', 300, 'html', 'sprite sheet' );
+//			dk.LOOP.S( 'hi', function(){
+//				log( 'hi' );
+//			} )
+//			dk.LOOP.S( 'hi', null )
+//			dk.LOOP.S( 'hi2', function(){
+//				log( 'hi2' );
+//			})
+//			log( dk.LOOP.S( 'hi', function(){
+//				log( 'hi' );
+//			} ).S( 'hi', null ) );
 
+//			dk.ajax( function( $data ){ log( dk.JSON.parse( $data ) ) }, 'asset/box.json' )
+
+//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//			sheet2.S2( 'repeat' );
+//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//			sheet2.S2( 'repeat' );
+//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//			sheet2.S2( 'repeat' );
+//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//			sheet2.S2( 'repeat' );
+
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet2.S2( 'repeat' ); } );
+
+			var sheet = dk.Sheet( 'asset/particle.png', 'asset/particle.json' ).S( '<', 'body' );
+			sheet.S2( 'rewind' );
+
+			dk.Css( 'button' ).S( 'margin', 10, 'padding', 10 );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet.S2( 'repeat' ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'play', 'click', function(){ sheet.S2( 'play' ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'stop', 'click', function(){ sheet.S2( 'stop' ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'rewind', 'click', function(){ sheet.S2( 'rewind' ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'gotoAndStop', 'click', function(){ sheet.S2( 'gotoAndStop', 10 ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'gotoAndPlay', 'click', function(){ sheet.S2( 'gotoAndPlay', 10 ); } );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'abRepeat', 'click', function(){ sheet.S2( 'abRepeat', 10, 20 ); } );
 		} );
 	</script>
 </head>

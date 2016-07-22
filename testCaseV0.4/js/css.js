@@ -39,5 +39,5 @@ dk.cls( 'Css', (function( $doc, $head, $detector ){
 			}
 		};
 	return factory;
-})( document, document.getElementsByTagName( 'head' )[ 0 ], dk.DETECTOR ) ),
+})( dk.DOC, dk.HEAD, dk.DETECTOR ) ),
 	dk.PROTO.connect( dk.Css.fn, dk.PROTO.css );
