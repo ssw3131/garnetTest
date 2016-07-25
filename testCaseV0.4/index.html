@@ -108,19 +108,28 @@
 
 //			dk.ajax( function( $data ){ log( dk.JSON.parse( $data ) ) }, 'asset/box.json' )
 
-//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//			sheet2.S2( 'repeat' );
-//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//			sheet2.S2( 'repeat' );
-//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//			sheet2.S2( 'repeat' );
-//			var sheet2 = dk.Sheet( 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//			sheet2.S2( 'repeat' );
+//			dk.Sheet( function( $sheet ){
+//				$sheet.S2( 'repeat' );
+//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//
+//			dk.Sheet( function( $sheet ){
+//				$sheet.S2( 'repeat' );
+//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
+//
+//			dk.Sheet( function( $sheet ){
+//				$sheet.S2( 'repeat' );
+//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
 
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet2.S2( 'repeat' ); } );
+			var sheet2 = dk.Sheet( function( $sheet ){
+				$sheet.S2( 'repeat' );
+			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
 
-			var sheet = dk.Sheet( 'asset/particle.png', 'asset/particle.json' ).S( '<', 'body' );
-			sheet.S2( 'rewind' );
+			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet2.S2( 'stop' ); } );
+
+			var sheet = dk.Sheet( function( $sheet ){
+				$sheet.S2( 'repeat' );
+//				$sheet.S2( 'abRepeat', 10, 20 );
+			}, 'asset/particle.png', 'asset/particle.json' ).S( '<', 'body' );
 
 			dk.Css( 'button' ).S( 'margin', 10, 'padding', 10 );
 			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet.S2( 'repeat' ); } );
