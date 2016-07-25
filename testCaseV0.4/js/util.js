@@ -1,5 +1,5 @@
+
 // UTIL :
-;
 dk.fn( 'random', (function( $mathRandom ){
 	return function( $max, $min ){ return $max = $max || 1, $min = $min || 0, ( $max - $min ) * $mathRandom() + $min; }
 })( Math.random ) ),

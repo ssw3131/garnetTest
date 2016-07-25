@@ -1,5 +1,5 @@
+
 // LOADER :
-;
 dk.stt( 'JSON', {
 	parse : function( $v ){ return ( new Function( '', 'return ' + $v ) )(); }
 } ),

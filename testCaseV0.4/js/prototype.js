@@ -1,4 +1,4 @@
-;
+
 // PROTOTYPE :
 dk.stt( 'PROTO', {
 	connect : function( $fn/* , $obj, $obj */ ){
@@ -73,10 +73,10 @@ dk.stt( 'PROTO', {
 	tree : (function( $doc, $detector ){
 		var text = $detector.innerText ? 'innerText' : 'textContent';
 		return {
-			'>' : function( $v ){ this.el.appendChild( $v.list[ 0 ].el ); },
-			'<' : function( $v ){ $v === 'body' ? $doc.body.appendChild( this.el ) : $v.list[ 0 ].el.appendChild( this.el ); },
-			'>-' : function( $v ){ this.el.removeChild( $v.list[ 0 ].el ); },
-			'<-' : function( $v ){ $v === 'body' ? $doc.body.removeChild( this.el ) : $v.list[ 0 ].el.removeChild( this.el ); },
+			'>' : function( $v ){ this.el.appendChild( $v.elList[ 0 ] ); },
+			'<' : function( $v ){ $v === 'body' ? $doc.body.appendChild( this.el ) : $v.elList[ 0 ].appendChild( this.el ); },
+			'>-' : function( $v ){ this.el.removeChild( $v.elList[ 0 ] ); },
+			'<-' : function( $v ){ $v === 'body' ? $doc.body.removeChild( this.el ) : $v.elList[ 0 ].removeChild( this.el ); },
 			'html' : function( $v ){ return ( $v === undefined ) ? this.el.innerHTML : this.el.innerHTML = $v; },
 			'+html' : function( $v ){ return this.el.innerHTML = $v + this.el.innerHTML; },
 			'html+' : function( $v ){ return this.el.innerHTML = this.el.innerHTML + $v; },

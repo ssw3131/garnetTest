@@ -1,4 +1,4 @@
-;
+
 // CSS :
 dk.cls( 'Css', (function( $doc, $head, $detector ){
 	var factory, Css, uuList = {}, proto = {}, el, sheet, rules;

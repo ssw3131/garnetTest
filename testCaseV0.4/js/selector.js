@@ -1,4 +1,4 @@
-;
+
 // SELECTOR : bsSelector v0.3.2, 141110
 dk.fn( 'selector', (function( $doc ){
 	/* bsSelector v0.3.2

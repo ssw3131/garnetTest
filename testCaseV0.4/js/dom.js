@@ -1,4 +1,4 @@
-;
+
 // DOM :
 dk.cls( 'Dom', (function( $doc, $selector, $detector ){
 	var factory, DomList, Dom, uuList = {}, proto = {}, maker = $doc.createElement( 'div' ), destroy, parser;

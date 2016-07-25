@@ -1,4 +1,4 @@
-;
+
 // SPRITE SHEET :
 dk.cls( 'Sheet', (function( $doc, $dkDom, $dkAjax, $dkJSON ){
 	var factory, Sheet, proto = {}, uuId = 0;

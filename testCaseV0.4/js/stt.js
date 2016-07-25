@@ -1,5 +1,5 @@
+
 // STATIC :
-;
 dk.stt( 'LOOP', (function( $SList ){
 	var r, start, end, loop;
 	start = function(){

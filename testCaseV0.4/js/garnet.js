@@ -18,7 +18,7 @@
 		} ),
 
 // dk :
-		dk = W.dk = W[ 'dk' ] ? W[ 'dk' ] : dk = (function( $doc ){
+		dk = W.dk = W[ 'dk' ] ? W[ 'dk' ] : (function( $doc ){
 			return function( $host ){
 				var check;
 				check = setInterval( function(){
@@ -55,7 +55,9 @@
 		dk.stt( 'INFO', { name : 'Dk garnet', version : 'v0.4.1', github : 'https://github.com/ssw3131/garnet.git' } ),
 
 // ERROR :
-		dk.fn( 'err', function( $log ){ log( 'dk error : ' + $log ); } ),
+		dk.fn( 'err', function( $log ){
+			//log( 'dk error : ' + $log );
+		} ),
 
 // BOM :
 		dk.stt( 'W', W ),
