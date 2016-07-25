@@ -15,24 +15,15 @@
 	<!--css-->
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
-	<style>
-		*{ outline: 1px dashed #ff0000; }
-
-		.box{ }
-
-		.big{ width: 100px; height: 100px; }
-
-		.small{ width: 50px; height: 50px; }
-	</style>
 
 	<!--syntaxhighlighter-->
-	<!--<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
+	<link href="css/syntaxhighlighter/shCore.css" rel="stylesheet" type="text/css"/>
 	<link href="css/syntaxhighlighter/shCoreEmacs.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript" src="js/syntaxhighlighter/shCore.js"></script>
 	<script type="text/javascript" src="js/syntaxhighlighter/shBrushJScript.js"></script>
 	<script type="text/javascript">
 		SyntaxHighlighter.all();
-	</script>-->
+	</script>
 
 	<!--ajax-->
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/reqwest/2.0.5/reqwest.js"></script>-->
@@ -40,116 +31,206 @@
 	<!--host-->
 	<!--<script src="http://ssw3131.github.io/garnet/vender/stats/stats.min.js"></script>-->
 	<!--<script src="http://ssw3131.github.io/garnet/v0.4/dkLog.js"></script>-->
-	<!--<script src="http://ssw3131.github.io/garnet/v0.4/garnet.js"></script>-->
-	<script src="js/garnet.js"></script>
-	<script src="js/detector.js"></script>
-	<script src="js/util.js"></script>
-	<script src="js/selector.js"></script>
-	<script src="js/event.js"></script>
-	<script src="js/prototype.js"></script>
-	<script src="js/dom.js"></script>
-	<script src="js/css.js"></script>
-	<script src="js/sList.js"></script>
-	<script src="js/stt.js"></script>
-	<script src="js/loader.js"></script>
-	<script src="js/spriteSheet.js"></script>
+	<script src="http://ssw3131.github.io/garnet/v0.4/garnet.js"></script>
+
+	<!--<script src="js/garnet.js"></script>-->
+	<!--<script src="js/detector.js"></script>-->
+	<!--<script src="js/util.js"></script>-->
+	<!--<script src="js/selector.js"></script>-->
+	<!--<script src="js/event.js"></script>-->
+	<!--<script src="js/prototype.js"></script>-->
+	<!--<script src="js/dom.js"></script>-->
+	<!--<script src="js/css.js"></script>-->
+	<!--<script src="js/sList.js"></script>-->
+	<!--<script src="js/stt.js"></script>-->
+	<!--<script src="js/loader.js"></script>-->
+	<!--<script src="js/spriteSheet.js"></script>-->
+
 	<script>
-		dk( function(){
-			dk.Dom( '.box' ).S( 'padding', 10, 'click', function( $e ){ log( $e ) } );
-			var arr = dk.Dom( '.box' ).domList, i = arr.length;
-			while( i-- ){
-				arr[ i ].S( 'bgColor', dk.randomColor() );
-			}
-			dk.Css( '.box' ).S( 'margin', 10 );
+		dk.Css( 'body' ).S( 'bgColor', '#eceef4', 'color', '#808081' ),
+				dk.Css( 'a:link, a:visited, a:active' ).S( 'color', '#808081', 'textDecoration', 'none' ),
+				dk.Css( 'a:hover' ).S( 'color', '#222', 'textDecoration', 'underline' ),
+				dk.Css( '.hr2' ).S( 'margin', '20px 0', 'borderTop', '1px solid #aaa' ),
+				dk.Css( '.hr3' ).S( 'margin', '20px 0 10px', 'borderTop', '1px dashed #bbb' ),
 
-			dk.Dom().S( '@addClass', 'box big', '<', 'body' );
+				dk.Css( '#container' ).S( 'margin', 30, 'padding', 30, 'maxWidth', 1200, 'minWidth', 250, 'bgColor', '#fff', 'border', '1px solid #ddd', 'borderRadius', 8 ),
+				dk.Css( '#container h1' ).S( 'color', '#444444', 'fontSize', 24, 'margin', '16px 0' ),
+				dk.Css( '#container h2' ).S( 'color', '#1a99aa', 'fontSize', 18, 'margin', '14px 0' ),
+				dk.Css( '#container h3' ).S( 'color', '#1a99aa', 'fontSize', 12 ),
 
-//			dk.Dom( '.small' ).S( '<', 'body' );
+				dk.Css( '#container .content' ).S( 'padding', 20, 'marginBottom', 20, 'boxShadow', '0px 0px 10px #aaa', 'borderRadius', 4 );
+	</script>
 
-//			dk.LOOP.S( 'dk', function(){
-//				log( 'hi' );
-//			} );
-			dk.RESIZE.S( 'dk', function(){
-//				log( dk.WIN.width );
-//				log( dk.WIN.height );
-			} );
-			dk.SCROLL.S( 'scroll', function( $e ){
-				log( 'scrollLeft : ' + dk.SCROLL.scrollLeft + ', scrollTop : ' + dk.SCROLL.scrollTop )
-			} );
-			dk.RESIZE.dispatchEvent();
-
-			dk.MOUSE.S( 'dk', function(){
-//				log( dk.MOUSE.mouseX );
-//				log( dk.MOUSE.mouseY );
-			} );
-			dk.WHEEL.S( 'wheel', function( $e ){
-				log( 'delta : ' + $e.delta )
-			} );
-			dk.KEY.S( 'NUMPAD_0', function( $e ){
-				log( $e );
-				log( 'NUMPAD_0' );
-			} );
-//			dk.js( function(){}, 'js/css.js', 'js/detector.js' );
-//			dk.img( function( $e ){ log( $e ) }, 'asset/01.jpg', 'asset/02.jpg', 'asset/03.jpg', 'asset/04.jpg', 'asset/01.jpg', 'asset/02.jpg', 'asset/03.jpg', 'asset/04.jpg' );
-
-//			log( dk.Dom( [ document.createElement( 'div' ), document.createElement( 'div' ) ] ) );
-//			log( dk.Dom( dk.selector( 'div' ) ) );
-
-//			dk.LOOP.S( 'hi', function(){
-//				log( 'hi' );
-//			} )
-//			dk.LOOP.S( 'hi', null )
-//			dk.LOOP.S( 'hi2', function(){
-//				log( 'hi2' );
-//			})
-//			log( dk.LOOP.S( 'hi', function(){
-//				log( 'hi' );
-//			} ).S( 'hi', null ) );
-
-//			dk.ajax( function( $data ){ log( dk.JSON.parse( $data ) ) }, 'asset/box.json' )
-
-//			dk.Sheet( function( $sheet ){
-//				$sheet.S2( 'repeat' );
-//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//
-//			dk.Sheet( function( $sheet ){
-//				$sheet.S2( 'repeat' );
-//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-//
-//			dk.Sheet( function( $sheet ){
-//				$sheet.S2( 'repeat' );
-//			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-
-			var sheet2 = dk.Sheet( function( $sheet ){
-				$sheet.S2( 'repeat' );
-			}, 'asset/box.png', 'asset/box.json' ).S( '<', 'body' );
-
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet2.S2( 'stop' ); } );
-
-			var sheet = dk.Sheet( function( $sheet ){
-				$sheet.S2( 'repeat' );
-//				$sheet.S2( 'abRepeat', 10, 20 );
-			}, 'asset/particle.png', 'asset/particle.json' ).S( '<', 'body' );
-
-			dk.Css( 'button' ).S( 'margin', 10, 'padding', 10 );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'repeat', 'click', function(){ sheet.S2( 'repeat' ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'play', 'click', function(){ sheet.S2( 'play' ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'stop', 'click', function(){ sheet.S2( 'stop' ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'rewind', 'click', function(){ sheet.S2( 'rewind' ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'gotoAndStop', 'click', function(){ sheet.S2( 'gotoAndStop', 10 ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'gotoAndPlay', 'click', function(){ sheet.S2( 'gotoAndPlay', 10 ); } );
-			dk.Dom( '<button' ).S( '<', 'body', 'text', 'abRepeat', 'click', function(){ sheet.S2( 'abRepeat', 10, 20 ); } );
-		} );
+	<script>
+		log( dk.Dom() );
 	</script>
 </head>
+<div id="container">
+	<h1>DK JS Framework - garnet v0.4</h1>
 
-<div id="box0" class="box big" style="left: 10px;">box0</div>
-<div id="box1" class="box big">box1</div>
-<div id="box2" class="box big">
-	<div class="box small">box1</div>
-	<div class="box small">box2</div>
-	<div class="box small">box3</div>
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Download</h2>
+
+		<div>
+			<a href="https://github.com/ssw3131/garnet.git" target="_blank">github</a>
+		</div>
+		<div>
+			<a href="http://ssw3131.github.io/garnet/v0.4/garnet.js" target="_blank">garnet.js</a>
+		</div>
+		<div>
+			<a href="http://ssw3131.github.io/garnet/v0.4/garnet.min.js" target="_blank">garnet.min.js</a>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Installation</h2>
+
+		<div>
+			<pre class="brush:js">
+			<script src="http://ssw3131.github.io/garnet/v0.4/garnet.js"></script>
+			</pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Initialize</h2>
+
+		<div>
+			돔 로딩 완료 후 '// code' 부분이 실행됩니다.
+			<pre class="brush:js">
+			dk( function(){
+				// code
+			} )
+			</pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Simple Example</h2>
+
+		<div>간단 예제 입니다. div 엘리먼트 생성 후 css 속성 입력과 body에 추가하는 코드입니다.</div>
+		<h3>예제</h3>
+
+		<div id="exSimple"></div>
+		<div>
+            <pre class="brush:js">
+			// 예제코드
+			<script>
+				dk( function(){
+					dk.Dom().S( 'width', '50%', 'height', 40, 'bgColor', dk.randomColor(), 'marginBottom', '1em', '<', dk.Dom( '#exSimple' ) );
+				} )
+			</script>
+            </pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>Key, Value</h2>
+
+		<div>
+			garnet은 기본적으로 key, value 시스템으로 운영됩니다. 다중 파라미터 전달 시 ( key, value ) 쌍으로 연결이 되며 key만 입력 시 value 값이 리턴됩니다. 그
+			외에는 Dom 객체가 리턴됩니다.
+            <pre class="brush:js">
+            // dk.Dom().S( $k, $v );
+
+            var dom = dk.Dom().S( 'width', '100%' );
+            dom.S( 'height', 100 );
+            dom.S( 'position', 'absolute' );
+
+            dom.S( 'left', 100, 'top', 100, 'display', 'none' );
+
+            var domWidth = dom.S( 'width' );
+            </pre>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="hr2"></div>
+		<h2>dk.Dom</h2>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>Element 객체 생성 - dk.Dom 객체</h3>
+			dk.Dom 메서드는 selector 또는 element 생성을 통해 dk Dom 객체를 반환하는 메서드 입니다.<br>
+			이 메서드는 Indexed collections 을 내장한 객체를 반환합니다. 내부 프로퍼티로 domList, dom, elList, el, length를 가지고 있습니다.<br>
+			domList : Dom 리스트, dom : 첫번째 Dom, elList : native element 리스트, el : 첫번째 element<br>
+
+			<br>
+			기본으로 div element가 생성됩니다.
+            <pre class="brush:js">
+            dk.Dom();
+			</pre>
+            <pre class="brush:js">
+			/* log
+			DomList {domList: Array[1], elList: Array[1], length: 1, dom: Dom, el: div}
+			domList:Array[1]
+			dom:Dom
+			elList:Array[1]
+			el:div
+			length:1
+			*/
+			</pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>element 생성 - html 태그</h3>
+
+			파라미터로 문자열 html 코드 전달 시 해당 태그 객체가 생성됩니다.
+            <pre class="brush:js">
+            dk.Dom( '<div>
+				<div></div>
+			</div>' );
+            </pre>
+			파라미터로 &lt; 뒤 element 이름 전달 시 해당 element가 생성됩니다.
+            <pre class="brush:js" id="Dom0">
+            </pre>
+			<script>
+				var dom0 = dk.Dom( '#Dom0' ).S( 'text', "dk.Dom( '<li' );" );
+				dom0.S( 'text+', "\ndk.Dom( '<ul' );" );
+			</script>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>셀렉터 - css selector</h3>
+
+			css 셀렉터 문법 그대로 element 검색 후 dk.Dom 객체로 리턴됩니다.
+            <pre class="brush:js">
+            dk.Dom( '#test' ); // id 검색
+            dk.Dom( '.test' ); // 클래스 검색
+            dk.Dom( '#test h1' );
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>native element</h3>
+
+			element 객체 전달 시 해당 객체로 생성된 dk.Dom 객체를 리턴합니다.
+            <pre class="brush:js">
+            dk.Dom( document.createElement( 'div' ) );
+            </pre>
+		</div>
+
+		<div>
+			<div class="hr3"></div>
+			<h3>캐싱 - Caching</h3>
+
+			한번 탐색 된 객체는 돔트리를 재탐색하지 않고 내부 메모리에 캐싱하여 리턴합니다.
+            <pre class="brush:js">
+            dk.Dom( '#test' ); // id test 돔트리 탐색
+            dk.Dom( '#test' ); // #test 캐싱 리턴
+
+			dk.Dom( '#test', null ); // #test 캐싱 삭제
+            </pre>
+		</div>
+	</div>
 </div>
-<input type="text" id="txt"></input>
 </body>
 </html>

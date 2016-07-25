@@ -2,7 +2,6 @@
 
 *{ margin: 0; padding: 0; }
 label{ cursor: pointer; }
-code{ display: block; }
 body, h1, h2, h3, h4, h5, h6, p, dl, dd, ul, ol, li, form, fieldset, blockquote, table, thead, tbody, tfoot, tr, td, th, input, div, pre{ margin: 0; padding: 0; }
 h1, h2, h3, h4, h5, h6, th, td, table, input, button, select, textarea{ font-size: 1em; }
 em, cite, address, optgroup{ font-style: normal; }
@@ -16,7 +15,3 @@ abbr, acronym{ cursor: help; border-bottom: 1px dotted black; }
 fieldset{ font-size: 0; width: 0; height: 0; position: absolute; left: -99999px; overflow: hidden; }
 table{ border-collapse: collapse; border-spacing: 0; }
 legend{ margin: 0; padding: 0; display: block; }
-a:link{ color: #a7a8ac; text-decoration: none; }
-a:hover{ color: #333; text-decoration: none; }
-a:visited{ color: #a7a8ac; text-decoration: none; }
-a:active{ color: #a7a8ac; text-decoration: none; }
