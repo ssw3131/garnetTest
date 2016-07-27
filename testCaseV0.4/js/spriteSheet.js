@@ -4,13 +4,14 @@ dk.cls( 'Sheet', (function( $doc, $dkDom, $dkAjax, $dkJSON ){
 	var factory, Sheet, proto = {}, uuId = 0;
 
 	Sheet = function( $cb, $img, $json, $framerate ){
+		log( arguments )
 		var dom, self = this;
 		this.uuId = 'Sheet' + uuId++,
 			dom = $dkDom().S( 'bgImg', $img ), this.dom = dom, this.el = dom.el, this.style = this.el.style,
 			this.arr = null, this.repeat = true, this.currentFrame = 1, this.totalFrames = 1, this.startFrame = 1, this.endFrame = 1, this.currentRate = 0, this.frameRate = 30, this.direction = true,
 			$dkAjax( function( $data ){
 				var data = $dkJSON.parse( $data ), arr = self.arr = data.frames;
-				self.totalFrames = self.endFrame = arr.length, self.frameRate = $framerate == undefined ? 2 : 60 / $framerate,
+				self.totalFrames = self.endFrame = arr.length, self.frameRate = $framerate,
 					dom.S( 'width', arr[ 0 ].sourceSize.w, 'height', arr[ 0 ].sourceSize.h ), $cb( self );
 			}, $json );
 	},
@@ -24,8 +25,8 @@ dk.cls( 'Sheet', (function( $doc, $dkDom, $dkAjax, $dkJSON ){
 			return this;
 		},
 
-		factory = function( $img, $json, $framerate ){
-			return new Sheet( $img, $json, $framerate );
+		factory = function( $cb, $img, $json, $framerate ){
+			return new Sheet( $cb, $img, $json, $framerate == undefined ? 2 : 60 / $framerate );
 		},
 		factory.fn = function(){
 			var i = 0, j = arguments.length, k, v;

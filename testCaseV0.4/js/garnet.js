@@ -56,7 +56,7 @@
 
 // ERROR :
 		dk.fn( 'err', function( $log ){
-			//log( 'dk error : ' + $log );
+			log( 'dk error : ' + $log );
 		} ),
 
 // BOM :

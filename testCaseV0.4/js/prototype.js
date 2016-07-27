@@ -11,6 +11,7 @@ dk.stt( 'PROTO', {
 	attr : (function(){
 		var trim = /^\s*|\s*$/g;
 		return {
+			// todo 중복 문자열 에러
 			'@addClass' : function( $v ){
 				var e = this.el, r, check = new RegExp( '(\\s|^)' + $v + '(\\s|$)' );
 				r = e.getAttribute( 'class' ), r = r ? r.replace( check, ' ' ).replace( trim, '' ) + ' ' + $v : $v,
@@ -30,6 +31,7 @@ dk.stt( 'PROTO', {
 				if( $v === undefined ) return e[ 'scrollTop' ];
 				else e[ 'scrollTop' ] = $v;
 			}
+			// todo computed height, computed width
 		}
 	})(),
 	css : (function( $detector ){
