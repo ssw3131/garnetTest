@@ -1,5 +1,5 @@
 
-// SList :
+// SLIST :
 dk.cls( 'SList', (function(){
 	var SList, reset;
 	SList = function( $k, $update, $start, $end ){
